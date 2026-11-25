@@ -10,7 +10,6 @@ name = "halo_core"
 crate-type = ["cdylib", "staticlib", "rlib"]
 
 [dependencies]
-jni = "0.21"
 boringtun = "0.7.1"
 libc = "0.2"
 serde = { version = "1", features = ["derive"] }
@@ -20,6 +19,9 @@ base64 = "0.22"
 getrandom = "0.2"
 time = { version = "0.3", features = ["formatting"] }
 log = "0.4"
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21"
 android_logger = "0.14"
 
 [profile.release]
