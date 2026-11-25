@@ -1,0 +1,31 @@
+[package]
+name = "halo-core"
+version = "0.1.0"
+edition = "2021"
+license = "LicenseRef-Proprietary"
+description = "Halo VPN native core: WireGuard (WARP/Proton), DNS adblock, stats."
+
+[lib]
+name = "halo_core"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+jni = "0.21"
+boringtun = "0.6"
+smoltcp = "0.11"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "2.10", features = ["json"] }
+x25519-dalek = { version = "2", features = ["static_secrets"] }
+base64 = "0.22"
+getrandom = "0.2"
+time = { version = "0.3", features = ["formatting"] }
+log = "0.4"
+android_logger = "0.14"
+thiserror = "1"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
