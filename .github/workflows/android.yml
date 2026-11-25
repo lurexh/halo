@@ -55,17 +55,28 @@ jobs:
         if: ${{ secrets.HALO_KEYSTORE_BASE64 != '' }}
         run: echo "${{ secrets.HALO_KEYSTORE_BASE64 }}" | base64 -d > app/halo-release.jks
 
-      - name: Assemble release APK
-        run: gradle assembleRelease --no-daemon
+      - name: Assemble APK
+        run: |
+          if [ -n "${HALO_KEYSTORE:-}" ]; then
+            gradle assembleRelease --no-daemon
+          else
+            gradle assembleDebug --no-daemon
+          fi
         env:
           HALO_KEYSTORE: ${{ secrets.HALO_KEYSTORE_BASE64 != '' && 'app/halo-release.jks' || '' }}
           HALO_KEYSTORE_PASSWORD: ${{ secrets.HALO_KEYSTORE_PASSWORD }}
           HALO_KEY_ALIAS: ${{ secrets.HALO_KEY_ALIAS }}
           HALO_KEY_PASSWORD: ${{ secrets.HALO_KEY_PASSWORD }}
 
+      - name: Collect APK
+        run: |
+          mkdir -p dist
+          find app/build/outputs/apk -name '*.apk' -exec cp {} dist/halo.apk \;
+          ls -l dist
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: halo-apk
-          path: app/build/outputs/apk/**/*.apk
+          path: dist/halo.apk
           if-no-files-found: error
