@@ -13,6 +13,7 @@ data class Profile(
     val dns: String = "1.1.1.1",
     val mtu: Int = 1280,
     val allowedIps: List<String> = listOf("0.0.0.0/0"),
+    val blocklistFile: String? = null,
 ) {
     fun toJson(): String = JSONObject().apply {
         put("name", name)
@@ -24,5 +25,6 @@ data class Profile(
         put("dns", dns)
         put("mtu", mtu)
         put("allowed_ips", JSONArray(allowedIps))
+        if (blocklistFile != null) put("blocklist_file", blocklistFile)
     }.toString()
 }

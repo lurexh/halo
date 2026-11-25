@@ -1,9 +1,12 @@
 package dev.lurexh.halo.vpn
 
 import android.content.Context
+import org.json.JSONObject
+import java.io.File
 
 class ProfileStore(context: Context) {
-    private val prefs = context.getSharedPreferences("halo", Context.MODE_PRIVATE)
+    private val appContext = context.applicationContext
+    private val prefs = appContext.getSharedPreferences("halo", Context.MODE_PRIVATE)
 
     fun active(): Profile? {
         val raw = prefs.getString(KEY_ACTIVE, null) ?: return null
@@ -58,17 +61,23 @@ class ProfileStore(context: Context) {
             dns = dns,
             mtu = mtu,
             allowedIps = allowed,
+            blocklistFile = blocklistPath(appContext),
         )
         save(profile)
         return profile
     }
 
     private fun decode(raw: String): Profile {
-        val o = org.json.JSONObject(raw)
+        val o = JSONObject(raw)
         val allowedArray = o.optJSONArray("allowed_ips")
         val allowed = buildList {
             if (allowedArray != null) for (i in 0 until allowedArray.length()) add(allowedArray.getString(i))
         }.ifEmpty { listOf("0.0.0.0/0") }
+        val blocklist = if (o.has("blocklist_file") && !o.isNull("blocklist_file")) {
+            o.getString("blocklist_file")
+        } else {
+            blocklistPath(appContext)
+        }
         return Profile(
             name = o.getString("name"),
             privateKey = o.getString("private_key"),
@@ -79,10 +88,14 @@ class ProfileStore(context: Context) {
             dns = o.optString("dns", "1.1.1.1"),
             mtu = o.optInt("mtu", 1280),
             allowedIps = allowed,
+            blocklistFile = blocklist,
         )
     }
 
-    private companion object {
-        const val KEY_ACTIVE = "active_profile"
+    companion object {
+        private const val KEY_ACTIVE = "active_profile"
+
+        fun blocklistPath(context: Context): String =
+            File(context.applicationContext.filesDir, "blocklist.txt").absolutePath
     }
 }

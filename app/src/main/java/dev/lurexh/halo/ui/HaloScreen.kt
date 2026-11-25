@@ -26,6 +26,7 @@ import androidx.compose.material.icons.rounded.Bolt
 import androidx.compose.material.icons.rounded.PowerSettingsNew
 import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -59,7 +60,7 @@ import dev.lurexh.halo.vpn.VpnState
 import dev.lurexh.halo.vpn.VpnStatus
 
 @Composable
-fun HaloScreen(state: VpnState, onToggle: () -> Unit) {
+fun HaloScreen(state: VpnState, onToggle: () -> Unit, onCreateWarp: () -> Unit) {
     var showSheet by remember { mutableStateOf(false) }
 
     Box(
@@ -108,7 +109,11 @@ fun HaloScreen(state: VpnState, onToggle: () -> Unit) {
         }
 
         if (showSheet) {
-            DetailsSheet(state = state, onDismiss = { showSheet = false })
+            DetailsSheet(
+                state = state,
+                onDismiss = { showSheet = false },
+                onCreateWarp = onCreateWarp,
+            )
         }
     }
 }
@@ -180,7 +185,7 @@ private fun DetailsPill(onClick: () -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DetailsSheet(state: VpnState, onDismiss: () -> Unit) {
+private fun DetailsSheet(state: VpnState, onDismiss: () -> Unit, onCreateWarp: () -> Unit) {
     var adblock by remember { mutableStateOf(true) }
 
     ModalBottomSheet(onDismissRequest = onDismiss, containerColor = DeepSpace) {
@@ -219,6 +224,17 @@ private fun DetailsSheet(state: VpnState, onDismiss: () -> Unit) {
             }
 
             Spacer(Modifier.height(12.dp))
+            FilledTonalButton(
+                onClick = {
+                    onDismiss()
+                    onCreateWarp()
+                },
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Text("Generate WARP profile")
+            }
+
+            Spacer(Modifier.height(16.dp))
             Text(
                 text = "Rust core · boringtun · ${Native.version()}",
                 style = MaterialTheme.typography.labelSmall,
