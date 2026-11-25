@@ -2,10 +2,12 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
+    #[serde(default)]
     pub name: String,
     pub private_key: String,
     pub peer_public_key: String,
     pub endpoint: String,
+    #[serde(default)]
     pub address: String,
     #[serde(default = "default_prefix")]
     pub prefix: u8,
@@ -17,6 +19,8 @@ pub struct Config {
     pub allowed_ips: Vec<String>,
     #[serde(default)]
     pub blocklists: Vec<String>,
+    #[serde(default)]
+    pub blocklist_file: Option<String>,
 }
 
 fn default_prefix() -> u8 {

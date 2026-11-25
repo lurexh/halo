@@ -1,7 +1,7 @@
 use base64::engine::general_purpose::STANDARD as B64;
 use base64::Engine;
+use boringtun::x25519::{PublicKey, StaticSecret};
 use serde::Deserialize;
-use x25519_dalek::{PublicKey, StaticSecret};
 
 /// Result of a WARP device registration (the same flow `wgcf register` uses).
 #[derive(Debug, Clone)]
@@ -62,8 +62,7 @@ struct Addresses {
 }
 
 /// Register a fresh WARP device against Cloudflare's client API.
-///
-/// Uses your own account/device only — this is the standard wgcf flow.
+/// Uses your own account/device only — the standard wgcf flow.
 pub fn register() -> Result<Registration, String> {
     let mut seed = [0u8; 32];
     getrandom::getrandom(&mut seed).map_err(|e| e.to_string())?;
