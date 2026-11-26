@@ -29,6 +29,8 @@ class HaloVpnService : VpnService() {
     }
 
     private fun startTunnel() {
+        closeTunnel()
+
         val store = ProfileStore(this)
         val profile = store.active()
         if (profile == null) {
@@ -109,19 +111,21 @@ class HaloVpnService : VpnService() {
         VpnController.update { it.copy(status = VpnStatus.CONNECTED) }
     }
 
-    private fun stopTunnel() {
-        Native.stopTunnel()
+    private fun closeTunnel() {
         runCatching { tun?.close() }
         tun = null
+        Native.stopTunnel()
+    }
+
+    private fun stopTunnel() {
+        closeTunnel()
         stopForeground(STOP_FOREGROUND_REMOVE)
         VpnController.update { it.copy(status = VpnStatus.DISCONNECTED, message = null) }
         stopSelf()
     }
 
     private fun fail(message: String) {
-        Native.stopTunnel()
-        runCatching { tun?.close() }
-        tun = null
+        closeTunnel()
         VpnController.update { it.copy(status = VpnStatus.ERROR, message = message) }
         stopSelf()
     }
@@ -132,9 +136,7 @@ class HaloVpnService : VpnService() {
     }
 
     override fun onDestroy() {
-        Native.stopTunnel()
-        runCatching { tun?.close() }
-        tun = null
+        closeTunnel()
         super.onDestroy()
     }
 
@@ -171,7 +173,7 @@ class HaloVpnService : VpnService() {
         }
         return builder
             .setContentTitle("Halo VPN")
-            .setContentText("Connected · $profile")
+            .setContentText("Connected \u00b7 $profile")
             .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(open)
             .setOngoing(true)

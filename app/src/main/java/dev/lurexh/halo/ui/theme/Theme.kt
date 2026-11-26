@@ -3,16 +3,23 @@ package dev.lurexh.halo.ui.theme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val HaloColors = darkColorScheme(
-    primary = HaloPurple,
+    primary = Proton,
+    onPrimary = Color.White,
     secondary = HaloCyan,
+    onSecondary = Void,
     tertiary = HaloPink,
     background = Void,
-    surface = DeepSpace,
-    onPrimary = androidx.compose.ui.graphics.Color.White,
     onBackground = TextPrimary,
+    surface = HaloSurface,
     onSurface = TextPrimary,
+    surfaceVariant = HaloSurfaceHigh,
+    onSurfaceVariant = TextMuted,
+    outline = HaloBorder,
+    error = Danger,
+    onError = Color.White,
 )
 
 @Composable
