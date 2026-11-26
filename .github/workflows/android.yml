@@ -42,23 +42,24 @@ jobs:
           unzip -q /tmp/gradle.zip -d /opt
           echo "/opt/gradle-8.13/bin" >> "$GITHUB_PATH"
 
-      - name: Rust targets
+      - name: Rust android target
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android
+          targets: aarch64-linux-android
 
-      - name: cargo-ndk
-        uses: taiki-e/install-action@v2
-        with:
-          tool: cargo-ndk
-
-      - name: Build Rust core
+      - name: Build Rust core (arm64)
         run: |
-          set -o pipefail
+          set -euo pipefail
+          TC="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin"
+          export PATH="$TC:$PATH"
+          export CC_aarch64_linux_android="$TC/aarch64-linux-android24-clang"
+          export AR_aarch64_linux_android="$TC/llvm-ar"
+          export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER="$TC/aarch64-linux-android24-clang"
           cd rust
-          cargo ndk -p 24 -t arm64-v8a -t armeabi-v7a -t x86_64 \
-            -o ../app/src/main/jniLibs \
-            build --release 2>&1 | tee -a ../ci-build.log
+          cargo build --release --target aarch64-linux-android 2>&1 | tee -a ../ci-build.log
+          mkdir -p ../app/src/main/jniLibs/arm64-v8a
+          cp target/aarch64-linux-android/release/libhalo_core.so ../app/src/main/jniLibs/arm64-v8a/
+          ls -l ../app/src/main/jniLibs/arm64-v8a/
 
       - name: Rust unit tests
         run: |
@@ -95,7 +96,13 @@ jobs:
       - name: Commit failure log
         if: failure()
         run: |
-          tail -c 200000 ci-build.log > ci-build-tail.log 2>/dev/null || true
+          {
+            echo "run=$GITHUB_RUN_ID"
+            echo "sha=$GITHUB_SHA"
+            echo "date=$(date -u)"
+            echo "-----"
+            tail -c 400000 ci-build.log 2>/dev/null || true
+          } > ci-build-tail.log
           git config user.name "halo-ci"
           git config user.email "ci@lurexh.invalid"
           git add -f ci-build-tail.log
