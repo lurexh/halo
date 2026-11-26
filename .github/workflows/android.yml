@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -46,10 +49,10 @@ jobs:
           cargo ndk \
             -t arm64-v8a -t armeabi-v7a -t x86_64 \
             -o app/src/main/jniLibs \
-            build --release --manifest-path rust/Cargo.toml
+            build --release --manifest-path rust/Cargo.toml 2>&1 | tee ci-build.log
 
       - name: Rust unit tests
-        run: cargo test --manifest-path rust/Cargo.toml
+        run: cargo test --manifest-path rust/Cargo.toml 2>&1 | tee -a ci-build.log
 
       - name: Decode keystore
         if: ${{ secrets.HALO_KEYSTORE_BASE64 != '' }}
@@ -57,10 +60,11 @@ jobs:
 
       - name: Assemble APK
         run: |
+          set -o pipefail
           if [ -n "${HALO_KEYSTORE:-}" ]; then
-            gradle assembleRelease --no-daemon
+            gradle assembleRelease --no-daemon 2>&1 | tee -a ci-build.log
           else
-            gradle assembleDebug --no-daemon
+            gradle assembleDebug --no-daemon 2>&1 | tee -a ci-build.log
           fi
         env:
           HALO_KEYSTORE: ${{ secrets.HALO_KEYSTORE_BASE64 != '' && 'app/halo-release.jks' || '' }}
@@ -74,9 +78,28 @@ jobs:
           find app/build/outputs/apk -name '*.apk' -exec cp {} dist/halo.apk \;
           ls -l dist
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: halo-apk
           path: dist/halo.apk
           if-no-files-found: error
+
+      - name: Publish nightly release
+        if: success()
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: nightly
+          name: Halo nightly
+          body: "Automated build of the latest main."
+          files: dist/halo.apk
+
+      - name: Commit failure log (so it can be read without a token)
+        if: failure()
+        run: |
+          tail -c 200000 ci-build.log > ci-build-tail.log || true
+          git config user.name "halo-ci"
+          git config user.email "ci@lurexh.invalid"
+          git add -f ci-build-tail.log
+          git commit -m "ci: build log [skip ci]" || true
+          git push || true
