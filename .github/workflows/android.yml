@@ -69,7 +69,14 @@ jobs:
       - name: Assemble debug APK
         run: |
           set -o pipefail
-          gradle assembleDebug --no-daemon 2>&1 | tee -a ci-build.log
+          for attempt in 1 2 3; do
+            echo "== gradle attempt $attempt =="
+            if gradle assembleDebug --no-daemon 2>&1 | tee -a ci-build.log; then
+              exit 0
+            fi
+            sleep 30
+          done
+          exit 1
 
       - name: Collect APK
         run: |
