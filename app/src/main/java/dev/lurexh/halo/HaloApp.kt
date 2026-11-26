@@ -1,6 +1,7 @@
 package dev.lurexh.halo
 
 import android.app.Application
+import dev.lurexh.halo.vpn.BlocklistUpdater
 
 class HaloApp : Application() {
     override fun onCreate() {
