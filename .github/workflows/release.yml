@@ -45,40 +45,42 @@ jobs:
           tool: cargo-ndk
 
       - name: Rust tests
-        run: cargo test --manifest-path rust/Cargo.toml
+        run: |
+          set -o pipefail
+          cargo test --manifest-path rust/Cargo.toml 2>&1 | tee ci-build.log
 
       - name: Build Rust core
         run: |
+          set -o pipefail
           cargo ndk \
             -t arm64-v8a -t armeabi-v7a -t x86_64 \
             -o app/src/main/jniLibs \
-            build --release --manifest-path rust/Cargo.toml
+            build --release --manifest-path rust/Cargo.toml 2>&1 | tee -a ci-build.log
 
-      - name: Decode keystore
-        if: ${{ secrets.HALO_KEYSTORE_BASE64 != '' }}
-        run: echo "${{ secrets.HALO_KEYSTORE_BASE64 }}" | base64 -d > app/halo-release.jks
-
-      - name: Assemble APK
+      - name: Assemble debug APK
         run: |
-          if [ -n "${HALO_KEYSTORE:-}" ]; then
-            gradle assembleRelease --no-daemon
-          else
-            gradle assembleDebug --no-daemon
-          fi
-        env:
-          HALO_KEYSTORE: ${{ secrets.HALO_KEYSTORE_BASE64 != '' && 'app/halo-release.jks' || '' }}
-          HALO_KEYSTORE_PASSWORD: ${{ secrets.HALO_KEYSTORE_PASSWORD }}
-          HALO_KEY_ALIAS: ${{ secrets.HALO_KEY_ALIAS }}
-          HALO_KEY_PASSWORD: ${{ secrets.HALO_KEY_PASSWORD }}
+          set -o pipefail
+          gradle assembleDebug --no-daemon 2>&1 | tee -a ci-build.log
 
       - name: Collect APK
         run: |
           mkdir -p dist
-          find app/build/outputs/apk -name '*.apk' -exec cp {} dist/ \;
+          find app/build/outputs/apk -name '*.apk' -exec cp {} dist/halo.apk \;
           ls -l dist
 
-      - name: Publish GitHub Release
+      - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.apk
+          name: Halo ${{ github.ref_name }}
+          files: dist/halo.apk
           generate_release_notes: true
+
+      - name: Commit failure log
+        if: failure()
+        run: |
+          tail -c 200000 ci-build.log > ci-build-tail.log 2>/dev/null || true
+          git config user.name "halo-ci"
+          git config user.email "ci@lurexh.invalid"
+          git add -f ci-build-tail.log
+          git commit -m "ci: build log [skip ci]" || true
+          git push || true

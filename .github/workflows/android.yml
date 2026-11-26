@@ -46,31 +46,21 @@ jobs:
 
       - name: Build Rust core
         run: |
+          set -o pipefail
           cargo ndk \
             -t arm64-v8a -t armeabi-v7a -t x86_64 \
             -o app/src/main/jniLibs \
             build --release --manifest-path rust/Cargo.toml 2>&1 | tee ci-build.log
 
       - name: Rust unit tests
-        run: cargo test --manifest-path rust/Cargo.toml 2>&1 | tee -a ci-build.log
-
-      - name: Decode keystore
-        if: ${{ secrets.HALO_KEYSTORE_BASE64 != '' }}
-        run: echo "${{ secrets.HALO_KEYSTORE_BASE64 }}" | base64 -d > app/halo-release.jks
-
-      - name: Assemble APK
         run: |
           set -o pipefail
-          if [ -n "${HALO_KEYSTORE:-}" ]; then
-            gradle assembleRelease --no-daemon 2>&1 | tee -a ci-build.log
-          else
-            gradle assembleDebug --no-daemon 2>&1 | tee -a ci-build.log
-          fi
-        env:
-          HALO_KEYSTORE: ${{ secrets.HALO_KEYSTORE_BASE64 != '' && 'app/halo-release.jks' || '' }}
-          HALO_KEYSTORE_PASSWORD: ${{ secrets.HALO_KEYSTORE_PASSWORD }}
-          HALO_KEY_ALIAS: ${{ secrets.HALO_KEY_ALIAS }}
-          HALO_KEY_PASSWORD: ${{ secrets.HALO_KEY_PASSWORD }}
+          cargo test --manifest-path rust/Cargo.toml 2>&1 | tee -a ci-build.log
+
+      - name: Assemble debug APK
+        run: |
+          set -o pipefail
+          gradle assembleDebug --no-daemon 2>&1 | tee -a ci-build.log
 
       - name: Collect APK
         run: |
@@ -94,10 +84,10 @@ jobs:
           body: "Automated build of the latest main."
           files: dist/halo.apk
 
-      - name: Commit failure log (so it can be read without a token)
+      - name: Commit failure log
         if: failure()
         run: |
-          tail -c 200000 ci-build.log > ci-build-tail.log || true
+          tail -c 200000 ci-build.log > ci-build-tail.log 2>/dev/null || true
           git config user.name "halo-ci"
           git config user.email "ci@lurexh.invalid"
           git add -f ci-build-tail.log
