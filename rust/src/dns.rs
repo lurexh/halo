@@ -1,48 +1,115 @@
 use std::collections::HashSet;
 
-/// Domain blocklist used by the in-tunnel DNS sinkhole.
+/// Domain firewall used by the in-tunnel DNS sinkhole. Supports hosts-file
+/// lines, plain domains, wildcard (`*.x`), AdGuard-style `||x^` and `@@` allows.
 #[derive(Debug, Default, Clone)]
 pub struct Blocklist {
-    domains: HashSet<String>,
+    block: HashSet<String>,
+    allow: HashSet<String>,
 }
 
 impl Blocklist {
     pub fn from_lines<'a>(lines: impl IntoIterator<Item = &'a str>) -> Self {
-        let mut domains = HashSet::new();
+        let mut list = Self::default();
+        list.extend(lines);
+        list
+    }
+
+    pub fn extend<'a>(&mut self, lines: impl IntoIterator<Item = &'a str>) {
+        for line in lines {
+            let (allow, domain) = normalize_rule(line);
+            if domain.is_empty() {
+                continue;
+            }
+            if allow {
+                self.allow.insert(domain);
+            } else {
+                self.block.insert(domain);
+            }
+        }
+    }
+
+    pub fn extend_allow<'a>(&mut self, lines: impl IntoIterator<Item = &'a str>) {
         for line in lines {
             let line = line.trim();
             if line.is_empty() || line.starts_with('#') || line.starts_with('!') {
                 continue;
             }
-            let domain = line.split_whitespace().last().unwrap_or(line);
-            let domain = domain.trim_end_matches('.').to_ascii_lowercase();
+            let (_, domain) = normalize_rule(line);
             if !domain.is_empty() {
-                domains.insert(domain);
+                self.allow.insert(domain);
             }
         }
-        Self { domains }
     }
 
     pub fn is_blocked(&self, query: &str) -> bool {
-        let mut domain = query.trim_end_matches('.').to_ascii_lowercase();
-        loop {
-            if self.domains.contains(&domain) {
-                return true;
-            }
-            match domain.find('.') {
-                Some(idx) => domain = domain[idx + 1..].to_string(),
-                None => return false,
-            }
+        let q = query.trim_end_matches('.').to_ascii_lowercase();
+        if q.is_empty() {
+            return false;
         }
+        if suffix_match(&self.allow, &q) {
+            return false;
+        }
+        suffix_match(&self.block, &q)
     }
 
     pub fn len(&self) -> usize {
-        self.domains.len()
+        self.block.len()
     }
 
     pub fn is_empty(&self) -> bool {
-        self.domains.is_empty()
+        self.block.is_empty()
     }
+}
+
+fn suffix_match(set: &HashSet<String>, query: &str) -> bool {
+    let mut domain = query;
+    loop {
+        if set.contains(domain) {
+            return true;
+        }
+        match domain.find('.') {
+            Some(idx) => domain = &domain[idx + 1..],
+            None => return false,
+        }
+    }
+}
+
+fn normalize_rule(raw: &str) -> (bool, String) {
+    let raw = raw.trim();
+    if raw.is_empty() || raw.starts_with('#') || raw.starts_with('!') {
+        return (false, String::new());
+    }
+    let mut allow = false;
+    let mut s = raw;
+    if let Some(rest) = s.strip_prefix("@@") {
+        allow = true;
+        s = rest.trim();
+    }
+    let tokens: Vec<&str> = s.split_whitespace().collect();
+    let token = if tokens.len() >= 2 && matches!(tokens[0], "0.0.0.0" | "127.0.0.1" | "::1") {
+        tokens[1]
+    } else {
+        tokens.first().copied().unwrap_or("")
+    };
+    let mut t = token;
+    if let Some(rest) = t.strip_prefix("||") {
+        t = rest;
+    }
+    if let Some(idx) = t.find('^') {
+        t = &t[..idx];
+    }
+    if let Some(idx) = t.find('/') {
+        t = &t[..idx];
+    }
+    let t = t
+        .trim_start_matches("*.")
+        .trim_end_matches('.')
+        .to_ascii_lowercase();
+    if t.is_empty() || !t.contains('.') {
+        return (allow, String::new());
+    }
+    (allow, t)
 }
 
 /// If `query` is a DNS A query for a blocked domain, return a synthetic response
@@ -225,6 +292,15 @@ mod tests {
         assert!(bl.is_blocked("tracker.net"));
         assert!(!bl.is_blocked("example.com"));
         assert!(!bl.is_blocked("nottracker.net"));
+    }
+
+    #[test]
+    fn supports_allow_and_adguard_syntax() {
+        let mut bl = Blocklist::from_lines(["||ads.example^", "0.0.0.0 tracker.net"]);
+        bl.extend_allow(["good.ads.example"]);
+        assert!(bl.is_blocked("ads.example"));
+        assert!(!bl.is_blocked("good.ads.example"));
+        assert!(bl.is_blocked("a.tracker.net"));
     }
 
     #[test]

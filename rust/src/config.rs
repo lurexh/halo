@@ -6,31 +6,31 @@ pub struct Config {
     pub name: String,
     pub private_key: String,
     pub peer_public_key: String,
+    #[serde(default)]
+    pub preshared_key: Option<String>,
     pub endpoint: String,
     #[serde(default)]
-    pub address: String,
-    #[serde(default = "default_prefix")]
-    pub prefix: u8,
-    #[serde(default = "default_dns")]
-    pub dns: String,
+    pub addresses: Vec<String>,
+    #[serde(default)]
+    pub dns: Vec<String>,
     #[serde(default = "default_mtu")]
     pub mtu: u16,
     #[serde(default)]
     pub allowed_ips: Vec<String>,
     #[serde(default)]
+    pub keepalive: u16,
+    #[serde(default)]
+    pub reserved: Option<Vec<u8>>,
+    #[serde(default)]
     pub blocklists: Vec<String>,
     #[serde(default)]
     pub blocklist_file: Option<String>,
+    #[serde(default)]
+    pub allowlist_file: Option<String>,
 }
 
-fn default_prefix() -> u8 {
-    32
-}
-fn default_dns() -> String {
-    "1.1.1.1".to_string()
-}
 fn default_mtu() -> u16 {
-    1280
+    1420
 }
 
 impl Config {

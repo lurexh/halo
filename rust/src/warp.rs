@@ -12,7 +12,7 @@ pub struct Registration {
     pub endpoint: String,
     pub ipv4: String,
     pub ipv6: String,
-    pub client_id: String,
+    pub reserved: Vec<u8>,
 }
 
 #[derive(Deserialize, Default)]
@@ -62,7 +62,6 @@ struct Addresses {
 }
 
 /// Register a fresh WARP device against Cloudflare's client API.
-/// Uses your own account/device only — the standard wgcf flow.
 pub fn register() -> Result<Registration, String> {
     let mut seed = [0u8; 32];
     getrandom::getrandom(&mut seed).map_err(|e| e.to_string())?;
@@ -100,16 +99,33 @@ pub fn register() -> Result<Registration, String> {
         .ok_or("registration response had no peer")?;
 
     if peer.public_key.is_empty() || peer.endpoint.host.is_empty() {
-        return Err(format!("incomplete registration response (device {})", resp.id));
+        return Err(format!(
+            "incomplete registration response (device {})",
+            resp.id
+        ));
     }
+
+    let host = &peer.endpoint.host;
+    let endpoint = if host.matches(':').count() == 1 {
+        host.clone()
+    } else {
+        format!("{host}:2408")
+    };
+
+    let reserved = B64
+        .decode(resp.config.client_id.trim())
+        .ok()
+        .filter(|b| b.len() >= 3)
+        .map(|b| b[..3].to_vec())
+        .unwrap_or_default();
 
     Ok(Registration {
         private_key,
         public_key,
         peer_public_key: peer.public_key.clone(),
-        endpoint: format!("{}:2408", peer.endpoint.host),
+        endpoint,
         ipv4: resp.config.interface.addresses.v4.clone(),
         ipv6: resp.config.interface.addresses.v6.clone(),
-        client_id: resp.config.client_id.clone(),
+        reserved,
     })
 }

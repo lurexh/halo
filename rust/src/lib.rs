@@ -1,11 +1,12 @@
 mod config;
 pub mod dns;
+pub mod logbuf;
+pub mod probe;
 pub mod tun;
 mod tunnel;
 pub mod warp;
+pub mod wgconf;
 
-// JNI + Android logging are Android-only so the crate also builds/tests on a
-// plain host (Linux CI runs `cargo test` against the DNS + datapath modules).
 #[cfg(target_os = "android")]
 mod android_ffi {
     use jni::objects::{JObject, JString};
@@ -31,6 +32,10 @@ mod android_ffi {
         }
     }
 
+    fn read_string(env: &mut JNIEnv, value: &JString) -> Option<String> {
+        env.get_string(value).ok().map(|s| s.into())
+    }
+
     #[no_mangle]
     pub extern "system" fn Java_dev_lurexh_halo_core_Native_nativeStart(
         mut env: JNIEnv,
@@ -39,17 +44,14 @@ mod android_ffi {
         config: JString,
     ) -> jint {
         init_logger();
-        let json: String = match env.get_string(&config) {
-            Ok(s) => s.into(),
-            Err(e) => {
-                log::error!("invalid config string: {e}");
-                return -1;
-            }
+        let json = match read_string(&mut env, &config) {
+            Some(s) => s,
+            None => return -1,
         };
         match crate::tunnel::start_fd(fd, &json) {
             Ok(()) => 0,
             Err(e) => {
-                log::error!("startTunnel: {e}");
+                crate::logbuf::push("E", format!("startTunnel: {e}"));
                 -2
             }
         }
@@ -68,10 +70,11 @@ mod android_ffi {
         mut env: JNIEnv,
         _this: JObject,
     ) -> jstring {
-        let (rx, tx) = crate::tunnel::stats();
+        let (rx, tx, blocked) = crate::tunnel::stats();
         let json = serde_json::json!({
             "rx": rx,
             "tx": tx,
+            "blocked": blocked,
             "running": crate::tunnel::is_running(),
         })
         .to_string();
@@ -88,27 +91,74 @@ mod android_ffi {
     }
 
     #[no_mangle]
+    pub extern "system" fn Java_dev_lurexh_halo_core_Native_nativeParseConfig(
+        mut env: JNIEnv,
+        _this: JObject,
+        text: JString,
+        name: JString,
+    ) -> jstring {
+        let body = match read_string(&mut env, &text) {
+            Some(s) => s,
+            None => return to_jstring(&mut env, "{\"error\":\"bad text\"}".to_string()),
+        };
+        let label = read_string(&mut env, &name).unwrap_or_else(|| "WireGuard".to_string());
+        let out = match crate::wgconf::parse(&body, Some(&label)) {
+            Ok(v) => v.to_string(),
+            Err(e) => serde_json::json!({ "error": e }).to_string(),
+        };
+        to_jstring(&mut env, out)
+    }
+
+    #[no_mangle]
+    pub extern "system" fn Java_dev_lurexh_halo_core_Native_nativeProbe(
+        mut env: JNIEnv,
+        _this: JObject,
+        endpoint: JString,
+    ) -> jint {
+        match read_string(&mut env, &endpoint) {
+            Some(s) => crate::probe::probe(&s),
+            None => -1,
+        }
+    }
+
+    #[no_mangle]
+    pub extern "system" fn Java_dev_lurexh_halo_core_Native_nativeLogs(
+        mut env: JNIEnv,
+        _this: JObject,
+    ) -> jstring {
+        to_jstring(&mut env, crate::logbuf::snapshot())
+    }
+
+    #[no_mangle]
     pub extern "system" fn Java_dev_lurexh_halo_core_Native_nativeRegisterWarp(
         mut env: JNIEnv,
         _this: JObject,
     ) -> jstring {
         init_logger();
-        let payload = match crate::warp::register() {
+        let out = match crate::warp::register() {
             Ok(r) => {
-                let address = r.ipv4.split('/').next().unwrap_or("").to_string();
+                let addresses: Vec<String> = if r.ipv4.is_empty() {
+                    Vec::new()
+                } else {
+                    vec![r.ipv4.clone()]
+                };
                 serde_json::json!({
+                    "name": "WARP",
                     "private_key": r.private_key,
                     "peer_public_key": r.peer_public_key,
+                    "preshared_key": serde_json::Value::Null,
                     "endpoint": r.endpoint,
-                    "address": address,
-                    "prefix": 32,
-                    "dns": "1.1.1.1",
+                    "addresses": addresses,
+                    "dns": ["1.1.1.1", "1.0.0.1"],
                     "mtu": 1280,
+                    "allowed_ips": ["0.0.0.0/0", "::/0"],
+                    "keepalive": 25,
+                    "reserved": r.reserved,
                 })
                 .to_string()
             }
             Err(e) => serde_json::json!({ "error": e }).to_string(),
         };
-        to_jstring(&mut env, payload)
+        to_jstring(&mut env, out)
     }
 }
