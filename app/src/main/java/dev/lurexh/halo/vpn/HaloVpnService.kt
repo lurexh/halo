@@ -3,12 +3,18 @@ package dev.lurexh.halo.vpn
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.ServiceInfo
 import android.net.VpnService
 import android.os.Build
 import android.os.ParcelFileDescriptor
+import dev.lurexh.halo.MainActivity
+import dev.lurexh.halo.R
 import dev.lurexh.halo.core.Native
+import org.json.JSONArray
+import org.json.JSONObject
 
 class HaloVpnService : VpnService() {
 
@@ -23,20 +29,41 @@ class HaloVpnService : VpnService() {
     }
 
     private fun startTunnel() {
-        val profile = ProfileStore(this).active()
+        val store = ProfileStore(this)
+        val profile = store.active()
         if (profile == null) {
             fail("No profile imported")
             return
         }
 
-        VpnController.update { it.copy(status = VpnStatus.CONNECTING, profile = profile.name, message = null) }
+        VpnController.update {
+            it.copy(
+                status = VpnStatus.CONNECTING,
+                profileName = profile.name,
+                profileId = profile.id,
+                message = null,
+            )
+        }
 
         val builder = Builder()
             .setSession("Halo VPN")
-            .setMtu(profile.mtu)
-            .addAddress(profile.address, profile.prefix)
-            .addDnsServer(profile.dns)
-            .addRoute("0.0.0.0", 0)
+            .setMtu(profile.mtu.coerceIn(1280, 1500))
+
+        var added = 0
+        for (addr in profile.addresses) {
+            val (ip, prefix) = splitCidr(addr) ?: continue
+            runCatching { builder.addAddress(ip, prefix) }.onSuccess { added++ }
+        }
+        if (added == 0) {
+            fail("Profile has no usable Address")
+            return
+        }
+
+        val dns = profile.dns.filter { it.isNotBlank() }.ifEmpty { listOf("1.1.1.1") }
+        dns.forEach { runCatching { builder.addDnsServer(it) } }
+
+        builder.addRoute("0.0.0.0", 0)
+        builder.addRoute("::", 0)
 
         try {
             builder.addDisallowedApplication(packageName)
@@ -50,13 +77,35 @@ class HaloVpnService : VpnService() {
         }
         tun = pfd
 
-        val rc = Native.startTunnel(pfd.fd, profile.toJson())
+        val config = JSONObject(profile.tunnelJson()).apply {
+            if (store.adblockEnabled()) {
+                val rules = store.customRules()
+                    .lineSequence()
+                    .map { it.trim() }
+                    .filter { it.isNotEmpty() && !it.startsWith("#") }
+                    .toList()
+                put("blocklists", JSONArray(rules))
+                profile.blocklistFile?.let { put("blocklist_file", it) }
+                profile.allowlistFile?.let { put("allowlist_file", it) }
+            } else {
+                put("blocklists", JSONArray())
+                remove("blocklist_file")
+                remove("allowlist_file")
+            }
+        }.toString()
+
+        val rc = Native.startTunnel(pfd.fd, config)
         if (rc != 0) {
             fail("Core start failed (code $rc)")
             return
         }
 
-        startForeground(NOTIF_ID, buildNotification(profile.name))
+        val notification = buildNotification(profile.name)
+        if (Build.VERSION.SDK_INT >= 34) {
+            startForeground(NOTIF_ID, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        } else {
+            startForeground(NOTIF_ID, notification)
+        }
         VpnController.update { it.copy(status = VpnStatus.CONNECTED) }
     }
 
@@ -65,7 +114,7 @@ class HaloVpnService : VpnService() {
         runCatching { tun?.close() }
         tun = null
         stopForeground(STOP_FOREGROUND_REMOVE)
-        VpnController.update { VpnState(status = VpnStatus.DISCONNECTED) }
+        VpnController.update { it.copy(status = VpnStatus.DISCONNECTED, message = null) }
         stopSelf()
     }
 
@@ -89,6 +138,19 @@ class HaloVpnService : VpnService() {
         super.onDestroy()
     }
 
+    private fun splitCidr(value: String): Pair<String, Int>? {
+        val v = value.trim()
+        if (v.isEmpty()) return null
+        val idx = v.lastIndexOf('/')
+        return if (idx < 0) {
+            Pair(v, if (v.contains(':')) 128 else 32)
+        } else {
+            val ip = v.substring(0, idx)
+            val prefix = v.substring(idx + 1).toIntOrNull() ?: return null
+            Pair(ip, prefix)
+        }
+    }
+
     private fun buildNotification(profile: String): Notification {
         val manager = getSystemService(NotificationManager::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && manager.getNotificationChannel(CHANNEL_ID) == null) {
@@ -96,16 +158,21 @@ class HaloVpnService : VpnService() {
                 NotificationChannel(CHANNEL_ID, "Connection", NotificationManager.IMPORTANCE_LOW),
             )
         }
-        val open = android.app.PendingIntent.getActivity(
+        val open = PendingIntent.getActivity(
             this,
             0,
-            Intent(this, dev.lurexh.halo.MainActivity::class.java),
-            android.app.PendingIntent.FLAG_IMMUTABLE,
+            Intent(this, MainActivity::class.java),
+            PendingIntent.FLAG_IMMUTABLE,
         )
-        return Notification.Builder(this, CHANNEL_ID)
+        val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Notification.Builder(this, CHANNEL_ID)
+        } else {
+            Notification.Builder(this)
+        }
+        return builder
             .setContentTitle("Halo VPN")
             .setContentText("Connected · $profile")
-            .setSmallIcon(android.R.drawable.ic_lock_lock)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(open)
             .setOngoing(true)
             .build()

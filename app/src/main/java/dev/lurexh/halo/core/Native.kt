@@ -7,6 +7,9 @@ object Native {
     private external fun nativeStop()
     private external fun nativeStats(): String
     private external fun nativeVersion(): String
+    private external fun nativeParseConfig(text: String, name: String): String
+    private external fun nativeProbe(endpoint: String): Int
+    private external fun nativeLogs(): String
     private external fun nativeRegisterWarp(): String
 
     fun startTunnel(fd: Int, configJson: String): Int =
@@ -21,6 +24,15 @@ object Native {
 
     fun version(): String =
         if (available) runCatching { nativeVersion() }.getOrDefault("halo-core") else "halo-core (not loaded)"
+
+    fun parseConfig(text: String, name: String): String? =
+        if (available) runCatching { nativeParseConfig(text, name) }.getOrNull() else null
+
+    fun probe(endpoint: String): Int =
+        if (available) runCatching { nativeProbe(endpoint) }.getOrDefault(-1) else -1
+
+    fun logs(): String =
+        if (available) runCatching { nativeLogs() }.getOrDefault("") else ""
 
     fun registerWarp(): String =
         if (available) runCatching { nativeRegisterWarp() }.getOrDefault("{\"error\":\"native unavailable\"}")

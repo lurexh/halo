@@ -1,101 +1,123 @@
 package dev.lurexh.halo.vpn
 
 import android.content.Context
+import dev.lurexh.halo.core.Native
+import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
+import java.util.UUID
 
 class ProfileStore(context: Context) {
     private val appContext = context.applicationContext
     private val prefs = appContext.getSharedPreferences("halo", Context.MODE_PRIVATE)
 
+    fun list(): List<Profile> {
+        migrate()
+        val raw = prefs.getString(KEY_PROFILES, null) ?: return emptyList()
+        return runCatching {
+            val arr = JSONArray(raw)
+            (0 until arr.length()).map { Profile.fromJson(arr.getJSONObject(it)) }
+        }.getOrDefault(emptyList())
+    }
+
     fun active(): Profile? {
-        val raw = prefs.getString(KEY_ACTIVE, null) ?: return null
-        return runCatching { decode(raw) }.getOrNull()
+        val all = list()
+        val id = prefs.getString(KEY_ACTIVE, null)
+        return all.firstOrNull { it.id == id } ?: all.firstOrNull()
     }
 
-    fun save(profile: Profile) {
-        prefs.edit().putString(KEY_ACTIVE, profile.toJson()).apply()
+    fun upsert(profile: Profile) {
+        val all = list().filterNot { it.id == profile.id } + profile
+        saveAll(all)
+        if (prefs.getString(KEY_ACTIVE, null) == null) setActive(profile.id)
     }
 
-    fun importWireGuard(text: String, name: String): Profile {
-        var privateKey = ""
-        var address = ""
-        var dns = "1.1.1.1"
-        var mtu = 1280
-        var peerKey = ""
-        var endpoint = ""
-        var allowed = listOf("0.0.0.0/0")
-        var inPeer = false
+    fun remove(id: String) {
+        saveAll(list().filterNot { it.id == id })
+        if (prefs.getString(KEY_ACTIVE, null) == id) prefs.edit().remove(KEY_ACTIVE).apply()
+    }
 
-        for (rawLine in text.lineSequence()) {
-            val line = rawLine.trim()
-            if (line.startsWith("[")) {
-                inPeer = line.equals("[Peer]", ignoreCase = true)
-                continue
-            }
-            val idx = line.indexOf('=')
-            if (idx < 0) continue
-            val key = line.substring(0, idx).trim().lowercase()
-            val value = line.substring(idx + 1).trim()
-            when (key) {
-                "privatekey" -> privateKey = value
-                "address" -> address = value.substringBefore(',').trim()
-                "dns" -> dns = value.substringBefore(',').trim()
-                "mtu" -> mtu = value.toIntOrNull() ?: mtu
-                "publickey" -> if (inPeer) peerKey = value
-                "endpoint" -> if (inPeer) endpoint = value
-                "allowedips" -> if (inPeer) allowed = value.split(',').map { it.trim() }
-            }
-        }
+    fun setActive(id: String) {
+        prefs.edit().putString(KEY_ACTIVE, id).apply()
+    }
 
-        val (ip, prefix) = address.split('/').let {
-            it[0] to (it.getOrNull(1)?.toIntOrNull() ?: 32)
-        }
-        val profile = Profile(
-            name = name,
-            privateKey = privateKey,
-            peerPublicKey = peerKey,
-            endpoint = endpoint,
-            address = ip,
-            prefix = prefix,
-            dns = dns,
-            mtu = mtu,
-            allowedIps = allowed,
+    fun adblockEnabled(): Boolean = prefs.getBoolean(KEY_ADBLOCK, true)
+
+    fun setAdblock(enabled: Boolean) = prefs.edit().putBoolean(KEY_ADBLOCK, enabled).apply()
+
+    fun autoconnect(): Boolean = prefs.getBoolean(KEY_AUTOCONNECT, false)
+
+    fun setAutoconnect(enabled: Boolean) = prefs.edit().putBoolean(KEY_AUTOCONNECT, enabled).apply()
+
+    fun customRules(): String {
+        val file = File(appContext.filesDir, "custom_rules.txt")
+        return if (file.exists()) file.readText() else ""
+    }
+
+    fun setCustomRules(text: String) {
+        File(appContext.filesDir, "custom_rules.txt").writeText(text)
+    }
+
+    fun importText(text: String, name: String): Result<Profile> = runCatching {
+        val parsed = Native.parseConfig(text, name) ?: error("native parser unavailable")
+        val obj = JSONObject(parsed)
+        val error = obj.optString("error").takeIf { it.isNotBlank() }
+        if (error != null) error(error)
+        val profile = Profile.fromJson(obj).copy(
+            id = UUID.randomUUID().toString(),
             blocklistFile = blocklistPath(appContext),
+            allowlistFile = allowlistPath(appContext),
         )
-        save(profile)
-        return profile
+        if (profile.addresses.isEmpty()) error("config has no Address")
+        if (profile.privateKey.isBlank()) error("config has no PrivateKey")
+        if (profile.peerPublicKey.isBlank()) error("config has no peer PublicKey")
+        upsert(profile)
+        profile
     }
 
-    private fun decode(raw: String): Profile {
-        val o = JSONObject(raw)
-        val allowedArray = o.optJSONArray("allowed_ips")
-        val allowed = buildList {
-            if (allowedArray != null) for (i in 0 until allowedArray.length()) add(allowedArray.getString(i))
-        }.ifEmpty { listOf("0.0.0.0/0") }
-        val blocklist = if (o.has("blocklist_file") && !o.isNull("blocklist_file")) {
-            o.getString("blocklist_file")
-        } else {
-            blocklistPath(appContext)
-        }
-        return Profile(
-            name = o.getString("name"),
-            privateKey = o.getString("private_key"),
-            peerPublicKey = o.getString("peer_public_key"),
-            endpoint = o.getString("endpoint"),
-            address = o.getString("address"),
-            prefix = o.optInt("prefix", 32),
-            dns = o.optString("dns", "1.1.1.1"),
-            mtu = o.optInt("mtu", 1280),
-            allowedIps = allowed,
-            blocklistFile = blocklist,
+    fun warp(): Result<Profile> = runCatching {
+        val obj = JSONObject(Native.registerWarp())
+        val error = obj.optString("error").takeIf { it.isNotBlank() }
+        if (error != null) error(error)
+        val profile = Profile.fromJson(obj).copy(
+            id = UUID.randomUUID().toString(),
+            source = "warp",
+            blocklistFile = blocklistPath(appContext),
+            allowlistFile = allowlistPath(appContext),
         )
+        if (profile.addresses.isEmpty()) error("WARP returned no address")
+        upsert(profile)
+        profile
+    }
+
+    private fun saveAll(profiles: List<Profile>) {
+        val arr = JSONArray()
+        profiles.forEach { arr.put(JSONObject(it.toJson())) }
+        prefs.edit().putString(KEY_PROFILES, arr.toString()).apply()
+    }
+
+    private fun migrate() {
+        val legacy = prefs.getString("active_profile", null) ?: return
+        if (prefs.getString(KEY_PROFILES, null) == null) {
+            runCatching {
+                val p = Profile.fromJson(JSONObject(legacy))
+                saveAll(listOf(p))
+                setActive(p.id)
+            }
+        }
+        prefs.edit().remove("active_profile").apply()
     }
 
     companion object {
-        private const val KEY_ACTIVE = "active_profile"
+        private const val KEY_PROFILES = "profiles"
+        private const val KEY_ACTIVE = "active_id"
+        private const val KEY_ADBLOCK = "adblock"
+        private const val KEY_AUTOCONNECT = "autoconnect"
 
         fun blocklistPath(context: Context): String =
             File(context.applicationContext.filesDir, "blocklist.txt").absolutePath
+
+        fun allowlistPath(context: Context): String =
+            File(context.applicationContext.filesDir, "allowlist.txt").absolutePath
     }
 }
