@@ -1,7 +1,6 @@
 package dev.lurexh.halo
 
 import android.content.Intent
-import android.net.Uri
 import android.net.VpnService
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,9 +16,11 @@ import androidx.lifecycle.lifecycleScope
 import dev.lurexh.halo.core.Native
 import dev.lurexh.halo.ui.HaloRoot
 import dev.lurexh.halo.ui.theme.HaloTheme
+import dev.lurexh.halo.vpn.CatalogRepository
 import dev.lurexh.halo.vpn.HaloVpnService
-import dev.lurexh.halo.vpn.Profile
+import dev.lurexh.halo.vpn.OpenVpnEngine
 import dev.lurexh.halo.vpn.ProfileStore
+import dev.lurexh.halo.vpn.Server
 import dev.lurexh.halo.vpn.VpnController
 import dev.lurexh.halo.vpn.VpnStatus
 import kotlinx.coroutines.Dispatchers
@@ -32,48 +33,40 @@ class MainActivity : ComponentActivity() {
 
     private lateinit var store: ProfileStore
 
-    private var profiles by mutableStateOf<List<Profile>>(emptyList())
-    private var activeId by mutableStateOf<String?>(null)
-    private var latencies by mutableStateOf<Map<String, Int>>(emptyMap())
+    private var servers by mutableStateOf<List<Server>>(emptyList())
+    private var catalogUpdatedAt by mutableStateOf(0L)
+    private var selectedServer by mutableStateOf<Server?>(null)
+    private var refreshing by mutableStateOf(false)
     private var adblock by mutableStateOf(true)
     private var autoconnect by mutableStateOf(false)
+    private var engine by mutableStateOf("smart")
     private var busy by mutableStateOf(false)
-    private var rules by mutableStateOf("")
+    private var pendingAction: (() -> Unit)? = null
 
     private val vpnPermission = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) startVpn()
-    }
-
-    private val importFile = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
-        if (uri == null) return@registerForActivityResult
-        lifecycleScope.launch {
-            val text = withContext(Dispatchers.IO) {
-                runCatching {
-                    contentResolver.openInputStream(uri)?.bufferedReader()?.use { it.readText() }
-                }.getOrNull()
-            }
-            if (text.isNullOrBlank()) {
-                VpnController.update { it.copy(message = "Could not read that file") }
-            } else {
-                handleImport(text)
-            }
+        val action = pendingAction
+        pendingAction = null
+        if (result.resultCode == RESULT_OK) {
+            action?.invoke()
+        } else {
+            VpnController.update { it.copy(message = "VPN permission was not granted") }
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         store = ProfileStore(this)
-        reload()
         adblock = store.adblockEnabled()
         autoconnect = store.autoconnect()
-        rules = store.customRules()
+        engine = store.engine()
+        loadCatalog(refresh = false)
 
         setContent {
             HaloTheme {
                 val state = VpnController.state.collectAsState().value
 
-                LaunchedEffect(state.status) {
-                    if (state.status != VpnStatus.CONNECTED) return@LaunchedEffect
+                LaunchedEffect(state.status, state.engine) {
+                    if (state.status != VpnStatus.CONNECTED || state.engine != "warp") return@LaunchedEffect
                     while (true) {
                         val parsed = runCatching { JSONObject(Native.statsJson()) }.getOrNull()
                         if (parsed != null) {
@@ -91,159 +84,196 @@ class MainActivity : ComponentActivity() {
 
                 HaloRoot(
                     state = state,
-                    profiles = profiles,
-                    activeId = activeId,
-                    latencies = latencies,
+                    servers = servers,
+                    catalogUpdatedAt = catalogUpdatedAt,
+                    refreshing = refreshing,
+                    selectedServer = selectedServer,
                     adblock = adblock,
                     autoconnect = autoconnect,
+                    engine = engine,
                     busy = busy,
-                    initialRules = rules,
                     onToggle = {
                         when (state.status) {
                             VpnStatus.CONNECTED, VpnStatus.CONNECTING -> stopVpn()
-                            else -> requestStart()
+                            else -> requestQuickConnect()
                         }
                     },
-                    onQuickConnect = { quickConnect() },
-                    onSelect = { profile -> selectProfile(profile) },
-                    onDelete = { profile -> deleteProfile(profile) },
-                    onImportFile = { importFile.launch(arrayOf("*/*")) },
-                    onImportText = { text -> handleImport(text) },
-                    onAddWarp = { addWarp(false) },
-                    onProbe = { probeAll() },
+                    onQuickConnect = { requestQuickConnect() },
+                    onConnectWarp = { withVpnPermission { connectWarp() } },
+                    onConnectServer = { server -> withVpnPermission { connectServer(server) } },
+                    onConnectCountry = { code -> requestCountry(code) },
+                    onCountryTap = { code -> requestCountry(code) },
+                    onRefresh = { loadCatalog(refresh = true) },
                     onAdblock = { enabled ->
                         adblock = enabled
                         store.setAdblock(enabled)
+                        if (state.status == VpnStatus.CONNECTED) {
+                            VpnController.update { it.copy(message = "Reconnect to apply DNS filtering") }
+                        }
                     },
                     onAutoconnect = { enabled ->
                         autoconnect = enabled
                         store.setAutoconnect(enabled)
                     },
-                    onSaveRules = { text ->
-                        rules = text
-                        store.setCustomRules(text)
-                        VpnController.update { it.copy(message = "Rules saved \u2014 reconnect to apply") }
+                    onEngine = { value ->
+                        engine = value
+                        store.setEngine(value)
+                        if (state.status == VpnStatus.CONNECTED) {
+                            VpnController.update { it.copy(message = "Reconnect to switch engine") }
+                        }
                     },
                 )
             }
         }
     }
 
-    private fun reload() {
-        profiles = store.list()
-        activeId = store.active()?.id
-    }
-
-    private fun selectProfile(profile: Profile) {
-        store.setActive(profile.id)
-        reload()
-        connectSelected()
-    }
-
-    private fun deleteProfile(profile: Profile) {
-        store.remove(profile.id)
-        reload()
-        VpnController.update { it.copy(message = "Removed ${profile.name}") }
-    }
-
-    private fun handleImport(text: String) {
+    override fun onResume() {
+        super.onResume()
         lifecycleScope.launch {
-            busy = true
-            val result = withContext(Dispatchers.IO) { store.importText(text, "Imported") }
-            result.onSuccess { profile ->
-                store.setActive(profile.id)
-                reload()
-                VpnController.update { it.copy(message = "Imported ${profile.name}") }
-            }.onFailure { error ->
-                VpnController.update { it.copy(message = error.message ?: "Import failed") }
+            val catalog = withContext(Dispatchers.IO) { CatalogRepository.load(this@MainActivity) }
+            if (catalog.servers.isNotEmpty()) {
+                servers = catalog.servers
+                catalogUpdatedAt = catalog.updatedAt
             }
-            busy = false
+            selectedServer = withContext(Dispatchers.IO) { CatalogRepository.lastServer(this@MainActivity) }
         }
     }
 
-    private fun addWarp(connect: Boolean) {
+    private fun loadCatalog(refresh: Boolean) {
+        lifecycleScope.launch {
+            refreshing = true
+            val result = withContext(Dispatchers.IO) {
+                if (refresh) {
+                    CatalogRepository.refresh(this@MainActivity)
+                } else {
+                    CatalogRepository.refreshIfStale(this@MainActivity)
+                }
+            }
+            val catalog = result.getOrNull()
+            if (catalog != null) {
+                servers = catalog.servers
+                catalogUpdatedAt = catalog.updatedAt
+            } else {
+                val cached = withContext(Dispatchers.IO) { CatalogRepository.load(this@MainActivity) }
+                servers = cached.servers
+                catalogUpdatedAt = cached.updatedAt
+                if (servers.isEmpty()) {
+                    VpnController.update {
+                        it.copy(message = "Server catalog unavailable: ${result.exceptionOrNull()?.message}")
+                    }
+                }
+            }
+            selectedServer = withContext(Dispatchers.IO) { CatalogRepository.lastServer(this@MainActivity) }
+            refreshing = false
+        }
+    }
+
+    private fun requestQuickConnect() {
+        if (busy) return
+        withVpnPermission {
+            when (store.engine()) {
+                "openvpn" -> {
+                    val best = CatalogRepository.fastest(servers)
+                    if (best != null) connectServer(best) else connectWarp()
+                }
+                else -> connectWarp()
+            }
+        }
+    }
+
+    private fun requestCountry(code: String) {
+        val best = CatalogRepository.fastest(servers, code)
+        if (best == null) {
+            VpnController.update { it.copy(message = "No public relay in that country yet") }
+            return
+        }
+        withVpnPermission { connectServer(best) }
+    }
+
+    private fun withVpnPermission(action: () -> Unit) {
+        val prepare = VpnService.prepare(this)
+        if (prepare != null) {
+            pendingAction = action
+            vpnPermission.launch(prepare)
+        } else {
+            action()
+        }
+    }
+
+    private fun connectServer(server: Server) {
+        selectedServer = server
+        CatalogRepository.setLastServer(this, server)
+        stopService(Intent(this, HaloVpnService::class.java))
+        OpenVpnEngine.connect(this, server, adblock)
+    }
+
+    private fun connectWarp() {
         lifecycleScope.launch {
             busy = true
-            VpnController.update { it.copy(message = "Registering WARP\u2026") }
+            OpenVpnEngine.disconnect(this@MainActivity)
+            stopService(Intent(this@MainActivity, HaloVpnService::class.java))
+            VpnController.update {
+                it.copy(
+                    status = VpnStatus.CONNECTING,
+                    engine = "warp",
+                    protocol = "WARP",
+                    profileName = "WARP Auto",
+                    exitIp = "Cloudflare edge",
+                    exitCountry = "",
+                    exitCountryName = "Cloudflare",
+                    message = "Registering WARP\u2026",
+                )
+            }
             val result = withContext(Dispatchers.IO) { store.warp() }
             result.onSuccess { profile ->
                 store.setActive(profile.id)
-                reload()
-                VpnController.update { it.copy(message = "WARP ready") }
-                if (connect) connectSelected()
+                VpnController.update {
+                    it.copy(
+                        status = VpnStatus.CONNECTING,
+                        engine = "warp",
+                        protocol = "WARP",
+                        profileName = "WARP Auto",
+                        profileId = profile.id,
+                        exitIp = "Cloudflare edge",
+                        exitCountry = "",
+                        exitCountryName = "Cloudflare",
+                        message = "Connecting WARP\u2026",
+                    )
+                }
+                startHaloService()
             }.onFailure { error ->
-                VpnController.update { it.copy(message = "WARP failed: ${error.message}") }
+                VpnController.update {
+                    it.copy(
+                        status = VpnStatus.ERROR,
+                        engine = "warp",
+                        message = "WARP failed: ${error.message}",
+                    )
+                }
             }
             busy = false
         }
     }
 
-    private fun quickConnect() {
-        if (busy) return
-        val list = store.list()
-        if (list.isEmpty()) {
-            addWarp(true)
-            return
-        }
-        lifecycleScope.launch {
-            busy = true
-            VpnController.update { it.copy(message = "Finding the fastest server\u2026") }
-            val results = withContext(Dispatchers.IO) {
-                list.map { it to Native.probe(it.endpoint) }
+    private fun startHaloService() {
+        runCatching {
+            ContextCompat.startForegroundService(
+                this,
+                Intent(this, HaloVpnService::class.java).setAction(HaloVpnService.ACTION_START),
+            )
+        }.onFailure { error ->
+            VpnController.update {
+                it.copy(status = VpnStatus.ERROR, message = error.message ?: "Could not start VPN")
             }
-            latencies = results.associate { it.first.id to it.second }
-            val best = results.filter { it.second >= 0 }.minByOrNull { it.second }?.first ?: list.first()
-            store.setActive(best.id)
-            reload()
-            VpnController.update { it.copy(message = "Fastest: ${best.name}") }
-            connectSelected()
-            busy = false
         }
-    }
-
-    private fun probeAll() {
-        if (busy) return
-        val list = store.list()
-        if (list.isEmpty()) return
-        lifecycleScope.launch {
-            busy = true
-            val results = withContext(Dispatchers.IO) {
-                list.map { it to Native.probe(it.endpoint) }
-            }
-            latencies = results.associate { it.first.id to it.second }
-            busy = false
-        }
-    }
-
-    private fun connectSelected() {
-        val status = VpnController.state.value.status
-        if (status == VpnStatus.CONNECTED || status == VpnStatus.CONNECTING) {
-            lifecycleScope.launch {
-                stopVpn()
-                delay(600)
-                requestStart()
-            }
-        } else {
-            requestStart()
-        }
-    }
-
-    private fun requestStart() {
-        val prepare = VpnService.prepare(this)
-        if (prepare != null) {
-            vpnPermission.launch(prepare)
-        } else {
-            startVpn()
-        }
-    }
-
-    private fun startVpn() {
-        val intent = Intent(this, HaloVpnService::class.java).setAction(HaloVpnService.ACTION_START)
-        ContextCompat.startForegroundService(this, intent)
     }
 
     private fun stopVpn() {
-        val intent = Intent(this, HaloVpnService::class.java).setAction(HaloVpnService.ACTION_STOP)
-        startService(intent)
+        OpenVpnEngine.disconnect(this)
+        runCatching {
+            stopService(Intent(this, HaloVpnService::class.java))
+        }
+        VpnController.update {
+            it.copy(status = VpnStatus.DISCONNECTED, message = null)
+        }
     }
 }

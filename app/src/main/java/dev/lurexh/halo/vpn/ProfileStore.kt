@@ -49,6 +49,10 @@ class ProfileStore(context: Context) {
 
     fun setAutoconnect(enabled: Boolean) = prefs.edit().putBoolean(KEY_AUTOCONNECT, enabled).apply()
 
+    fun engine(): String = prefs.getString(KEY_ENGINE, "smart") ?: "smart"
+
+    fun setEngine(value: String) = prefs.edit().putString(KEY_ENGINE, value).apply()
+
     fun customRules(): String {
         val file = File(appContext.filesDir, "custom_rules.txt")
         return if (file.exists()) file.readText() else ""
@@ -113,6 +117,7 @@ class ProfileStore(context: Context) {
         private const val KEY_ACTIVE = "active_id"
         private const val KEY_ADBLOCK = "adblock"
         private const val KEY_AUTOCONNECT = "autoconnect"
+        private const val KEY_ENGINE = "engine"
 
         fun blocklistPath(context: Context): String =
             File(context.applicationContext.filesDir, "blocklist.txt").absolutePath

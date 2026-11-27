@@ -12,8 +12,8 @@ android {
         applicationId = "dev.lurexh.halo"
         minSdk = 24
         targetSdk = 35
-        versionCode = 2
-        versionName = "0.2.0"
+        versionCode = 3
+        versionName = "1.0.0"
         ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64") }
     }
 
@@ -49,7 +49,9 @@ android {
     kotlinOptions { jvmTarget = "17" }
 
     packaging {
-        resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" }
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1,DEPENDENCIES,LICENSE,LICENSE.txt,NOTICE,NOTICE.txt,index.list}"
+        }
         jniLibs { useLegacyPackaging = true }
     }
 }
@@ -65,5 +67,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icons)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(files("libs/icsopenvpn.aar"))
     debugImplementation("androidx.compose.ui:ui-tooling")
 }

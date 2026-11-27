@@ -1,105 +1,108 @@
 # Halo VPN
 
-A free, open-source (MIT) VPN + adblocker with a small Rust core and an original
-Compose UI. One app for WARP, any WireGuard profile (Proton, Mullvad, self-hosted),
-and network-wide DNS adblocking.
+A free, open-source, zero-account VPN + DNS adblocker for Android.
 
-> **Not affiliated** with Cloudflare, Proton, or AdGuard. Uses your own accounts.
+Halo v1 combines two engines behind one switch:
 
----
+- **WARP / WireGuard** for reliable zero-config connectivity.
+- **OpenVPN** with a live, auto-updating public relay catalog for country
+  selection.
 
-## What actually works (and what can't)
+The UI lists every ISO country. Countries with a public relay are connectable;
+countries without one are shown honestly as unavailable.
+
+> Halo is not affiliated with Cloudflare, Proton, AdGuard, VPN Gate or any relay
+> operator. Public relays are operated by volunteers and can observe metadata.
+
+## What works
 
 | Capability | Status | Notes |
 |---|---|---|
-| WireGuard tunnel (WARP / Proton / any `.conf`) | **Implemented** | `boringtun` over the VpnService tun fd |
-| In-app WARP registration | **Implemented** | Same flow as `wgcf` |
-| DNS adblock (all apps, network-wide) | **Implemented** | Sinkhole at UDP/53 inside the tunnel |
-| Live rx/tx stats | **Implemented** | JNI poll, 1 Hz |
-| Blocklist auto-update | **Implemented** | StevenBlack unified hosts, 24 h cache |
-| Linux (named tun + core) | **Implemented** | Needs root + `ip` setup |
-| macOS / Windows | **Not yet** | Needs utun / wintun integration |
-| Split tunnel, kill switch | **Roadmap** | Hooks exist in `VpnService` |
+| WARP registration + WireGuard tunnel | Implemented | Rust `boringtun` core |
+| OpenVPN country relays | Implemented | ics-openvpn engine |
+| Live relay catalog | Implemented | VPN Gate API, refreshed every 12h |
+| Auto-update | Implemented | WorkManager + boot + app open |
+| Every-country browser | Implemented | Unavailable countries are disabled |
+| DNS adblock | Implemented | WARP sinkhole + filtering DNS for OpenVPN |
+| Auto-connect after reboot | Implemented | Uses last route or WARP |
+| Quick Settings tile | Implemented | Smart connect / disconnect |
+| Live transfer stats | Implemented | WARP JNI + OpenVPN byte listener |
+| Kill switch / split tunnel | Not yet | Do not claim otherwise |
 
-### Ads: the honest limits
+### Honest limits
 
-- **DNS/VPN-level blocking cannot block YouTube ads.** YouTube serves ads from the
-  same hosts as the video (`googlevideo.com`); sinkholing them breaks playback.
-  The same applies to **Peacock** and other streamers — ads are stitched into the
-  stream server-side on the same CDN. Blocking them requires client-side content
-  filtering (a browser extension or an accessibility-based scroller), not a VPN.
-  What Halo *does* block: ad/tracker domains, telemetry, and most in-app banner
-  and pre-roll ads that load from separate ad hosts.
-- **"0 latency" isn't a thing.** A VPN adds one RTT to the endpoint plus a few µs
-  of crypto. Halo minimizes overhead (Rust, no gVisor, no Go runtime), so latency
-  ≈ your normal ping to the WARP/Proton endpoint. Throughput is capped by the
-  endpoint and your link, not by us.
+- **Free relays are not private by default.** A relay can see your source IP,
+  destinations, timing and volume. Encryption hides content, not metadata. Use
+  self-hosted or audited paid servers when privacy is critical.
+- **“Every country” does not mean every country has a free relay.** The catalog
+  currently covers the countries VPN Gate volunteers provide. Halo shows the
+  rest as unavailable rather than faking coverage.
+- **Free public relays are often slower than 50 Mbps.** WARP is usually the
+  fastest free option. VPN Gate speed varies by volunteer, time of day and
+  route.
+- **DNS adblock cannot block YouTube/streaming ads** stitched into the same CDN
+  stream. It blocks separate ad/tracker domains.
+- **A VPN adds latency.** Halo keeps the datapath small, but it cannot beat the
+  speed of the underlying relay.
 
----
+## Engines
 
-## Architecture
+### WARP
 
-```
-App (Kotlin/Compose)  ──VpnService tun fd──►  halo-core (Rust)
-   HaloScreen            JNI                   ├─ boringtun::Tunn  (WireGuard)
-   HaloVpnService                              ├─ tun read/write loop (libc)
-   ProfileStore                                ├─ DNS sinkhole (UDP/53)
-   BlocklistUpdater                            └─ UDP socket ↔ endpoint
-```
+`ProfileStore.warp()` registers a WARP device with Cloudflare, stores a
+WireGuard profile, and starts `HaloVpnService`. The Rust core handles the tun
+read/write loop, WireGuard encryption and DNS sinkholing.
 
-Design choice: because we own a real tun (Android `VpnService`, Linux `/dev/net/tun`)
-we **do not need** a userspace SOCKS5 stack or gVisor. Packets are encapsulated
-1:1, which is why the core is small and fast. DNS is intercepted in the tun reader
-before it is ever encrypted.
+### OpenVPN
+
+`CatalogRepository` downloads the VPN Gate catalog, decodes the embedded
+OpenVPN profiles, and stores the last good catalog on disk. `OpenVpnEngine`
+parses a selected profile with ics-openvpn, sets a full-tunnel default route,
+chooses filtering or standard DNS, saves the profile, and launches the
+ics-openvpn service.
+
+The two engines are mutually exclusive. Starting one stops the other.
 
 ## Build
 
-CI (`.github/workflows/android.yml`) is the source of truth: it builds the Rust
-core with `cargo-ndk` for arm64/armv7/x86_64, runs `cargo test`, and assembles
-the APK. Add signing secrets for a signed build:
+CI (`.github/workflows/android.yml`) is the source of truth. It:
 
-- `HALO_KEYSTORE_BASE64`, `HALO_KEYSTORE_PASSWORD`, `HALO_KEY_ALIAS`, `HALO_KEY_PASSWORD`
-
-Without secrets it builds an installable debug APK.
-
-Local (Termux/Linux): `cargo test --manifest-path rust/Cargo.toml` → the datapath
-and DNS engine are covered. Full APK builds belong in CI (no Android SDK here).
-
-### Release an APK
+1. Downloads `app/libs/icsopenvpn.aar` and verifies its SHA-256.
+2. Builds the Rust core for `arm64-v8a`, `armeabi-v7a` and `x86_64` with the Android NDK.
+3. Runs Rust unit tests.
+4. Assembles a debug APK and publishes the nightly release.
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+# Local Rust tests (no Android SDK needed)
+cargo test --manifest-path rust/Cargo.toml
 ```
 
-The `release` workflow attaches the APK to a GitHub Release automatically.
+A local APK build requires Android SDK 35, NDK 27.2.12479018, Gradle 8.13 and
+JDK 17+, plus the AAR at `app/libs/icsopenvpn.aar`.
 
 ## Layout
 
 ```
-app/                      Kotlin + Compose app
-  .../ui/HaloScreen.kt    Orb screen + details sheet (WARP button, stats, adblock)
-  .../vpn/HaloVpnService.kt  VpnService + foreground notification
-  .../vpn/ProfileStore.kt    WireGuard import + WARP profile persistence
-  .../vpn/BlocklistUpdater.kt  hosts-list download/cache
-  .../core/Native.kt      JNI bridge (safe fallback if .so missing)
-  assets/blocklist.txt    offline starter list
-rust/                     Native core
-  src/tunnel.rs           packet loop: tun ↔ boringtun ↔ udp, DNS sinkhole
-  src/dns.rs              DNS parse/sinkhole + IPv4/UDP synthesis (tested)
-  src/tun.rs              tun fd I/O (Android fd / Linux /dev/net/tun)
-  src/warp.rs             WARP registration (wgcf flow)
-  src/lib.rs              JNI exports
+app/
+  src/main/java/dev/lurexh/halo/
+    MainActivity.kt          catalog + connect orchestration
+    ui/HaloRoot.kt           globe, countries, settings, dialogs
+    vpn/CatalogRepository.kt VPN Gate fetch/parse/cache
+    vpn/CatalogWorker.kt     12h WorkManager refresh
+    vpn/OpenVpnEngine.kt     ics-openvpn bridge
+    vpn/VpnStarter.kt        tile/boot smart connect
+    vpn/HaloVpnService.kt    WARP VpnService
+    vpn/ProfileStore.kt      WARP/WireGuard profiles + prefs
+    vpn/BlocklistUpdater.kt  hosts-list cache
+    core/Native.kt           JNI bridge
+rust/
+  src/tunnel.rs              WARP datapath + DNS sinkhole
+  src/warp.rs                WARP registration
+  src/dns.rs                 DNS parsing/sinkhole
 ```
-
-## Roadmap
-
-1. Split tunnel + kill switch UI (`addDisallowedApplication`, `onRevoke`).
-2. Per-app stats and a connection log.
-3. macOS `utun` and Windows `wintun` backends for `halo-core`.
-4. ABI/`cargo` size trims and a benchmark harness (see `BENCHMARKS.md`).
 
 ## License
 
-MIT — see `LICENSE`. Visual direction inspired by ProtonVPN's GPLv3 client, but
-no GPL source is included. WARP registration uses your own device only.
+GPLv2. See `LICENSE` and `THIRD_PARTY_NOTICES.md`.
+
+The ics-openvpn engine is GPLv2. Halo is therefore distributed under GPLv2.

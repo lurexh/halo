@@ -8,6 +8,7 @@
 .externalNativeBuild
 .cxx
 app/release/
+app/libs/*.aar
 app/*.jks
 app/keystore.properties
 rust/target/

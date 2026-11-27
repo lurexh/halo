@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -7,6 +8,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".HaloApp"
@@ -57,6 +59,25 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="de.blinkt.openvpn.activities.DisconnectVPN"
+            android:exported="false"
+            tools:node="merge" />
+        <activity
+            android:name="de.blinkt.openvpn.activities.NotImplemented"
+            android:exported="false"
+            tools:node="merge" />
+        <activity-alias
+            android:name="de.blinkt.openvpn.activities.Req"
+            android:exported="false"
+            android:targetActivity="de.blinkt.openvpn.activities.NotImplemented"
+            tools:node="merge" />
+        <activity-alias
+            android:name="de.blinkt.openvpn.activities.LogWindow"
+            android:exported="false"
+            android:targetActivity="de.blinkt.openvpn.activities.NotImplemented"
+            tools:node="merge" />
 
     </application>
 </manifest>

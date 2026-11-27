@@ -31,6 +31,13 @@ class HaloVpnService : VpnService() {
     private fun startTunnel() {
         closeTunnel()
 
+        val connecting = buildNotification("Connecting")
+        if (Build.VERSION.SDK_INT >= 34) {
+            startForeground(NOTIF_ID, connecting, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        } else {
+            startForeground(NOTIF_ID, connecting)
+        }
+
         val store = ProfileStore(this)
         val profile = store.active()
         if (profile == null) {
@@ -41,8 +48,16 @@ class HaloVpnService : VpnService() {
         VpnController.update {
             it.copy(
                 status = VpnStatus.CONNECTING,
-                profileName = profile.name,
+                engine = "warp",
+                protocol = "WARP",
+                profileName = "WARP Auto",
                 profileId = profile.id,
+                exitIp = "Cloudflare edge",
+                exitCountry = "",
+                exitCountryName = "Cloudflare",
+                rxBytes = 0,
+                txBytes = 0,
+                blocked = 0,
                 message = null,
             )
         }
@@ -72,7 +87,7 @@ class HaloVpnService : VpnService() {
         } catch (_: PackageManager.NameNotFoundException) {
         }
 
-        val pfd = builder.establish()
+        val pfd = runCatching { builder.establish() }.getOrNull()
         if (pfd == null) {
             fail("VPN permission denied")
             return
@@ -96,37 +111,62 @@ class HaloVpnService : VpnService() {
             }
         }.toString()
 
-        val rc = Native.startTunnel(pfd.fd, config)
+        val rc = runCatching { Native.startTunnel(pfd.fd, config) }.getOrElse { error ->
+            fail("Core unavailable: ${error.message}")
+            return
+        }
         if (rc != 0) {
             fail("Core start failed (code $rc)")
             return
         }
 
-        val notification = buildNotification(profile.name)
-        if (Build.VERSION.SDK_INT >= 34) {
-            startForeground(NOTIF_ID, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
-        } else {
-            startForeground(NOTIF_ID, notification)
+        getSystemService(NotificationManager::class.java).notify(NOTIF_ID, buildNotification(profile.name))
+        VpnController.update {
+            it.copy(
+                status = VpnStatus.CONNECTED,
+                engine = "warp",
+                protocol = "WARP",
+                profileName = "WARP Auto",
+                exitIp = "Cloudflare edge",
+                exitCountry = "",
+                exitCountryName = "Cloudflare",
+                message = null,
+            )
         }
-        VpnController.update { it.copy(status = VpnStatus.CONNECTED) }
     }
 
     private fun closeTunnel() {
         runCatching { tun?.close() }
         tun = null
-        Native.stopTunnel()
+        runCatching { Native.stopTunnel() }
     }
 
     private fun stopTunnel() {
         closeTunnel()
         stopForeground(STOP_FOREGROUND_REMOVE)
-        VpnController.update { it.copy(status = VpnStatus.DISCONNECTED, message = null) }
+        if (VpnController.state.value.engine == "warp") {
+            VpnController.update {
+                it.copy(
+                    status = VpnStatus.DISCONNECTED,
+                    engine = "warp",
+                    exitIp = "",
+                    exitCountry = "",
+                    exitCountryName = "",
+                    message = null,
+                )
+            }
+        }
         stopSelf()
     }
 
     private fun fail(message: String) {
         closeTunnel()
-        VpnController.update { it.copy(status = VpnStatus.ERROR, message = message) }
+        stopForeground(STOP_FOREGROUND_REMOVE)
+        if (VpnController.state.value.engine == "warp") {
+            VpnController.update {
+                it.copy(status = VpnStatus.ERROR, engine = "warp", message = message)
+            }
+        }
         stopSelf()
     }
 
