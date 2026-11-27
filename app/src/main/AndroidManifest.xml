@@ -63,21 +63,25 @@
         <activity
             android:name="de.blinkt.openvpn.activities.DisconnectVPN"
             android:exported="false"
-            tools:node="merge" />
+            tools:node="merge"
+            tools:replace="android:exported" />
         <activity
             android:name="de.blinkt.openvpn.activities.NotImplemented"
             android:exported="false"
-            tools:node="merge" />
+            tools:node="merge"
+            tools:replace="android:exported" />
         <activity-alias
             android:name="de.blinkt.openvpn.activities.Req"
             android:exported="false"
             android:targetActivity="de.blinkt.openvpn.activities.NotImplemented"
-            tools:node="merge" />
+            tools:node="merge"
+            tools:replace="android:exported" />
         <activity-alias
             android:name="de.blinkt.openvpn.activities.LogWindow"
             android:exported="false"
             android:targetActivity="de.blinkt.openvpn.activities.NotImplemented"
-            tools:node="merge" />
+            tools:node="merge"
+            tools:replace="android:exported" />
 
     </application>
 </manifest>
