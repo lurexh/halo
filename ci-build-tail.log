@@ -1,272 +1,265 @@
-run=45839996504
-sha=9661d6f2a3ac87692759ec15e4ee5f32bdb599af
-date=Thu Nov 26 14:37:02 UTC 2026
+run=45940173792
+sha=955f29ac483a2b6938be4b844f104a7a332f75c5
+date=Fri Nov 27 04:34:27 UTC 2026
 -----
 [1m[92m    Updating[0m crates.io index
-[1m[92m     Locking[0m 156 packages to highest compatible versions
-[1m[92m      Adding[0m android_logger v0.14.1 [1m[33m(available: v0.15.1)[0m
-[1m[92m      Adding[0m base64 v0.22.1 [1m[33m(available: v0.23.1)[0m
-[1m[92m      Adding[0m generic-array v0.14.7 [1m[33m(available: v0.14.9)[0m
-[1m[92m      Adding[0m getrandom v0.2.17 [1m[33m(available: v0.4.3)[0m
-[1m[92m      Adding[0m jni v0.21.1 [1m[33m(available: v0.22.4)[0m
-[1m[92m      Adding[0m ureq v2.12.1 [1m[33m(available: v3.5.2)[0m
 [1m[92m Downloading[0m crates ...
 [1m[92m  Downloaded[0m adler2 v2.0.1
-[1m[92m  Downloaded[0m bytes v1.12.2
-[1m[92m  Downloaded[0m cesu8 v1.1.0
-[1m[92m  Downloaded[0m utf_types v1.0.0
-[1m[92m  Downloaded[0m cc v1.11.3
-[1m[92m  Downloaded[0m cfg-if v1.0.5
-[1m[92m  Downloaded[0m jni-sys v0.3.1
-[1m[92m  Downloaded[0m time-core v0.1.9
-[1m[92m  Downloaded[0m cpufeatures v0.2.17
-[1m[92m  Downloaded[0m getrandom v0.2.17
-[1m[92m  Downloaded[0m portable-atomic v1.15.0
-[1m[92m  Downloaded[0m crypto-common v0.1.7
-[1m[92m  Downloaded[0m displaydoc v0.2.7
-[1m[92m  Downloaded[0m find-msvc-tools v0.1.15
-[1m[92m  Downloaded[0m curve25519-dalek-derive v0.1.1
-[1m[92m  Downloaded[0m cfg_aliases v0.2.2
-[1m[92m  Downloaded[0m cipher v0.4.4
-[1m[92m  Downloaded[0m form_urlencoded v1.2.3
-[1m[92m  Downloaded[0m percent-encoding v2.3.2
-[1m[92m  Downloaded[0m chacha20 v0.9.1
-[1m[92m  Downloaded[0m jni-sys-macros v0.4.1
-[1m[92m  Downloaded[0m powerfmt v0.2.1
-[1m[92m  Downloaded[0m scopeguard v1.2.0
-[1m[92m  Downloaded[0m android_log-sys v0.3.2
-[1m[92m  Downloaded[0m subtle v2.6.1
-[1m[92m  Downloaded[0m yoke-derive v0.8.4
-[1m[92m  Downloaded[0m digest v0.10.7
 [1m[92m  Downloaded[0m aead v0.5.2
-[1m[92m  Downloaded[0m inout v0.1.4
-[1m[92m  Downloaded[0m ip_network v0.4.1
-[1m[92m  Downloaded[0m rustls-pki-types v1.16.0
-[1m[92m  Downloaded[0m block-buffer v0.10.4
-[1m[92m  Downloaded[0m hmac v0.12.1
-[1m[92m  Downloaded[0m utf8_iter v1.1.0
-[1m[92m  Downloaded[0m webpki-roots v0.26.11
-[1m[92m  Downloaded[0m zeroize_derive v1.5.0
-[1m[92m  Downloaded[0m universal-hash v0.5.1
-[1m[92m  Downloaded[0m hex v0.4.3
-[1m[92m  Downloaded[0m typenum v1.20.1
+[1m[92m  Downloaded[0m android_log-sys v0.3.2
 [1m[92m  Downloaded[0m generic-array v0.14.7
-[1m[92m  Downloaded[0m itoa v1.0.19
-[1m[92m  Downloaded[0m shlex v2.0.1
-[1m[92m  Downloaded[0m rustc_version v0.4.1
-[1m[92m  Downloaded[0m same-file v1.0.6
-[1m[92m  Downloaded[0m idna_adapter v1.2.2
-[1m[92m  Downloaded[0m potential_utf v0.1.6
-[1m[92m  Downloaded[0m thiserror-impl v1.0.69
-[1m[92m  Downloaded[0m base64 v0.22.1
-[1m[92m  Downloaded[0m ip_network_table-deps-treebitmap v0.5.0
-[1m[92m  Downloaded[0m pin-project-lite v0.2.18
-[1m[92m  Downloaded[0m num-conv v0.2.2
-[1m[92m  Downloaded[0m opaque-debug v0.3.1
+[1m[92m  Downloaded[0m curve25519-dalek-derive v0.1.1
 [1m[92m  Downloaded[0m android_logger v0.14.1
+[1m[92m  Downloaded[0m cpufeatures v0.2.17
+[1m[92m  Downloaded[0m webpki-roots v0.26.11
+[1m[92m  Downloaded[0m aho-corasick v1.1.5
 [1m[92m  Downloaded[0m env_filter v0.1.4
 [1m[92m  Downloaded[0m untrusted v0.9.0
-[1m[92m  Downloaded[0m zerofrom v0.1.8
-[1m[92m  Downloaded[0m zerofrom-derive v0.1.8
-[1m[92m  Downloaded[0m deranged v0.5.9
-[1m[92m  Downloaded[0m thiserror v1.0.69
-[1m[92m  Downloaded[0m stable_deref_trait v1.2.1
-[1m[92m  Downloaded[0m synstructure v0.14.0
-[1m[92m  Downloaded[0m chacha20poly1305 v0.10.1
-[1m[92m  Downloaded[0m crc32fast v1.5.6
-[1m[92m  Downloaded[0m icu_locale_core v2.4.0
-[1m[92m  Downloaded[0m ip_network_table v0.2.0
-[1m[92m  Downloaded[0m parking_lot v0.12.5
-[1m[92m  Downloaded[0m rand_core v0.6.4
-[1m[92m  Downloaded[0m icu_provider v2.4.0
-[1m[92m  Downloaded[0m jni-sys v0.4.1
-[1m[92m  Downloaded[0m litemap v0.8.3
-[1m[92m  Downloaded[0m lock_api v0.4.14
-[1m[92m  Downloaded[0m parking_lot_core v0.9.12
-[1m[92m  Downloaded[0m poly1305 v0.8.0
-[1m[92m  Downloaded[0m quote v1.0.47
-[1m[92m  Downloaded[0m simd-adler32 v0.3.10
-[1m[92m  Downloaded[0m smallvec v1.16.6
-[1m[92m  Downloaded[0m blake2 v0.10.6
-[1m[92m  Downloaded[0m once_cell v1.21.4
-[1m[92m  Downloaded[0m proc-macro2 v1.0.107
-[1m[92m  Downloaded[0m semver v1.0.28
-[1m[92m  Downloaded[0m serde_core v1.0.229
+[1m[92m  Downloaded[0m time-core v0.1.9
+[1m[92m  Downloaded[0m universal-hash v0.5.1
 [1m[92m  Downloaded[0m version_check v0.9.5
-[1m[92m  Downloaded[0m log v0.4.35
-[1m[92m  Downloaded[0m miniz_oxide v0.9.1
-[1m[92m  Downloaded[0m walkdir v2.5.1
-[1m[92m  Downloaded[0m zerovec-derive v0.11.7
-[1m[92m  Downloaded[0m bitflags v2.13.2
-[1m[92m  Downloaded[0m icu_collections v2.4.0
-[1m[92m  Downloaded[0m boringtun v0.7.1
-[1m[92m  Downloaded[0m flate2 v1.1.11
-[1m[92m  Downloaded[0m icu_normalizer_data v2.4.0
-[1m[92m  Downloaded[0m serde v1.0.229
-[1m[92m  Downloaded[0m serde_derive v1.0.229
-[1m[92m  Downloaded[0m tinystr v0.8.5
+[1m[92m  Downloaded[0m block-buffer v0.10.4
+[1m[92m  Downloaded[0m cesu8 v1.1.0
+[1m[92m  Downloaded[0m crypto-common v0.1.7
+[1m[92m  Downloaded[0m form_urlencoded v1.2.3
+[1m[92m  Downloaded[0m utf8_iter v1.1.0
+[1m[92m  Downloaded[0m zerofrom v0.1.8
+[1m[92m  Downloaded[0m opaque-debug v0.3.1
+[1m[92m  Downloaded[0m subtle v2.6.1
+[1m[92m  Downloaded[0m thiserror-impl v1.0.69
+[1m[92m  Downloaded[0m cipher v0.4.4
+[1m[92m  Downloaded[0m digest v0.10.7
+[1m[92m  Downloaded[0m ip_network_table v0.2.0
+[1m[92m  Downloaded[0m lock_api v0.4.14
+[1m[92m  Downloaded[0m yoke-derive v0.8.4
+[1m[92m  Downloaded[0m chacha20 v0.9.1
+[1m[92m  Downloaded[0m deranged v0.5.9
+[1m[92m  Downloaded[0m jni-sys v0.4.1
+[1m[92m  Downloaded[0m percent-encoding v2.3.2
+[1m[92m  Downloaded[0m scopeguard v1.2.0
+[1m[92m  Downloaded[0m inout v0.1.4
+[1m[92m  Downloaded[0m powerfmt v0.2.1
+[1m[92m  Downloaded[0m zeroize_derive v1.5.0
+[1m[92m  Downloaded[0m zerofrom-derive v0.1.8
+[1m[92m  Downloaded[0m cfg-if v1.0.5
+[1m[92m  Downloaded[0m idna_adapter v1.2.2
+[1m[92m  Downloaded[0m utf_types v1.0.0
 [1m[92m  Downloaded[0m writeable v0.6.4
+[1m[92m  Downloaded[0m itoa v1.0.19
+[1m[92m  Downloaded[0m jni-sys-macros v0.4.1
+[1m[92m  Downloaded[0m walkdir v2.5.1
+[1m[92m  Downloaded[0m cfg_aliases v0.2.2
+[1m[92m  Downloaded[0m stable_deref_trait v1.2.1
+[1m[92m  Downloaded[0m zerovec-derive v0.11.7
+[1m[92m  Downloaded[0m potential_utf v0.1.6
+[1m[92m  Downloaded[0m same-file v1.0.6
+[1m[92m  Downloaded[0m num-conv v0.2.2
+[1m[92m  Downloaded[0m rustc_version v0.4.1
+[1m[92m  Downloaded[0m find-msvc-tools v0.1.15
+[1m[92m  Downloaded[0m getrandom v0.2.17
+[1m[92m  Downloaded[0m synstructure v0.14.0
 [1m[92m  Downloaded[0m zmij v1.0.23
-[1m[92m  Downloaded[0m combine v4.6.9
-[1m[92m  Downloaded[0m icu_properties v2.4.0
-[1m[92m  Downloaded[0m jni v0.21.1
-[1m[92m  Downloaded[0m memchr v2.8.3
-[1m[92m  Downloaded[0m rustls-webpki v0.103.17
-[1m[92m  Downloaded[0m time-macros v0.2.32
-[1m[92m  Downloaded[0m tracing-attributes v0.1.31
+[1m[92m  Downloaded[0m blake2 v0.10.6
+[1m[92m  Downloaded[0m hex v0.4.3
+[1m[92m  Downloaded[0m ip_network v0.4.1
+[1m[92m  Downloaded[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m  Downloaded[0m rand_core v0.6.4
+[1m[92m  Downloaded[0m simd-adler32 v0.3.10
+[1m[92m  Downloaded[0m thiserror v1.0.69
+[1m[92m  Downloaded[0m pin-project-lite v0.2.18
+[1m[92m  Downloaded[0m poly1305 v0.8.0
+[1m[92m  Downloaded[0m unicode-ident v1.0.27
 [1m[92m  Downloaded[0m yoke v0.8.4
 [1m[92m  Downloaded[0m zeroize v1.9.2
-[1m[92m  Downloaded[0m serde_json v1.0.154
-[1m[92m  Downloaded[0m idna v1.1.0
-[1m[92m  Downloaded[0m unicode-ident v1.0.27
-[1m[92m  Downloaded[0m aho-corasick v1.1.5
-[1m[92m  Downloaded[0m regex v1.13.2
-[1m[92m  Downloaded[0m icu_properties_data v2.4.0
-[1m[92m  Downloaded[0m url v2.5.9
-[1m[92m  Downloaded[0m x25519-dalek v2.0.1
-[1m[92m  Downloaded[0m syn v3.0.10
-[1m[92m  Downloaded[0m zerotrie v0.2.5
+[1m[92m  Downloaded[0m jni-sys v0.3.1
+[1m[92m  Downloaded[0m shlex v2.0.1
+[1m[92m  Downloaded[0m tinystr v0.8.5
+[1m[92m  Downloaded[0m tracing-attributes v0.1.31
+[1m[92m  Downloaded[0m displaydoc v0.2.7
+[1m[92m  Downloaded[0m litemap v0.8.3
+[1m[92m  Downloaded[0m boringtun v0.7.1
+[1m[92m  Downloaded[0m crc32fast v1.5.6
+[1m[92m  Downloaded[0m icu_provider v2.4.0
+[1m[92m  Downloaded[0m once_cell v1.21.4
+[1m[92m  Downloaded[0m parking_lot_core v0.9.12
+[1m[92m  Downloaded[0m rustls-pki-types v1.16.0
+[1m[92m  Downloaded[0m quote v1.0.47
+[1m[92m  Downloaded[0m semver v1.0.28
+[1m[92m  Downloaded[0m smallvec v1.16.6
+[1m[92m  Downloaded[0m time-macros v0.2.32
+[1m[92m  Downloaded[0m base64 v0.22.1
+[1m[92m  Downloaded[0m bitflags v2.13.2
+[1m[92m  Downloaded[0m chacha20poly1305 v0.10.1
+[1m[92m  Downloaded[0m parking_lot v0.12.5
+[1m[92m  Downloaded[0m bytes v1.12.2
+[1m[92m  Downloaded[0m flate2 v1.1.11
+[1m[92m  Downloaded[0m hmac v0.12.1
+[1m[92m  Downloaded[0m icu_locale_core v2.4.0
+[1m[92m  Downloaded[0m log v0.4.35
+[1m[92m  Downloaded[0m miniz_oxide v0.9.1
+[1m[92m  Downloaded[0m rustls-webpki v0.103.17
+[1m[92m  Downloaded[0m serde_core v1.0.229
+[1m[92m  Downloaded[0m icu_normalizer_data v2.4.0
+[1m[92m  Downloaded[0m proc-macro2 v1.0.107
+[1m[92m  Downloaded[0m serde v1.0.229
 [1m[92m  Downloaded[0m tracing-core v0.1.36
+[1m[92m  Downloaded[0m combine v4.6.9
+[1m[92m  Downloaded[0m url v2.5.9
+[1m[92m  Downloaded[0m zerotrie v0.2.5
+[1m[92m  Downloaded[0m serde_derive v1.0.229
+[1m[92m  Downloaded[0m typenum v1.20.1
+[1m[92m  Downloaded[0m x25519-dalek v2.0.1
+[1m[92m  Downloaded[0m icu_collections v2.4.0
+[1m[92m  Downloaded[0m jni v0.21.1
+[1m[92m  Downloaded[0m memchr v2.8.3
+[1m[92m  Downloaded[0m cc v1.11.3
+[1m[92m  Downloaded[0m icu_properties v2.4.0
 [1m[92m  Downloaded[0m ureq v2.12.1
 [1m[92m  Downloaded[0m zerovec v0.11.9
+[1m[92m  Downloaded[0m regex v1.13.2
+[1m[92m  Downloaded[0m serde_json v1.0.154
+[1m[92m  Downloaded[0m idna v1.1.0
+[1m[92m  Downloaded[0m webpki-roots v1.0.12
+[1m[92m  Downloaded[0m icu_properties_data v2.4.0
+[1m[92m  Downloaded[0m portable-atomic v1.15.0
+[1m[92m  Downloaded[0m zlib-rs v0.6.9
 [1m[92m  Downloaded[0m time v0.3.55
 [1m[92m  Downloaded[0m curve25519-dalek v4.1.3
+[1m[92m  Downloaded[0m syn v3.0.10
 [1m[92m  Downloaded[0m syn v2.0.119
-[1m[92m  Downloaded[0m webpki-roots v1.0.12
-[1m[92m  Downloaded[0m zlib-rs v0.6.9
+[1m[92m  Downloaded[0m nix v0.31.4
 [1m[92m  Downloaded[0m regex-syntax v0.8.12
 [1m[92m  Downloaded[0m rustls v0.23.46
-[1m[92m  Downloaded[0m nix v0.31.4
+[1m[92m  Downloaded[0m tracing v0.1.44
 [1m[92m  Downloaded[0m icu_normalizer v2.4.0
 [1m[92m  Downloaded[0m regex-automata v0.4.19
-[1m[92m  Downloaded[0m tracing v0.1.44
 [1m[92m  Downloaded[0m libc v0.2.191
 [1m[92m  Downloaded[0m ring v0.17.14
 [1m[92m   Compiling[0m proc-macro2 v1.0.107
-[1m[92m   Compiling[0m quote v1.0.47
 [1m[92m   Compiling[0m unicode-ident v1.0.27
+[1m[92m   Compiling[0m quote v1.0.47
 [1m[92m   Compiling[0m cfg-if v1.0.5
 [1m[92m   Compiling[0m libc v0.2.191
 [1m[92m   Compiling[0m version_check v0.9.5
+[1m[92m   Compiling[0m typenum v1.20.1
 [1m[92m   Compiling[0m generic-array v0.14.7
 [1m[92m   Compiling[0m stable_deref_trait v1.2.1
-[1m[92m   Compiling[0m typenum v1.20.1
 [1m[92m   Compiling[0m subtle v2.6.1
-[1m[92m   Compiling[0m find-msvc-tools v0.1.15
-[1m[92m   Compiling[0m memchr v2.8.3
 [1m[92m   Compiling[0m syn v2.0.119
 [1m[92m   Compiling[0m syn v3.0.10
 [1m[92m   Compiling[0m getrandom v0.2.17
 [1m[92m   Compiling[0m rand_core v0.6.4
 [1m[92m   Compiling[0m crypto-common v0.1.7
+[1m[92m   Compiling[0m memchr v2.8.3
+[1m[92m   Compiling[0m find-msvc-tools v0.1.15
 [1m[92m   Compiling[0m shlex v2.0.1
-[1m[92m   Compiling[0m utf_types v1.0.0
 [1m[92m   Compiling[0m cc v1.11.3
 [1m[92m   Compiling[0m litemap v0.8.3
 [1m[92m   Compiling[0m writeable v0.6.4
+[1m[92m   Compiling[0m utf_types v1.0.0
 [1m[92m   Compiling[0m smallvec v1.16.6
 [1m[92m   Compiling[0m utf8_iter v1.1.0
+[1m[92m   Compiling[0m synstructure v0.14.0
+[1m[92m   Compiling[0m ring v0.17.14
 [1m[92m   Compiling[0m icu_properties_data v2.4.0
 [1m[92m   Compiling[0m icu_normalizer_data v2.4.0
 [1m[92m   Compiling[0m semver v1.0.28
 [1m[92m   Compiling[0m rustc_version v0.4.1
-[1m[92m   Compiling[0m synstructure v0.14.0
-[1m[92m   Compiling[0m ring v0.17.14
-[1m[92m   Compiling[0m log v0.4.35
-[1m[92m   Compiling[0m serde_core v1.0.229
-[1m[92m   Compiling[0m untrusted v0.9.0
 [1m[92m   Compiling[0m zerofrom-derive v0.1.8
 [1m[92m   Compiling[0m yoke-derive v0.8.4
-[1m[92m   Compiling[0m zerovec-derive v0.11.7
 [1m[92m   Compiling[0m zerofrom v0.1.8
+[1m[92m   Compiling[0m zerovec-derive v0.11.7
 [1m[92m   Compiling[0m yoke v0.8.4
 [1m[92m   Compiling[0m displaydoc v0.2.7
 [1m[92m   Compiling[0m zerotrie v0.2.5
 [1m[92m   Compiling[0m zerovec v0.11.9
-[1m[92m   Compiling[0m once_cell v1.21.4
 [1m[92m   Compiling[0m zeroize_derive v1.5.0
+[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m serde_core v1.0.229
+[1m[92m   Compiling[0m tinystr v0.8.5
+[1m[92m   Compiling[0m potential_utf v0.1.6
+[1m[92m   Compiling[0m log v0.4.35
+[1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m icu_collections v2.4.0
+[1m[92m   Compiling[0m icu_locale_core v2.4.0
+[1m[92m   Compiling[0m rustls-pki-types v1.16.0
+[1m[92m   Compiling[0m once_cell v1.21.4
 [1m[92m   Compiling[0m curve25519-dalek v4.1.3
 [1m[92m   Compiling[0m aho-corasick v1.1.5
-[1m[92m   Compiling[0m zeroize v1.9.2
-[1m[92m   Compiling[0m tinystr v0.8.5
-[1m[92m   Compiling[0m icu_locale_core v2.4.0
-[1m[92m   Compiling[0m potential_utf v0.1.6
-[1m[92m   Compiling[0m icu_collections v2.4.0
+[1m[92m   Compiling[0m inout v0.1.4
+[1m[92m   Compiling[0m block-buffer v0.10.4
 [1m[92m   Compiling[0m icu_provider v2.4.0
-[1m[92m   Compiling[0m rustls-pki-types v1.16.0
 [1m[92m   Compiling[0m icu_properties v2.4.0
 [1m[92m   Compiling[0m icu_normalizer v2.4.0
-[1m[92m   Compiling[0m block-buffer v0.10.4
-[1m[92m   Compiling[0m inout v0.1.4
-[1m[92m   Compiling[0m parking_lot_core v0.9.12
-[1m[92m   Compiling[0m cfg_aliases v0.2.2
 [1m[92m   Compiling[0m crc32fast v1.5.6
+[1m[92m   Compiling[0m parking_lot_core v0.9.12
 [1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m regex-syntax v0.8.12
+[1m[92m   Compiling[0m cfg_aliases v0.2.2
 [1m[92m   Compiling[0m nix v0.31.4
-[1m[92m   Compiling[0m cipher v0.4.4
-[1m[92m   Compiling[0m digest v0.10.7
 [1m[92m   Compiling[0m idna_adapter v1.2.2
+[1m[92m   Compiling[0m digest v0.10.7
+[1m[92m   Compiling[0m cipher v0.4.4
 [1m[92m   Compiling[0m jni-sys-macros v0.4.1
 [1m[92m   Compiling[0m universal-hash v0.5.1
-[1m[92m   Compiling[0m percent-encoding v2.3.2
-[1m[92m   Compiling[0m simd-adler32 v0.3.10
-[1m[92m   Compiling[0m thiserror v1.0.69
-[1m[92m   Compiling[0m rustls v0.23.46
-[1m[92m   Compiling[0m portable-atomic v1.15.0
-[1m[92m   Compiling[0m serde_json v1.0.154
-[1m[92m   Compiling[0m scopeguard v1.2.0
-[1m[92m   Compiling[0m serde v1.0.229
-[1m[92m   Compiling[0m jni-sys v0.3.1
-[1m[92m   Compiling[0m adler2 v2.0.1
 [1m[92m   Compiling[0m regex-automata v0.4.19
 [1m[92m   Compiling[0m opaque-debug v0.3.1
-[1m[92m   Compiling[0m poly1305 v0.8.0
-[1m[92m   Compiling[0m miniz_oxide v0.9.1
+[1m[92m   Compiling[0m jni-sys v0.3.1
+[1m[92m   Compiling[0m percent-encoding v2.3.2
+[1m[92m   Compiling[0m portable-atomic v1.15.0
+[1m[92m   Compiling[0m adler2 v2.0.1
+[1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m simd-adler32 v0.3.10
+[1m[92m   Compiling[0m rustls v0.23.46
+[1m[92m   Compiling[0m serde_json v1.0.154
+[1m[92m   Compiling[0m thiserror v1.0.69
+[1m[92m   Compiling[0m scopeguard v1.2.0
 [1m[92m   Compiling[0m lock_api v0.4.14
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
 [1m[92m   Compiling[0m form_urlencoded v1.2.3
-[1m[92m   Compiling[0m jni-sys v0.4.1
-[1m[92m   Compiling[0m idna v1.1.0
+[1m[92m   Compiling[0m poly1305 v0.8.0
 [1m[92m   Compiling[0m regex v1.13.2
+[1m[92m   Compiling[0m jni-sys v0.4.1
 [1m[92m   Compiling[0m chacha20 v0.9.1
+[1m[92m   Compiling[0m idna v1.1.0
 [1m[92m   Compiling[0m rustls-webpki v0.103.17
 [1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m tracing-core v0.1.36
-[1m[92m   Compiling[0m tracing-attributes v0.1.31
 [1m[92m   Compiling[0m thiserror-impl v1.0.69
+[1m[92m   Compiling[0m tracing-attributes v0.1.31
 [1m[92m   Compiling[0m serde_derive v1.0.229
 [1m[92m   Compiling[0m aead v0.5.2
-[1m[92m   Compiling[0m bitflags v2.13.2
-[1m[92m   Compiling[0m itoa v1.0.19
-[1m[92m   Compiling[0m base64 v0.22.1
-[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
-[1m[92m   Compiling[0m ip_network v0.4.1
 [1m[92m   Compiling[0m pin-project-lite v0.2.18
 [1m[92m   Compiling[0m bytes v1.12.2
-[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m base64 v0.22.1
+[1m[92m   Compiling[0m bitflags v2.13.2
+[1m[92m   Compiling[0m itoa v1.0.19
+[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m   Compiling[0m ip_network v0.4.1
 [1m[92m   Compiling[0m ip_network_table v0.2.0
+[1m[92m   Compiling[0m combine v4.6.9
 [1m[92m   Compiling[0m tracing v0.1.44
 [1m[92m   Compiling[0m chacha20poly1305 v0.10.1
-[1m[92m   Compiling[0m flate2 v1.1.11
 [1m[92m   Compiling[0m webpki-roots v0.26.11
 [1m[92m   Compiling[0m parking_lot v0.12.5
-[1m[92m   Compiling[0m env_filter v0.1.4
+[1m[92m   Compiling[0m flate2 v1.1.11
 [1m[92m   Compiling[0m x25519-dalek v2.0.1
 [1m[92m   Compiling[0m url v2.5.9
-[1m[92m   Compiling[0m hmac v0.12.1
+[1m[92m   Compiling[0m env_filter v0.1.4
 [1m[92m   Compiling[0m blake2 v0.10.6
-[1m[92m   Compiling[0m time-core v0.1.9
-[1m[92m   Compiling[0m num-conv v0.2.2
-[1m[92m   Compiling[0m hex v0.4.3
-[1m[92m   Compiling[0m deranged v0.5.9
+[1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m cesu8 v1.1.0
-[1m[92m   Compiling[0m powerfmt v0.2.1
 [1m[92m   Compiling[0m android_log-sys v0.3.2
+[1m[92m   Compiling[0m num-conv v0.2.2
+[1m[92m   Compiling[0m deranged v0.5.9
+[1m[92m   Compiling[0m powerfmt v0.2.1
+[1m[92m   Compiling[0m hex v0.4.3
+[1m[92m   Compiling[0m time-core v0.1.9
 [1m[92m   Compiling[0m jni v0.21.1
-[1m[92m   Compiling[0m android_logger v0.14.1
 [1m[92m   Compiling[0m boringtun v0.7.1
 [1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m ureq v2.12.1
+[1m[92m   Compiling[0m android_logger v0.14.1
 [1m[92m   Compiling[0m halo-core v0.1.0 (/home/runner/work/halo/halo/rust)
 [1m[33mwarning[0m[1m: function `start_named_tun` is never used[0m
   [1m[94m--> [0msrc/tunnel.rs:66:8
@@ -277,63 +270,293 @@ date=Thu Nov 26 14:37:02 UTC 2026
    [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
 [1m[33mwarning[0m: `halo-core` (lib) generated 1 warning
-[1m[92m    Finished[0m `release` profile [optimized] target(s) in 29.22s
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 34.23s
+[1m[92m   Compiling[0m cfg-if v1.0.5
+[1m[92m   Compiling[0m libc v0.2.191
+[1m[92m   Compiling[0m generic-array v0.14.7
+[1m[92m   Compiling[0m zerofrom v0.1.8
+[1m[92m   Compiling[0m typenum v1.20.1
+[1m[92m   Compiling[0m stable_deref_trait v1.2.1
+[1m[92m   Compiling[0m yoke v0.8.4
+[1m[92m   Compiling[0m getrandom v0.2.17
+[1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m rand_core v0.6.4
+[1m[92m   Compiling[0m zerovec v0.11.9
+[1m[92m   Compiling[0m subtle v2.6.1
+[1m[92m   Compiling[0m memchr v2.8.3
+[1m[92m   Compiling[0m litemap v0.8.3
+[1m[92m   Compiling[0m crypto-common v0.1.7
+[1m[92m   Compiling[0m writeable v0.6.4
+[1m[92m   Compiling[0m utf_types v1.0.0
+[1m[92m   Compiling[0m tinystr v0.8.5
+[1m[92m   Compiling[0m smallvec v1.16.6
+[1m[92m   Compiling[0m utf8_iter v1.1.0
+[1m[92m   Compiling[0m potential_utf v0.1.6
+[1m[92m   Compiling[0m icu_locale_core v2.4.0
+[1m[92m   Compiling[0m zerotrie v0.2.5
+[1m[92m   Compiling[0m icu_normalizer_data v2.4.0
+[1m[92m   Compiling[0m icu_properties_data v2.4.0
+[1m[92m   Compiling[0m ring v0.17.14
+[1m[92m   Compiling[0m icu_collections v2.4.0
+[1m[92m   Compiling[0m rustls-pki-types v1.16.0
+[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m log v0.4.35
+[1m[92m   Compiling[0m icu_provider v2.4.0
+[1m[92m   Compiling[0m once_cell v1.21.4
+[1m[92m   Compiling[0m icu_properties v2.4.0
+[1m[92m   Compiling[0m icu_normalizer v2.4.0
+[1m[92m   Compiling[0m serde_core v1.0.229
+[1m[92m   Compiling[0m aho-corasick v1.1.5
+[1m[92m   Compiling[0m inout v0.1.4
+[1m[92m   Compiling[0m block-buffer v0.10.4
+[1m[92m   Compiling[0m regex-syntax v0.8.12
+[1m[92m   Compiling[0m zmij v1.0.23
+[1m[92m   Compiling[0m parking_lot_core v0.9.12
+[1m[92m   Compiling[0m idna_adapter v1.2.2
+[1m[92m   Compiling[0m crc32fast v1.5.6
+[1m[92m   Compiling[0m digest v0.10.7
+[1m[92m   Compiling[0m regex-automata v0.4.19
+[1m[92m   Compiling[0m cipher v0.4.4
+[1m[92m   Compiling[0m curve25519-dalek v4.1.3
+[1m[92m   Compiling[0m universal-hash v0.5.1
+[1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m percent-encoding v2.3.2
+[1m[92m   Compiling[0m adler2 v2.0.1
+[1m[92m   Compiling[0m simd-adler32 v0.3.10
+[1m[92m   Compiling[0m scopeguard v1.2.0
+[1m[92m   Compiling[0m lock_api v0.4.14
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
+[1m[92m   Compiling[0m thiserror v1.0.69
+[1m[92m   Compiling[0m serde_json v1.0.154
+[1m[92m   Compiling[0m rustls v0.23.46
+[1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m portable-atomic v1.15.0
+[1m[92m   Compiling[0m form_urlencoded v1.2.3
+[1m[92m   Compiling[0m jni-sys v0.3.1
+[1m[92m   Compiling[0m poly1305 v0.8.0
+[1m[92m   Compiling[0m jni-sys v0.4.1
+[1m[92m   Compiling[0m regex v1.13.2
+[1m[92m   Compiling[0m chacha20 v0.9.1
+[1m[92m   Compiling[0m rustls-webpki v0.103.17
+[1m[92m   Compiling[0m idna v1.1.0
+[1m[92m   Compiling[0m nix v0.31.4
+[1m[92m   Compiling[0m tracing-core v0.1.36
+[1m[92m   Compiling[0m webpki-roots v1.0.12
+[1m[92m   Compiling[0m aead v0.5.2
+[1m[92m   Compiling[0m pin-project-lite v0.2.18
+[1m[92m   Compiling[0m base64 v0.22.1
+[1m[92m   Compiling[0m bytes v1.12.2
+[1m[92m   Compiling[0m itoa v1.0.19
+[1m[92m   Compiling[0m bitflags v2.13.2
+[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m   Compiling[0m ip_network v0.4.1
+[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m ip_network_table v0.2.0
+[1m[92m   Compiling[0m tracing v0.1.44
+[1m[92m   Compiling[0m chacha20poly1305 v0.10.1
+[1m[92m   Compiling[0m webpki-roots v0.26.11
+[1m[92m   Compiling[0m parking_lot v0.12.5
+[1m[92m   Compiling[0m url v2.5.9
+[1m[92m   Compiling[0m flate2 v1.1.11
+[1m[92m   Compiling[0m x25519-dalek v2.0.1
+[1m[92m   Compiling[0m env_filter v0.1.4
+[1m[92m   Compiling[0m hmac v0.12.1
+[1m[92m   Compiling[0m blake2 v0.10.6
+[1m[92m   Compiling[0m cesu8 v1.1.0
+[1m[92m   Compiling[0m num-conv v0.2.2
+[1m[92m   Compiling[0m android_log-sys v0.3.2
+[1m[92m   Compiling[0m deranged v0.5.9
+[1m[92m   Compiling[0m powerfmt v0.2.1
+[1m[92m   Compiling[0m hex v0.4.3
+[1m[92m   Compiling[0m time-core v0.1.9
+[1m[92m   Compiling[0m boringtun v0.7.1
+[1m[92m   Compiling[0m jni v0.21.1
+[1m[92m   Compiling[0m time v0.3.55
+[1m[92m   Compiling[0m ureq v2.12.1
+[1m[92m   Compiling[0m android_logger v0.14.1
+[1m[92m   Compiling[0m halo-core v0.1.0 (/home/runner/work/halo/halo/rust)
+[1m[33mwarning[0m[1m: function `start_named_tun` is never used[0m
+  [1m[94m--> [0msrc/tunnel.rs:66:8
+   [1m[94m|[0m
+[1m[94m66[0m [1m[94m|[0m pub fn start_named_tun(name: &str, cfg_json: &str) -> Result<(), String> {
+   [1m[94m|[0m        [1m[33m^^^^^^^^^^^^^^^[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+[1m[33mwarning[0m: `halo-core` (lib) generated 1 warning
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 25.54s
+[1m[92m   Compiling[0m cfg-if v1.0.5
+[1m[92m   Compiling[0m libc v0.2.191
+[1m[92m   Compiling[0m zerofrom v0.1.8
+[1m[92m   Compiling[0m generic-array v0.14.7
+[1m[92m   Compiling[0m stable_deref_trait v1.2.1
+[1m[92m   Compiling[0m typenum v1.20.1
+[1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m yoke v0.8.4
+[1m[92m   Compiling[0m subtle v2.6.1
+[1m[92m   Compiling[0m zerovec v0.11.9
+[1m[92m   Compiling[0m memchr v2.8.3
+[1m[92m   Compiling[0m tinystr v0.8.5
+[1m[92m   Compiling[0m getrandom v0.2.17
+[1m[92m   Compiling[0m litemap v0.8.3
+[1m[92m   Compiling[0m rand_core v0.6.4
+[1m[92m   Compiling[0m writeable v0.6.4
+[1m[92m   Compiling[0m smallvec v1.16.6
+[1m[92m   Compiling[0m utf_types v1.0.0
+[1m[92m   Compiling[0m crypto-common v0.1.7
+[1m[92m   Compiling[0m icu_locale_core v2.4.0
+[1m[92m   Compiling[0m potential_utf v0.1.6
+[1m[92m   Compiling[0m zerotrie v0.2.5
+[1m[92m   Compiling[0m utf8_iter v1.1.0
+[1m[92m   Compiling[0m icu_properties_data v2.4.0
+[1m[92m   Compiling[0m icu_normalizer_data v2.4.0
+[1m[92m   Compiling[0m ring v0.17.14
+[1m[92m   Compiling[0m icu_collections v2.4.0
+[1m[92m   Compiling[0m cpufeatures v0.2.17
+[1m[92m   Compiling[0m rustls-pki-types v1.16.0
+[1m[92m   Compiling[0m icu_provider v2.4.0
+[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m log v0.4.35
+[1m[92m   Compiling[0m once_cell v1.21.4
+[1m[92m   Compiling[0m serde_core v1.0.229
+[1m[92m   Compiling[0m icu_properties v2.4.0
+[1m[92m   Compiling[0m icu_normalizer v2.4.0
+[1m[92m   Compiling[0m inout v0.1.4
+[1m[92m   Compiling[0m block-buffer v0.10.4
+[1m[92m   Compiling[0m aho-corasick v1.1.5
+[1m[92m   Compiling[0m regex-syntax v0.8.12
+[1m[92m   Compiling[0m zmij v1.0.23
+[1m[92m   Compiling[0m crc32fast v1.5.6
+[1m[92m   Compiling[0m idna_adapter v1.2.2
+[1m[92m   Compiling[0m regex-automata v0.4.19
+[1m[92m   Compiling[0m parking_lot_core v0.9.12
+[1m[92m   Compiling[0m digest v0.10.7
+[1m[92m   Compiling[0m cipher v0.4.4
+[1m[92m   Compiling[0m curve25519-dalek v4.1.3
+[1m[92m   Compiling[0m universal-hash v0.5.1
+[1m[92m   Compiling[0m curve25519-dalek-derive v0.1.1
+[1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m simd-adler32 v0.3.10
+[1m[92m   Compiling[0m adler2 v2.0.1
+[1m[92m   Compiling[0m percent-encoding v2.3.2
+[1m[92m   Compiling[0m scopeguard v1.2.0
+[1m[92m   Compiling[0m form_urlencoded v1.2.3
+[1m[92m   Compiling[0m lock_api v0.4.14
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
+[1m[92m   Compiling[0m jni-sys v0.3.1
+[1m[92m   Compiling[0m portable-atomic v1.15.0
+[1m[92m   Compiling[0m thiserror v1.0.69
+[1m[92m   Compiling[0m serde_json v1.0.154
+[1m[92m   Compiling[0m rustls v0.23.46
+[1m[92m   Compiling[0m poly1305 v0.8.0
+[1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m jni-sys v0.4.1
+[1m[92m   Compiling[0m chacha20 v0.9.1
+[1m[92m   Compiling[0m regex v1.13.2
+[1m[92m   Compiling[0m rustls-webpki v0.103.17
+[1m[92m   Compiling[0m idna v1.1.0
+[1m[92m   Compiling[0m nix v0.31.4
+[1m[92m   Compiling[0m tracing-core v0.1.36
+[1m[92m   Compiling[0m webpki-roots v1.0.12
+[1m[92m   Compiling[0m aead v0.5.2
+[1m[92m   Compiling[0m base64 v0.22.1
+[1m[92m   Compiling[0m bitflags v2.13.2
+[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m   Compiling[0m ip_network v0.4.1
+[1m[92m   Compiling[0m pin-project-lite v0.2.18
+[1m[92m   Compiling[0m bytes v1.12.2
+[1m[92m   Compiling[0m itoa v1.0.19
+[1m[92m   Compiling[0m ip_network_table v0.2.0
+[1m[92m   Compiling[0m tracing v0.1.44
+[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m chacha20poly1305 v0.10.1
+[1m[92m   Compiling[0m webpki-roots v0.26.11
+[1m[92m   Compiling[0m flate2 v1.1.11
+[1m[92m   Compiling[0m url v2.5.9
+[1m[92m   Compiling[0m env_filter v0.1.4
+[1m[92m   Compiling[0m parking_lot v0.12.5
+[1m[92m   Compiling[0m x25519-dalek v2.0.1
+[1m[92m   Compiling[0m hmac v0.12.1
+[1m[92m   Compiling[0m blake2 v0.10.6
+[1m[92m   Compiling[0m num-conv v0.2.2
+[1m[92m   Compiling[0m powerfmt v0.2.1
+[1m[92m   Compiling[0m deranged v0.5.9
+[1m[92m   Compiling[0m time-core v0.1.9
+[1m[92m   Compiling[0m cesu8 v1.1.0
+[1m[92m   Compiling[0m hex v0.4.3
+[1m[92m   Compiling[0m android_log-sys v0.3.2
+[1m[92m   Compiling[0m android_logger v0.14.1
+[1m[92m   Compiling[0m boringtun v0.7.1
+[1m[92m   Compiling[0m ureq v2.12.1
+[1m[92m   Compiling[0m time v0.3.55
+[1m[92m   Compiling[0m jni v0.21.1
+[1m[92m   Compiling[0m halo-core v0.1.0 (/home/runner/work/halo/halo/rust)
+[1m[33mwarning[0m[1m: function `start_named_tun` is never used[0m
+  [1m[94m--> [0msrc/tunnel.rs:66:8
+   [1m[94m|[0m
+[1m[94m66[0m [1m[94m|[0m pub fn start_named_tun(name: &str, cfg_json: &str) -> Result<(), String> {
+   [1m[94m|[0m        [1m[33m^^^^^^^^^^^^^^^[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+[1m[33mwarning[0m: `halo-core` (lib) generated 1 warning
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 25.77s
 [1m[92m   Compiling[0m proc-macro2 v1.0.107
 [1m[92m   Compiling[0m quote v1.0.47
 [1m[92m   Compiling[0m unicode-ident v1.0.27
 [1m[92m   Compiling[0m cfg-if v1.0.5
 [1m[92m   Compiling[0m libc v0.2.191
 [1m[92m   Compiling[0m version_check v0.9.5
-[1m[92m   Compiling[0m stable_deref_trait v1.2.1
 [1m[92m   Compiling[0m typenum v1.20.1
 [1m[92m   Compiling[0m generic-array v0.14.7
+[1m[92m   Compiling[0m stable_deref_trait v1.2.1
 [1m[92m   Compiling[0m subtle v2.6.1
-[1m[92m   Compiling[0m shlex v2.0.1
 [1m[92m   Compiling[0m find-msvc-tools v0.1.15
 [1m[92m   Compiling[0m syn v3.0.10
 [1m[92m   Compiling[0m syn v2.0.119
+[1m[92m   Compiling[0m shlex v2.0.1
 [1m[92m   Compiling[0m cc v1.11.3
 [1m[92m   Compiling[0m getrandom v0.2.17
 [1m[92m   Compiling[0m rand_core v0.6.4
 [1m[92m   Compiling[0m crypto-common v0.1.7
 [1m[92m   Compiling[0m utf_types v1.0.0
-[1m[92m   Compiling[0m smallvec v1.16.6
 [1m[92m   Compiling[0m litemap v0.8.3
 [1m[92m   Compiling[0m writeable v0.6.4
-[1m[92m   Compiling[0m utf8_iter v1.1.0
 [1m[92m   Compiling[0m synstructure v0.14.0
+[1m[92m   Compiling[0m smallvec v1.16.6
 [1m[92m   Compiling[0m ring v0.17.14
-[1m[92m   Compiling[0m icu_properties_data v2.4.0
+[1m[92m   Compiling[0m utf8_iter v1.1.0
 [1m[92m   Compiling[0m icu_normalizer_data v2.4.0
-[1m[92m   Compiling[0m cpufeatures v0.2.17
+[1m[92m   Compiling[0m icu_properties_data v2.4.0
 [1m[92m   Compiling[0m semver v1.0.28
-[1m[92m   Compiling[0m rustc_version v0.4.1
 [1m[92m   Compiling[0m zerofrom-derive v0.1.8
 [1m[92m   Compiling[0m yoke-derive v0.8.4
-[1m[92m   Compiling[0m zerovec-derive v0.11.7
 [1m[92m   Compiling[0m zerofrom v0.1.8
+[1m[92m   Compiling[0m zerovec-derive v0.11.7
 [1m[92m   Compiling[0m yoke v0.8.4
 [1m[92m   Compiling[0m displaydoc v0.2.7
 [1m[92m   Compiling[0m zerotrie v0.2.5
 [1m[92m   Compiling[0m zerovec v0.11.9
-[1m[92m   Compiling[0m serde_core v1.0.229
-[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m cpufeatures v0.2.17
+[1m[92m   Compiling[0m rustc_version v0.4.1
 [1m[92m   Compiling[0m zeroize_derive v1.5.0
-[1m[92m   Compiling[0m once_cell v1.21.4
+[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m serde_core v1.0.229
 [1m[92m   Compiling[0m tinystr v0.8.5
+[1m[92m   Compiling[0m zeroize v1.9.2
 [1m[92m   Compiling[0m potential_utf v0.1.6
 [1m[92m   Compiling[0m icu_locale_core v2.4.0
 [1m[92m   Compiling[0m icu_collections v2.4.0
-[1m[92m   Compiling[0m zeroize v1.9.2
 [1m[92m   Compiling[0m rustls-pki-types v1.16.0
+[1m[92m   Compiling[0m once_cell v1.21.4
 [1m[92m   Compiling[0m curve25519-dalek v4.1.3
 [1m[92m   Compiling[0m inout v0.1.4
 [1m[92m   Compiling[0m block-buffer v0.10.4
-[1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m cfg_aliases v0.2.2
+[1m[92m   Compiling[0m parking_lot_core v0.9.12
+[1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m icu_provider v2.4.0
 [1m[92m   Compiling[0m crc32fast v1.5.6
-[1m[92m   Compiling[0m parking_lot_core v0.9.12
 [1m[92m   Compiling[0m icu_properties v2.4.0
 [1m[92m   Compiling[0m icu_normalizer v2.4.0
 [1m[92m   Compiling[0m nix v0.31.4
@@ -341,50 +564,50 @@ date=Thu Nov 26 14:37:02 UTC 2026
 [1m[92m   Compiling[0m cipher v0.4.4
 [1m[92m   Compiling[0m curve25519-dalek-derive v0.1.1
 [1m[92m   Compiling[0m universal-hash v0.5.1
-[1m[92m   Compiling[0m portable-atomic v1.15.0
-[1m[92m   Compiling[0m rustls v0.23.46
+[1m[92m   Compiling[0m scopeguard v1.2.0
 [1m[92m   Compiling[0m idna_adapter v1.2.2
+[1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m rustls v0.23.46
 [1m[92m   Compiling[0m adler2 v2.0.1
 [1m[92m   Compiling[0m simd-adler32 v0.3.10
-[1m[92m   Compiling[0m scopeguard v1.2.0
-[1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m portable-atomic v1.15.0
 [1m[92m   Compiling[0m percent-encoding v2.3.2
 [1m[92m   Compiling[0m serde v1.0.229
 [1m[92m   Compiling[0m serde_json v1.0.154
-[1m[92m   Compiling[0m miniz_oxide v0.9.1
 [1m[92m   Compiling[0m form_urlencoded v1.2.3
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
 [1m[92m   Compiling[0m poly1305 v0.8.0
-[1m[92m   Compiling[0m lock_api v0.4.14
 [1m[92m   Compiling[0m idna v1.1.0
+[1m[92m   Compiling[0m lock_api v0.4.14
 [1m[92m   Compiling[0m chacha20 v0.9.1
-[1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m tracing-core v0.1.36
+[1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m tracing-attributes v0.1.31
 [1m[92m   Compiling[0m serde_derive v1.0.229
 [1m[92m   Compiling[0m aead v0.5.2
-[1m[92m   Compiling[0m pin-project-lite v0.2.18
-[1m[92m   Compiling[0m base64 v0.22.1
-[1m[92m   Compiling[0m bitflags v2.13.2
-[1m[92m   Compiling[0m itoa v1.0.19
-[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
-[1m[92m   Compiling[0m ip_network v0.4.1
 [1m[92m   Compiling[0m log v0.4.35
 [1m[92m   Compiling[0m memchr v2.8.3
-[1m[92m   Compiling[0m ip_network_table v0.2.0
+[1m[92m   Compiling[0m base64 v0.22.1
+[1m[92m   Compiling[0m bitflags v2.13.2
+[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m   Compiling[0m ip_network v0.4.1
+[1m[92m   Compiling[0m itoa v1.0.19
+[1m[92m   Compiling[0m pin-project-lite v0.2.18
 [1m[92m   Compiling[0m tracing v0.1.44
+[1m[92m   Compiling[0m ip_network_table v0.2.0
 [1m[92m   Compiling[0m chacha20poly1305 v0.10.1
-[1m[92m   Compiling[0m webpki-roots v0.26.11
-[1m[92m   Compiling[0m parking_lot v0.12.5
-[1m[92m   Compiling[0m flate2 v1.1.11
 [1m[92m   Compiling[0m x25519-dalek v2.0.1
+[1m[92m   Compiling[0m webpki-roots v0.26.11
+[1m[92m   Compiling[0m flate2 v1.1.11
+[1m[92m   Compiling[0m parking_lot v0.12.5
 [1m[92m   Compiling[0m url v2.5.9
-[1m[92m   Compiling[0m blake2 v0.10.6
 [1m[92m   Compiling[0m hmac v0.12.1
+[1m[92m   Compiling[0m blake2 v0.10.6
 [1m[92m   Compiling[0m num-conv v0.2.2
 [1m[92m   Compiling[0m powerfmt v0.2.1
 [1m[92m   Compiling[0m deranged v0.5.9
-[1m[92m   Compiling[0m time-core v0.1.9
 [1m[92m   Compiling[0m hex v0.4.3
+[1m[92m   Compiling[0m time-core v0.1.9
 [1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m rustls-webpki v0.103.17
 [1m[92m   Compiling[0m boringtun v0.7.1
@@ -532,19 +755,19 @@ date=Thu Nov 26 14:37:02 UTC 2026
 [1m[94m278[0m [1m[94m|[0m fn timer_loop(shared: Arc<Shared>) {
     [1m[94m|[0m    [1m[33m^^^^^^^^^^[0m
 
-[1m[33mwarning[0m: `halo-core` (lib) generated 23 warnings
 [1m[33mwarning[0m: `halo-core` (lib test) generated 23 warnings (23 duplicates)
-[1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 15.83s
+[1m[33mwarning[0m: `halo-core` (lib) generated 23 warnings
+[1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 22.34s
 [1m[92m     Running[0m unittests src/lib.rs (rust/target/debug/build/halo-core/6ee80c8bf6c94e41/out/halo_core-6ee80c8bf6c94e41)
 
 running 8 tests
-test dns::tests::does_not_sinkhole_other_ports ... ok
 test dns::tests::blocks_exact_and_subdomain ... ok
-test dns::tests::forwards_allowed_query ... ok
 test dns::tests::sinkholes_blocked_a_query ... ok
+test dns::tests::forwards_allowed_query ... ok
+test dns::tests::does_not_sinkhole_other_ports ... ok
 test dns::tests::sinkholes_full_udp_packet_and_swaps_endpoints ... ok
-test wgconf::tests::rejects_missing_key ... ok
 test dns::tests::supports_allow_and_adguard_syntax ... ok
+test wgconf::tests::rejects_missing_key ... ok
 test wgconf::tests::parses_full_config ... ok
 
 test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
@@ -567,491 +790,44 @@ For more details see https://docs.gradle.org/8.13/release-notes.html
 
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugResources
+
+> Task :app:processDebugMainManifest FAILED
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:69:13-37 Error:
+	Attribute activity#de.blinkt.openvpn.activities.NotImplemented@exported value=(false) from AndroidManifest.xml:69:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:21:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity> element at AndroidManifest.xml:67:9-70:34 to override.
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:73:13-37 Error:
+	Attribute activity-alias#de.blinkt.openvpn.activities.Req@exported value=(false) from AndroidManifest.xml:73:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:26:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity-alias> element at AndroidManifest.xml:71:9-75:34 to override.
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:78:13-37 Error:
+	Attribute activity-alias#de.blinkt.openvpn.activities.LogWindow@exported value=(false) from AndroidManifest.xml:78:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:30:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity-alias> element at AndroidManifest.xml:76:9-80:34 to override.
+
+See https://developer.android.com/r/studio-ui/build/manifest-merger for more information about the manifest merger.
+
+
+[Incubating] Problems report is available at: file:///home/runner/work/halo/halo/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-A problem occurred configuring root project 'HaloVPN'.
-> Could not resolve all artifacts for configuration 'classpath'.
-   > Could not resolve org.jetbrains.kotlin:kotlin-reflect:2.0.21.
-     Required by:
-         root project :
-      > Could not resolve org.jetbrains.kotlin:kotlin-reflect:2.0.21.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/2.0.21/kotlin-reflect-2.0.21.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/2.0.21/kotlin-reflect-2.0.21.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.jetbrains.kotlin:kotlin-reflect:2.0.21.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-reflect/2.0.21/kotlin-reflect-2.0.21.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/2.0.21/kotlin-reflect-2.0.21.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.jetbrains:annotations:13.0.
-     Required by:
-         root project :
-      > Could not resolve org.jetbrains:annotations:13.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.jetbrains:annotations:13.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/annotations/13.0/annotations-13.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.0.21.
-     Required by:
-         root project :
-      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.0.21.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.0.21/kotlin-stdlib-2.0.21.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.0.21/kotlin-stdlib-2.0.21.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.0.21.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib/2.0.21/kotlin-stdlib-2.0.21.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.0.21/kotlin-stdlib-2.0.21.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.20.
-     Required by:
-         root project : > org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:2.1.20
-      > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.20.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin/2.1.20/kotlin-gradle-plugin-2.1.20.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin/2.1.20/kotlin-gradle-plugin-2.1.20.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.20.
-         > Could not parse POM https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-gradle-plugin/2.1.20/kotlin-gradle-plugin-2.1.20.pom
-            > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugins-bom:2.1.20.
-               > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugins-bom:2.1.20.
-                  > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugins-bom/2.1.20/kotlin-gradle-plugins-bom-2.1.20.pom'.
-                     > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugins-bom/2.1.20/kotlin-gradle-plugins-bom-2.1.20.pom'. Received status code 429 from server: Too Many Requests
-               > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugins-bom:2.1.20.
-                  > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-gradle-plugins-bom/2.1.20/kotlin-gradle-plugins-bom-2.1.20.pom'.
-                     > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugins-bom/2.1.20/kotlin-gradle-plugins-bom-2.1.20.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.20.
-     Required by:
-         root project : > org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.1.20
-      > Could not resolve org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.20.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/compose-compiler-gradle-plugin/2.1.20/compose-compiler-gradle-plugin-2.1.20.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/compose-compiler-gradle-plugin/2.1.20/compose-compiler-gradle-plugin-2.1.20.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:gradle-settings-api:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:repository:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:aaptcompiler:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:shared:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.lint:lint-model:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.utp:android-test-plugin-host-emulator-control-proto:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.utp:android-test-plugin-host-retention-proto:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder-model:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:gradle-api:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1 > com.android.tools:common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.analytics-library:tracker:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.build:manifest-merger:31.9.1
-      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.0/kotlin-stdlib-jdk8-2.1.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.0/kotlin-stdlib-jdk8-2.1.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.0/kotlin-stdlib-jdk8-2.1.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.0/kotlin-stdlib-jdk8-2.1.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.apache.httpcomponents:httpmime:4.5.6.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdklib:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:crash:31.9.1
-      > Could not resolve org.apache.httpcomponents:httpmime:4.5.6.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.apache.httpcomponents:httpmime:4.5.6.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve commons-io:commons-io:2.16.1.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-      > Could not resolve commons-io:commons-io:2.16.1.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve commons-io:commons-io:2.16.1.
-         > Could not get resource 'https://plugins.gradle.org/m2/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.ow2.asm:asm:9.7.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.lint:lint-typedef-remover:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:gradle-api:8.9.1
-      > Could not resolve org.ow2.asm:asm:9.7.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7/asm-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7/asm-9.7.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.ow2.asm:asm:9.7.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/ow2/asm/asm/9.7/asm-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7/asm-9.7.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.ow2.asm:asm-analysis:9.7.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve org.ow2.asm:asm-analysis:9.7.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.7/asm-analysis-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.7/asm-analysis-9.7.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.ow2.asm:asm-analysis:9.7.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/ow2/asm/asm-analysis/9.7/asm-analysis-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.7/asm-analysis-9.7.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.ow2.asm:asm-commons:9.7.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1
-      > Could not resolve org.ow2.asm:asm-commons:9.7.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.7/asm-commons-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.7/asm-commons-9.7.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.ow2.asm:asm-commons:9.7.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/ow2/asm/asm-commons/9.7/asm-commons-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.7/asm-commons-9.7.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.ow2.asm:asm-util:9.7.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve org.ow2.asm:asm-util:9.7.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.7/asm-util-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.7/asm-util-9.7.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.ow2.asm:asm-util:9.7.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/ow2/asm/asm-util/9.7/asm-util-9.7.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.7/asm-util-9.7.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.bouncycastle:bcpkix-jdk18on:1.79.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.build:apkzlib:8.9.1
-      > Could not resolve org.bouncycastle:bcpkix-jdk18on:1.79.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.79/bcpkix-jdk18on-1.79.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.79/bcpkix-jdk18on-1.79.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.bouncycastle:bcpkix-jdk18on:1.79.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/bouncycastle/bcpkix-jdk18on/1.79/bcpkix-jdk18on-1.79.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.79/bcpkix-jdk18on-1.79.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.glassfish.jaxb:jaxb-runtime:2.3.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdklib:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:repository:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-      > Could not resolve org.glassfish.jaxb:jaxb-runtime:2.3.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.glassfish.jaxb:jaxb-runtime:2.3.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve net.sf.jopt-simple:jopt-simple:4.9.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve net.sf.jopt-simple:jopt-simple:4.9.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve net.sf.jopt-simple:jopt-simple:4.9.
-         > Could not get resource 'https://plugins.gradle.org/m2/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.squareup:javapoet:1.10.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-      > Could not resolve com.squareup:javapoet:1.10.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/squareup/javapoet/1.10.0/javapoet-1.10.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/javapoet/1.10.0/javapoet-1.10.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.squareup:javapoet:1.10.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/squareup/javapoet/1.10.0/javapoet-1.10.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/javapoet/1.10.0/javapoet-1.10.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.protobuf:protobuf-java:3.24.4.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:aapt2-proto:8.9.1-12782657
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:aaptcompiler:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve com.google.protobuf:protobuf-java:3.24.4.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.24.4/protobuf-java-3.24.4.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.24.4/protobuf-java-3.24.4.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.protobuf:protobuf-java:3.24.4.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/protobuf/protobuf-java/3.24.4/protobuf-java-3.24.4.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.24.4/protobuf-java-3.24.4.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.protobuf:protobuf-java-util:3.22.3.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve com.google.protobuf:protobuf-java-util:3.22.3.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.22.3/protobuf-java-util-3.22.3.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.22.3/protobuf-java-util-3.22.3.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.protobuf:protobuf-java-util:3.22.3.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/protobuf/protobuf-java-util/3.22.3/protobuf-java-util-3.22.3.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.22.3/protobuf-java-util-3.22.3.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.code.gson:gson:2.10.1.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdklib:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:shared:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.build:manifest-merger:31.9.1
-      > Could not resolve com.google.code.gson:gson:2.10.1.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.code.gson:gson:2.10.1.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/code/gson/gson/2.10.1/gson-2.10.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve io.grpc:grpc-core:1.57.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve io.grpc:grpc-core:1.57.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.57.2/grpc-core-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.57.2/grpc-core-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve io.grpc:grpc-core:1.57.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/io/grpc/grpc-core/1.57.2/grpc-core-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.57.2/grpc-core-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve io.grpc:grpc-netty:1.57.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve io.grpc:grpc-netty:1.57.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/1.57.2/grpc-netty-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/1.57.2/grpc-netty-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve io.grpc:grpc-netty:1.57.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/io/grpc/grpc-netty/1.57.2/grpc-netty-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/1.57.2/grpc-netty-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve io.grpc:grpc-protobuf:1.57.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve io.grpc:grpc-protobuf:1.57.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.57.2/grpc-protobuf-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.57.2/grpc-protobuf-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve io.grpc:grpc-protobuf:1.57.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/io/grpc/grpc-protobuf/1.57.2/grpc-protobuf-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.57.2/grpc-protobuf-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve io.grpc:grpc-stub:1.57.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve io.grpc:grpc-stub:1.57.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.57.2/grpc-stub-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.57.2/grpc-stub-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve io.grpc:grpc-stub:1.57.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/io/grpc/grpc-stub/1.57.2/grpc-stub-1.57.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.57.2/grpc-stub-1.57.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.crypto.tink:tink:1.7.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve com.google.crypto.tink:tink:1.7.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/crypto/tink/tink/1.7.0/tink-1.7.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/crypto/tink/tink/1.7.0/tink-1.7.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.crypto.tink:tink:1.7.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/crypto/tink/tink/1.7.0/tink-1.7.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/crypto/tink/tink/1.7.0/tink-1.7.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.flatbuffers:flatbuffers-java:1.12.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve com.google.flatbuffers:flatbuffers-java:1.12.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/1.12.0/flatbuffers-java-1.12.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/1.12.0/flatbuffers-java-1.12.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.flatbuffers:flatbuffers-java:1.12.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/flatbuffers/flatbuffers-java/1.12.0/flatbuffers-java-1.12.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/1.12.0/flatbuffers-java-1.12.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.tensorflow:tensorflow-lite-metadata:0.2.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1
-      > Could not resolve org.tensorflow:tensorflow-lite-metadata:0.2.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-metadata/0.2.0/tensorflow-lite-metadata-0.2.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-metadata/0.2.0/tensorflow-lite-metadata-0.2.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.tensorflow:tensorflow-lite-metadata:0.2.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/tensorflow/tensorflow-lite-metadata/0.2.0/tensorflow-lite-metadata-0.2.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-metadata/0.2.0/tensorflow-lite-metadata-0.2.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.guava:guava:32.0.1-jre.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:aaptcompiler:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:crash:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:shared:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.lint:lint-typedef-remover:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder-test-api:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:gradle-api:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1 > com.android.tools:common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.analytics-library:tracker:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.build:apkzlib:8.9.1
-      > Could not resolve com.google.guava:guava:32.0.1-jre.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.guava:guava:32.0.1-jre.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve javax.inject:javax.inject:1.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1
-      > Could not resolve javax.inject:javax.inject:1.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve javax.inject:javax.inject:1.
-         > Could not get resource 'https://plugins.gradle.org/m2/javax/inject/javax.inject/1/javax.inject-1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve net.sf.kxml:kxml2:2.3.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.ddms:ddmlib:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.lint:lint-model:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.layoutlib:layoutlib-api:31.9.1
-      > Could not resolve net.sf.kxml:kxml2:2.3.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve net.sf.kxml:kxml2:2.3.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.bouncycastle:bcprov-jdk18on:1.79.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.build:apkzlib:8.9.1
-      > Could not resolve org.bouncycastle:bcprov-jdk18on:1.79.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.bouncycastle:bcprov-jdk18on:1.79.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.apache.commons:commons-compress:1.21.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdklib:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:repository:31.9.1
-      > Could not resolve org.apache.commons:commons-compress:1.21.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.apache.commons:commons-compress:1.21.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.apache.httpcomponents:httpcore:4.4.16.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdklib:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:crash:31.9.1
-      > Could not resolve org.apache.httpcomponents:httpcore:4.4.16.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.apache.httpcomponents:httpcore:4.4.16.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.jimfs:jimfs:1.1.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:repository:31.9.1
-      > Could not resolve com.google.jimfs:jimfs:1.1.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/1.1/jimfs-1.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/1.1/jimfs-1.1.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.jimfs:jimfs:1.1.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/jimfs/jimfs/1.1/jimfs-1.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/1.1/jimfs-1.1.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.sun.activation:javax.activation:1.2.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:repository:31.9.1
-      > Could not resolve com.sun.activation:javax.activation:1.2.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.sun.activation:javax.activation:1.2.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.apache.httpcomponents:httpclient:4.5.14.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:crash:31.9.1
-      > Could not resolve org.apache.httpcomponents:httpclient:4.5.14.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.apache.httpcomponents:httpclient:4.5.14.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve net.java.dev.jna:jna-platform:5.6.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.analytics-library:shared:31.9.1
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools:sdk-common:31.9.1 > com.android.tools:common:31.9.1
-      > Could not resolve net.java.dev.jna:jna-platform:5.6.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/5.6.0/jna-platform-5.6.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/5.6.0/jna-platform-5.6.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve net.java.dev.jna:jna-platform:5.6.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/net/java/dev/jna/jna-platform/5.6.0/jna-platform-5.6.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/5.6.0/jna-platform-5.6.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > androidx.databinding:databinding-compiler-common:8.9.1
-      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve javax.annotation:javax.annotation-api:1.3.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.9.1
-      > Could not resolve javax.annotation:javax.annotation-api:1.3.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve javax.annotation:javax.annotation-api:1.3.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.auto.value:auto-value-annotations:1.6.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve com.google.auto.value:auto-value-annotations:1.6.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.auto.value:auto-value-annotations:1.6.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.errorprone:error_prone_annotations:2.3.1.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve com.google.errorprone:error_prone_annotations:2.3.1.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.3.1/error_prone_annotations-2.3.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.3.1/error_prone_annotations-2.3.1.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.errorprone:error_prone_annotations:2.3.1.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/errorprone/error_prone_annotations/2.3.1/error_prone_annotations-2.3.1.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.3.1/error_prone_annotations-2.3.1.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.dagger:dagger:2.28.3.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve com.google.dagger:dagger:2.28.3.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/dagger/dagger/2.28.3/dagger-2.28.3.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/dagger/dagger/2.28.3/dagger-2.28.3.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.dagger:dagger:2.28.3.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/dagger/dagger/2.28.3/dagger-2.28.3.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/dagger/dagger/2.28.3/dagger-2.28.3.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.bitbucket.b_c:jose4j:0.9.5.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve org.bitbucket.b_c:jose4j:0.9.5.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/bitbucket/b_c/jose4j/0.9.5/jose4j-0.9.5.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/bitbucket/b_c/jose4j/0.9.5/jose4j-0.9.5.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.bitbucket.b_c:jose4j:0.9.5.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/bitbucket/b_c/jose4j/0.9.5/jose4j-0.9.5.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/bitbucket/b_c/jose4j/0.9.5/jose4j-0.9.5.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.slf4j:slf4j-api:1.7.30.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:bundletool:1.17.2
-      > Could not resolve org.slf4j:slf4j-api:1.7.30.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.slf4j:slf4j-api:1.7.30.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve org.jdom:jdom2:2.0.6.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10
-      > Could not resolve org.jdom:jdom2:2.0.6.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve org.jdom:jdom2:2.0.6.
-         > Could not get resource 'https://plugins.gradle.org/m2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.squareup:javawriter:2.5.0.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1
-      > Could not resolve com.squareup:javawriter:2.5.0.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/squareup/javawriter/2.5.0/javawriter-2.5.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/javawriter/2.5.0/javawriter-2.5.0.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.squareup:javawriter:2.5.0.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/squareup/javawriter/2.5.0/javawriter-2.5.0.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/javawriter/2.5.0/javawriter-2.5.0.pom'. Received status code 429 from server: Too Many Requests
-   > Could not resolve com.google.code.findbugs:jsr305:3.0.2.
-     Required by:
-         root project : > com.android.application:com.android.application.gradle.plugin:8.9.1 > com.android.tools.build:gradle:8.9.1 > com.android.tools.build:builder:8.9.1 > com.android.tools.build:apkzlib:8.9.1
-      > Could not resolve com.google.code.findbugs:jsr305:3.0.2.
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom'. Received status code 429 from server: Too Many Requests
-      > Could not resolve com.google.code.findbugs:jsr305:3.0.2.
-         > Could not get resource 'https://plugins.gradle.org/m2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom'.
-            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom'. Received status code 429 from server: Too Many Requests
-> There are 26 more failures with identical causes.
+Execution failed for task ':app:processDebugMainManifest'.
+> Manifest merger failed with multiple errors, see logs
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -1059,4 +835,121 @@ A problem occurred configuring root project 'HaloVPN'.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 3m 25s
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1m 13s
+10 actionable tasks: 10 executed
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+
+> Task :app:processDebugMainManifest FAILED
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:69:13-37 Error:
+	Attribute activity#de.blinkt.openvpn.activities.NotImplemented@exported value=(false) from AndroidManifest.xml:69:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:21:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity> element at AndroidManifest.xml:67:9-70:34 to override.
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:73:13-37 Error:
+	Attribute activity-alias#de.blinkt.openvpn.activities.Req@exported value=(false) from AndroidManifest.xml:73:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:26:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity-alias> element at AndroidManifest.xml:71:9-75:34 to override.
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:78:13-37 Error:
+	Attribute activity-alias#de.blinkt.openvpn.activities.LogWindow@exported value=(false) from AndroidManifest.xml:78:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:30:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity-alias> element at AndroidManifest.xml:76:9-80:34 to override.
+
+See https://developer.android.com/r/studio-ui/build/manifest-merger for more information about the manifest merger.
+
+
+[Incubating] Problems report is available at: file:///home/runner/work/halo/halo/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugMainManifest'.
+> Manifest merger failed with multiple errors, see logs
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 11s
+10 actionable tasks: 1 executed, 9 up-to-date
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+
+> Task :app:processDebugMainManifest FAILED
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:69:13-37 Error:
+	Attribute activity#de.blinkt.openvpn.activities.NotImplemented@exported value=(false) from AndroidManifest.xml:69:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:21:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity> element at AndroidManifest.xml:67:9-70:34 to override.
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:73:13-37 Error:
+	Attribute activity-alias#de.blinkt.openvpn.activities.Req@exported value=(false) from AndroidManifest.xml:73:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:26:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity-alias> element at AndroidManifest.xml:71:9-75:34 to override.
+/home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:78:13-37 Error:
+	Attribute activity-alias#de.blinkt.openvpn.activities.LogWindow@exported value=(false) from AndroidManifest.xml:78:13-37
+	is also present at [icsopenvpn.aar] AndroidManifest.xml:30:13-36 value=(true).
+	Suggestion: add 'tools:replace="android:exported"' to <activity-alias> element at AndroidManifest.xml:76:9-80:34 to override.
+
+See https://developer.android.com/r/studio-ui/build/manifest-merger for more information about the manifest merger.
+
+
+[Incubating] Problems report is available at: file:///home/runner/work/halo/halo/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugMainManifest'.
+> Manifest merger failed with multiple errors, see logs
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 11s
+10 actionable tasks: 1 executed, 9 up-to-date
