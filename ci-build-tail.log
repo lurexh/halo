@@ -1,140 +1,140 @@
-run=45940885287
-sha=2c937b837959c8519b22bcb2d1203eae23d19741
-date=Fri Nov 27 04:43:53 UTC 2026
+run=45942059207
+sha=19e42250793939bd2e5a119c81992c79a0fde38b
+date=Fri Nov 27 04:54:48 UTC 2026
 -----
 [1m[92m    Updating[0m crates.io index
 [1m[92m Downloading[0m crates ...
-[1m[92m  Downloaded[0m time-macros v0.2.32
 [1m[92m  Downloaded[0m adler2 v2.0.1
+[1m[92m  Downloaded[0m time-core v0.1.9
+[1m[92m  Downloaded[0m tinystr v0.8.5
+[1m[92m  Downloaded[0m bitflags v2.13.2
 [1m[92m  Downloaded[0m android_log-sys v0.3.2
 [1m[92m  Downloaded[0m aead v0.5.2
 [1m[92m  Downloaded[0m android_logger v0.14.1
-[1m[92m  Downloaded[0m time-core v0.1.9
 [1m[92m  Downloaded[0m tracing-attributes v0.1.31
-[1m[92m  Downloaded[0m cfg_aliases v0.2.2
-[1m[92m  Downloaded[0m crypto-common v0.1.7
-[1m[92m  Downloaded[0m hex v0.4.3
-[1m[92m  Downloaded[0m idna_adapter v1.2.2
-[1m[92m  Downloaded[0m num-conv v0.2.2
-[1m[92m  Downloaded[0m potential_utf v0.1.6
-[1m[92m  Downloaded[0m scopeguard v1.2.0
-[1m[92m  Downloaded[0m tracing v0.1.44
-[1m[92m  Downloaded[0m universal-hash v0.5.1
-[1m[92m  Downloaded[0m yoke-derive v0.8.4
-[1m[92m  Downloaded[0m tracing-core v0.1.36
-[1m[92m  Downloaded[0m url v2.5.9
-[1m[92m  Downloaded[0m zmij v1.0.23
-[1m[92m  Downloaded[0m utf8_iter v1.1.0
+[1m[92m  Downloaded[0m time-macros v0.2.32
+[1m[92m  Downloaded[0m parking_lot_core v0.9.12
 [1m[92m  Downloaded[0m zeroize v1.9.2
-[1m[92m  Downloaded[0m zerovec v0.11.9
-[1m[92m  Downloaded[0m block-buffer v0.10.4
-[1m[92m  Downloaded[0m env_filter v0.1.4
-[1m[92m  Downloaded[0m form_urlencoded v1.2.3
-[1m[92m  Downloaded[0m ip_network_table v0.2.0
-[1m[92m  Downloaded[0m jni-sys-macros v0.4.1
-[1m[92m  Downloaded[0m zerovec-derive v0.11.7
-[1m[92m  Downloaded[0m ureq v2.12.1
-[1m[92m  Downloaded[0m pin-project-lite v0.2.18
-[1m[92m  Downloaded[0m stable_deref_trait v1.2.1
-[1m[92m  Downloaded[0m zerofrom v0.1.8
-[1m[92m  Downloaded[0m deranged v0.5.9
-[1m[92m  Downloaded[0m lock_api v0.4.14
-[1m[92m  Downloaded[0m typenum v1.20.1
-[1m[92m  Downloaded[0m zerofrom-derive v0.1.8
-[1m[92m  Downloaded[0m untrusted v0.9.0
-[1m[92m  Downloaded[0m parking_lot v0.12.5
-[1m[92m  Downloaded[0m rustls-pki-types v1.16.0
-[1m[92m  Downloaded[0m shlex v2.0.1
-[1m[92m  Downloaded[0m walkdir v2.5.1
-[1m[92m  Downloaded[0m yoke v0.8.4
-[1m[92m  Downloaded[0m base64 v0.22.1
-[1m[92m  Downloaded[0m bitflags v2.13.2
 [1m[92m  Downloaded[0m chacha20poly1305 v0.10.1
+[1m[92m  Downloaded[0m aho-corasick v1.1.5
+[1m[92m  Downloaded[0m cc v1.11.3
+[1m[92m  Downloaded[0m base64 v0.22.1
+[1m[92m  Downloaded[0m zerovec v0.11.9
+[1m[92m  Downloaded[0m tracing-core v0.1.36
+[1m[92m  Downloaded[0m typenum v1.20.1
+[1m[92m  Downloaded[0m zlib-rs v0.6.9
+[1m[92m  Downloaded[0m utf_types v1.0.0
+[1m[92m  Downloaded[0m zerofrom-derive v0.1.8
+[1m[92m  Downloaded[0m yoke-derive v0.8.4
+[1m[92m  Downloaded[0m zeroize_derive v1.5.0
+[1m[92m  Downloaded[0m zerovec-derive v0.11.7
+[1m[92m  Downloaded[0m cpufeatures v0.2.17
+[1m[92m  Downloaded[0m ureq v2.12.1
+[1m[92m  Downloaded[0m version_check v0.9.5
+[1m[92m  Downloaded[0m percent-encoding v2.3.2
+[1m[92m  Downloaded[0m zerofrom v0.1.8
+[1m[92m  Downloaded[0m untrusted v0.9.0
+[1m[92m  Downloaded[0m icu_normalizer_data v2.4.0
+[1m[92m  Downloaded[0m lock_api v0.4.14
+[1m[92m  Downloaded[0m url v2.5.9
+[1m[92m  Downloaded[0m bytes v1.12.2
+[1m[92m  Downloaded[0m blake2 v0.10.6
+[1m[92m  Downloaded[0m utf8_iter v1.1.0
+[1m[92m  Downloaded[0m chacha20 v0.9.1
+[1m[92m  Downloaded[0m zmij v1.0.23
+[1m[92m  Downloaded[0m x25519-dalek v2.0.1
+[1m[92m  Downloaded[0m yoke v0.8.4
+[1m[92m  Downloaded[0m zerotrie v0.2.5
+[1m[92m  Downloaded[0m unicode-ident v1.0.27
+[1m[92m  Downloaded[0m webpki-roots v1.0.12
+[1m[92m  Downloaded[0m block-buffer v0.10.4
+[1m[92m  Downloaded[0m form_urlencoded v1.2.3
+[1m[92m  Downloaded[0m universal-hash v0.5.1
+[1m[92m  Downloaded[0m tracing v0.1.44
+[1m[92m  Downloaded[0m writeable v0.6.4
+[1m[92m  Downloaded[0m walkdir v2.5.1
+[1m[92m  Downloaded[0m webpki-roots v0.26.11
+[1m[92m  Downloaded[0m idna v1.1.0
+[1m[92m  Downloaded[0m litemap v0.8.3
+[1m[92m  Downloaded[0m rand_core v0.6.4
+[1m[92m  Downloaded[0m regex-automata v0.4.19
+[1m[92m  Downloaded[0m flate2 v1.1.11
+[1m[92m  Downloaded[0m rustls-pki-types v1.16.0
+[1m[92m  Downloaded[0m icu_properties_data v2.4.0
+[1m[92m  Downloaded[0m jni-sys v0.4.1
+[1m[92m  Downloaded[0m cfg_aliases v0.2.2
+[1m[92m  Downloaded[0m getrandom v0.2.17
+[1m[92m  Downloaded[0m shlex v2.0.1
+[1m[92m  Downloaded[0m syn v3.0.10
+[1m[92m  Downloaded[0m icu_collections v2.4.0
+[1m[92m  Downloaded[0m synstructure v0.14.0
+[1m[92m  Downloaded[0m deranged v0.5.9
+[1m[92m  Downloaded[0m serde_derive v1.0.229
+[1m[92m  Downloaded[0m potential_utf v0.1.6
+[1m[92m  Downloaded[0m cesu8 v1.1.0
+[1m[92m  Downloaded[0m displaydoc v0.2.7
+[1m[92m  Downloaded[0m jni v0.21.1
+[1m[92m  Downloaded[0m cfg-if v1.0.5
+[1m[92m  Downloaded[0m miniz_oxide v0.9.1
+[1m[92m  Downloaded[0m quote v1.0.47
+[1m[92m  Downloaded[0m crypto-common v0.1.7
+[1m[92m  Downloaded[0m log v0.4.35
+[1m[92m  Downloaded[0m num-conv v0.2.2
+[1m[92m  Downloaded[0m parking_lot v0.12.5
+[1m[92m  Downloaded[0m serde_core v1.0.229
+[1m[92m  Downloaded[0m rustc_version v0.4.1
 [1m[92m  Downloaded[0m combine v4.6.9
 [1m[92m  Downloaded[0m icu_locale_core v2.4.0
-[1m[92m  Downloaded[0m jni v0.21.1
-[1m[92m  Downloaded[0m memchr v2.8.3
-[1m[92m  Downloaded[0m webpki-roots v0.26.11
-[1m[92m  Downloaded[0m zeroize_derive v1.5.0
-[1m[92m  Downloaded[0m cc v1.11.3
-[1m[92m  Downloaded[0m version_check v0.9.5
-[1m[92m  Downloaded[0m writeable v0.6.4
-[1m[92m  Downloaded[0m icu_properties_data v2.4.0
-[1m[92m  Downloaded[0m tinystr v0.8.5
-[1m[92m  Downloaded[0m unicode-ident v1.0.27
-[1m[92m  Downloaded[0m utf_types v1.0.0
-[1m[92m  Downloaded[0m aho-corasick v1.1.5
-[1m[92m  Downloaded[0m zlib-rs v0.6.9
-[1m[92m  Downloaded[0m zerotrie v0.2.5
-[1m[92m  Downloaded[0m syn v2.0.119
-[1m[92m  Downloaded[0m x25519-dalek v2.0.1
-[1m[92m  Downloaded[0m webpki-roots v1.0.12
-[1m[92m  Downloaded[0m curve25519-dalek-derive v0.1.1
-[1m[92m  Downloaded[0m regex-automata v0.4.19
-[1m[92m  Downloaded[0m inout v0.1.4
-[1m[92m  Downloaded[0m cesu8 v1.1.0
-[1m[92m  Downloaded[0m chacha20 v0.9.1
-[1m[92m  Downloaded[0m itoa v1.0.19
-[1m[92m  Downloaded[0m hmac v0.12.1
-[1m[92m  Downloaded[0m jni-sys v0.4.1
-[1m[92m  Downloaded[0m getrandom v0.2.17
-[1m[92m  Downloaded[0m opaque-debug v0.3.1
-[1m[92m  Downloaded[0m rustc_version v0.4.1
-[1m[92m  Downloaded[0m cpufeatures v0.2.17
-[1m[92m  Downloaded[0m cfg-if v1.0.5
-[1m[92m  Downloaded[0m displaydoc v0.2.7
-[1m[92m  Downloaded[0m find-msvc-tools v0.1.15
-[1m[92m  Downloaded[0m powerfmt v0.2.1
-[1m[92m  Downloaded[0m jni-sys v0.3.1
-[1m[92m  Downloaded[0m subtle v2.6.1
-[1m[92m  Downloaded[0m percent-encoding v2.3.2
-[1m[92m  Downloaded[0m same-file v1.0.6
-[1m[92m  Downloaded[0m ip_network v0.4.1
-[1m[92m  Downloaded[0m cipher v0.4.4
-[1m[92m  Downloaded[0m quote v1.0.47
-[1m[92m  Downloaded[0m digest v0.10.7
-[1m[92m  Downloaded[0m generic-array v0.14.7
-[1m[92m  Downloaded[0m log v0.4.35
-[1m[92m  Downloaded[0m rand_core v0.6.4
 [1m[92m  Downloaded[0m simd-adler32 v0.3.10
-[1m[92m  Downloaded[0m synstructure v0.14.0
-[1m[92m  Downloaded[0m thiserror v1.0.69
-[1m[92m  Downloaded[0m poly1305 v0.8.0
-[1m[92m  Downloaded[0m blake2 v0.10.6
-[1m[92m  Downloaded[0m litemap v0.8.3
-[1m[92m  Downloaded[0m once_cell v1.21.4
-[1m[92m  Downloaded[0m thiserror-impl v1.0.69
-[1m[92m  Downloaded[0m ip_network_table-deps-treebitmap v0.5.0
-[1m[92m  Downloaded[0m parking_lot_core v0.9.12
-[1m[92m  Downloaded[0m serde_core v1.0.229
-[1m[92m  Downloaded[0m serde v1.0.229
-[1m[92m  Downloaded[0m smallvec v1.16.6
-[1m[92m  Downloaded[0m bytes v1.12.2
-[1m[92m  Downloaded[0m icu_provider v2.4.0
-[1m[92m  Downloaded[0m semver v1.0.28
-[1m[92m  Downloaded[0m proc-macro2 v1.0.107
-[1m[92m  Downloaded[0m crc32fast v1.5.6
-[1m[92m  Downloaded[0m serde_derive v1.0.229
+[1m[92m  Downloaded[0m digest v0.10.7
+[1m[92m  Downloaded[0m jni-sys-macros v0.4.1
+[1m[92m  Downloaded[0m powerfmt v0.2.1
+[1m[92m  Downloaded[0m curve25519-dalek-derive v0.1.1
+[1m[92m  Downloaded[0m same-file v1.0.6
 [1m[92m  Downloaded[0m boringtun v0.7.1
-[1m[92m  Downloaded[0m icu_normalizer_data v2.4.0
-[1m[92m  Downloaded[0m miniz_oxide v0.9.1
-[1m[92m  Downloaded[0m rustls-webpki v0.103.17
-[1m[92m  Downloaded[0m flate2 v1.1.11
-[1m[92m  Downloaded[0m icu_collections v2.4.0
-[1m[92m  Downloaded[0m icu_properties v2.4.0
-[1m[92m  Downloaded[0m idna v1.1.0
+[1m[92m  Downloaded[0m icu_provider v2.4.0
+[1m[92m  Downloaded[0m ip_network v0.4.1
+[1m[92m  Downloaded[0m generic-array v0.14.7
+[1m[92m  Downloaded[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m  Downloaded[0m semver v1.0.28
 [1m[92m  Downloaded[0m regex v1.13.2
-[1m[92m  Downloaded[0m serde_json v1.0.154
-[1m[92m  Downloaded[0m portable-atomic v1.15.0
-[1m[92m  Downloaded[0m curve25519-dalek v4.1.3
-[1m[92m  Downloaded[0m time v0.3.55
-[1m[92m  Downloaded[0m syn v3.0.10
-[1m[92m  Downloaded[0m regex-syntax v0.8.12
-[1m[92m  Downloaded[0m rustls v0.23.46
+[1m[92m  Downloaded[0m subtle v2.6.1
+[1m[92m  Downloaded[0m once_cell v1.21.4
+[1m[92m  Downloaded[0m env_filter v0.1.4
+[1m[92m  Downloaded[0m find-msvc-tools v0.1.15
+[1m[92m  Downloaded[0m stable_deref_trait v1.2.1
+[1m[92m  Downloaded[0m jni-sys v0.3.1
+[1m[92m  Downloaded[0m idna_adapter v1.2.2
+[1m[92m  Downloaded[0m ip_network_table v0.2.0
 [1m[92m  Downloaded[0m nix v0.31.4
+[1m[92m  Downloaded[0m poly1305 v0.8.0
+[1m[92m  Downloaded[0m proc-macro2 v1.0.107
+[1m[92m  Downloaded[0m rustls-webpki v0.103.17
+[1m[92m  Downloaded[0m smallvec v1.16.6
+[1m[92m  Downloaded[0m serde_json v1.0.154
+[1m[92m  Downloaded[0m time v0.3.55
+[1m[92m  Downloaded[0m crc32fast v1.5.6
+[1m[92m  Downloaded[0m inout v0.1.4
+[1m[92m  Downloaded[0m icu_properties v2.4.0
+[1m[92m  Downloaded[0m hex v0.4.3
+[1m[92m  Downloaded[0m itoa v1.0.19
+[1m[92m  Downloaded[0m opaque-debug v0.3.1
+[1m[92m  Downloaded[0m pin-project-lite v0.2.18
+[1m[92m  Downloaded[0m thiserror v1.0.69
+[1m[92m  Downloaded[0m thiserror-impl v1.0.69
+[1m[92m  Downloaded[0m cipher v0.4.4
+[1m[92m  Downloaded[0m portable-atomic v1.15.0
+[1m[92m  Downloaded[0m serde v1.0.229
+[1m[92m  Downloaded[0m hmac v0.12.1
+[1m[92m  Downloaded[0m memchr v2.8.3
+[1m[92m  Downloaded[0m scopeguard v1.2.0
+[1m[92m  Downloaded[0m regex-syntax v0.8.12
+[1m[92m  Downloaded[0m syn v2.0.119
+[1m[92m  Downloaded[0m curve25519-dalek v4.1.3
+[1m[92m  Downloaded[0m rustls v0.23.46
+[1m[92m  Downloaded[0m icu_normalizer v2.4.0
 [1m[92m  Downloaded[0m libc v0.2.191
 [1m[92m  Downloaded[0m ring v0.17.14
-[1m[92m  Downloaded[0m icu_normalizer v2.4.0
 [1m[92m   Compiling[0m proc-macro2 v1.0.107
 [1m[92m   Compiling[0m quote v1.0.47
 [1m[92m   Compiling[0m unicode-ident v1.0.27
@@ -142,124 +142,124 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[92m   Compiling[0m libc v0.2.191
 [1m[92m   Compiling[0m version_check v0.9.5
 [1m[92m   Compiling[0m generic-array v0.14.7
-[1m[92m   Compiling[0m typenum v1.20.1
 [1m[92m   Compiling[0m stable_deref_trait v1.2.1
-[1m[92m   Compiling[0m subtle v2.6.1
-[1m[92m   Compiling[0m getrandom v0.2.17
 [1m[92m   Compiling[0m syn v3.0.10
 [1m[92m   Compiling[0m syn v2.0.119
-[1m[92m   Compiling[0m rand_core v0.6.4
-[1m[92m   Compiling[0m shlex v2.0.1
-[1m[92m   Compiling[0m crypto-common v0.1.7
-[1m[92m   Compiling[0m find-msvc-tools v0.1.15
-[1m[92m   Compiling[0m memchr v2.8.3
-[1m[92m   Compiling[0m cc v1.11.3
-[1m[92m   Compiling[0m writeable v0.6.4
-[1m[92m   Compiling[0m smallvec v1.16.6
-[1m[92m   Compiling[0m utf_types v1.0.0
-[1m[92m   Compiling[0m litemap v0.8.3
-[1m[92m   Compiling[0m utf8_iter v1.1.0
+[1m[92m   Compiling[0m typenum v1.20.1
+[1m[92m   Compiling[0m getrandom v0.2.17
 [1m[92m   Compiling[0m synstructure v0.14.0
-[1m[92m   Compiling[0m ring v0.17.14
-[1m[92m   Compiling[0m icu_normalizer_data v2.4.0
-[1m[92m   Compiling[0m icu_properties_data v2.4.0
+[1m[92m   Compiling[0m rand_core v0.6.4
+[1m[92m   Compiling[0m subtle v2.6.1
+[1m[92m   Compiling[0m crypto-common v0.1.7
+[1m[92m   Compiling[0m memchr v2.8.3
+[1m[92m   Compiling[0m shlex v2.0.1
 [1m[92m   Compiling[0m zerofrom-derive v0.1.8
 [1m[92m   Compiling[0m yoke-derive v0.8.4
 [1m[92m   Compiling[0m zerofrom v0.1.8
 [1m[92m   Compiling[0m zerovec-derive v0.11.7
-[1m[92m   Compiling[0m yoke v0.8.4
 [1m[92m   Compiling[0m displaydoc v0.2.7
-[1m[92m   Compiling[0m zerotrie v0.2.5
+[1m[92m   Compiling[0m yoke v0.8.4
+[1m[92m   Compiling[0m find-msvc-tools v0.1.15
+[1m[92m   Compiling[0m cc v1.11.3
+[1m[92m   Compiling[0m smallvec v1.16.6
+[1m[92m   Compiling[0m writeable v0.6.4
 [1m[92m   Compiling[0m zerovec v0.11.9
-[1m[92m   Compiling[0m zeroize_derive v1.5.0
-[1m[92m   Compiling[0m semver v1.0.28
-[1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m utf_types v1.0.0
+[1m[92m   Compiling[0m litemap v0.8.3
+[1m[92m   Compiling[0m utf8_iter v1.1.0
 [1m[92m   Compiling[0m tinystr v0.8.5
 [1m[92m   Compiling[0m potential_utf v0.1.6
-[1m[92m   Compiling[0m rustc_version v0.4.1
 [1m[92m   Compiling[0m icu_locale_core v2.4.0
+[1m[92m   Compiling[0m zerotrie v0.2.5
+[1m[92m   Compiling[0m zeroize_derive v1.5.0
+[1m[92m   Compiling[0m icu_properties_data v2.4.0
+[1m[92m   Compiling[0m ring v0.17.14
+[1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m icu_normalizer_data v2.4.0
 [1m[92m   Compiling[0m icu_collections v2.4.0
+[1m[92m   Compiling[0m semver v1.0.28
+[1m[92m   Compiling[0m icu_provider v2.4.0
+[1m[92m   Compiling[0m rustc_version v0.4.1
 [1m[92m   Compiling[0m rustls-pki-types v1.16.0
+[1m[92m   Compiling[0m once_cell v1.21.4
 [1m[92m   Compiling[0m untrusted v0.9.0
 [1m[92m   Compiling[0m log v0.4.35
 [1m[92m   Compiling[0m serde_core v1.0.229
-[1m[92m   Compiling[0m once_cell v1.21.4
+[1m[92m   Compiling[0m icu_normalizer v2.4.0
+[1m[92m   Compiling[0m icu_properties v2.4.0
 [1m[92m   Compiling[0m curve25519-dalek v4.1.3
 [1m[92m   Compiling[0m aho-corasick v1.1.5
 [1m[92m   Compiling[0m block-buffer v0.10.4
 [1m[92m   Compiling[0m inout v0.1.4
-[1m[92m   Compiling[0m icu_provider v2.4.0
-[1m[92m   Compiling[0m icu_properties v2.4.0
-[1m[92m   Compiling[0m icu_normalizer v2.4.0
+[1m[92m   Compiling[0m cfg_aliases v0.2.2
+[1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m regex-syntax v0.8.12
 [1m[92m   Compiling[0m crc32fast v1.5.6
-[1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m parking_lot_core v0.9.12
-[1m[92m   Compiling[0m cfg_aliases v0.2.2
-[1m[92m   Compiling[0m nix v0.31.4
-[1m[92m   Compiling[0m regex-automata v0.4.19
 [1m[92m   Compiling[0m idna_adapter v1.2.2
+[1m[92m   Compiling[0m regex-automata v0.4.19
+[1m[92m   Compiling[0m nix v0.31.4
 [1m[92m   Compiling[0m cipher v0.4.4
 [1m[92m   Compiling[0m digest v0.10.7
 [1m[92m   Compiling[0m jni-sys-macros v0.4.1
 [1m[92m   Compiling[0m universal-hash v0.5.1
+[1m[92m   Compiling[0m jni-sys v0.3.1
 [1m[92m   Compiling[0m percent-encoding v2.3.2
-[1m[92m   Compiling[0m portable-atomic v1.15.0
-[1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m simd-adler32 v0.3.10
+[1m[92m   Compiling[0m scopeguard v1.2.0
 [1m[92m   Compiling[0m serde v1.0.229
 [1m[92m   Compiling[0m rustls v0.23.46
 [1m[92m   Compiling[0m serde_json v1.0.154
-[1m[92m   Compiling[0m adler2 v2.0.1
+[1m[92m   Compiling[0m opaque-debug v0.3.1
 [1m[92m   Compiling[0m thiserror v1.0.69
-[1m[92m   Compiling[0m simd-adler32 v0.3.10
-[1m[92m   Compiling[0m jni-sys v0.3.1
-[1m[92m   Compiling[0m scopeguard v1.2.0
-[1m[92m   Compiling[0m lock_api v0.4.14
+[1m[92m   Compiling[0m portable-atomic v1.15.0
+[1m[92m   Compiling[0m adler2 v2.0.1
 [1m[92m   Compiling[0m miniz_oxide v0.9.1
-[1m[92m   Compiling[0m regex v1.13.2
 [1m[92m   Compiling[0m poly1305 v0.8.0
+[1m[92m   Compiling[0m lock_api v0.4.14
 [1m[92m   Compiling[0m form_urlencoded v1.2.3
 [1m[92m   Compiling[0m jni-sys v0.4.1
+[1m[92m   Compiling[0m regex v1.13.2
 [1m[92m   Compiling[0m chacha20 v0.9.1
-[1m[92m   Compiling[0m idna v1.1.0
 [1m[92m   Compiling[0m rustls-webpki v0.103.17
+[1m[92m   Compiling[0m idna v1.1.0
 [1m[92m   Compiling[0m tracing-core v0.1.36
 [1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m thiserror-impl v1.0.69
 [1m[92m   Compiling[0m tracing-attributes v0.1.31
 [1m[92m   Compiling[0m serde_derive v1.0.229
 [1m[92m   Compiling[0m aead v0.5.2
-[1m[92m   Compiling[0m pin-project-lite v0.2.18
-[1m[92m   Compiling[0m bytes v1.12.2
-[1m[92m   Compiling[0m itoa v1.0.19
-[1m[92m   Compiling[0m base64 v0.22.1
-[1m[92m   Compiling[0m bitflags v2.13.2
 [1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
 [1m[92m   Compiling[0m ip_network v0.4.1
-[1m[92m   Compiling[0m ip_network_table v0.2.0
-[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m base64 v0.22.1
+[1m[92m   Compiling[0m bytes v1.12.2
+[1m[92m   Compiling[0m itoa v1.0.19
+[1m[92m   Compiling[0m pin-project-lite v0.2.18
+[1m[92m   Compiling[0m bitflags v2.13.2
 [1m[92m   Compiling[0m tracing v0.1.44
+[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m ip_network_table v0.2.0
 [1m[92m   Compiling[0m chacha20poly1305 v0.10.1
 [1m[92m   Compiling[0m webpki-roots v0.26.11
 [1m[92m   Compiling[0m parking_lot v0.12.5
 [1m[92m   Compiling[0m flate2 v1.1.11
-[1m[92m   Compiling[0m x25519-dalek v2.0.1
 [1m[92m   Compiling[0m url v2.5.9
+[1m[92m   Compiling[0m x25519-dalek v2.0.1
 [1m[92m   Compiling[0m env_filter v0.1.4
-[1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m blake2 v0.10.6
+[1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m cesu8 v1.1.0
-[1m[92m   Compiling[0m num-conv v0.2.2
-[1m[92m   Compiling[0m deranged v0.5.9
 [1m[92m   Compiling[0m powerfmt v0.2.1
+[1m[92m   Compiling[0m num-conv v0.2.2
 [1m[92m   Compiling[0m hex v0.4.3
-[1m[92m   Compiling[0m android_log-sys v0.3.2
 [1m[92m   Compiling[0m time-core v0.1.9
-[1m[92m   Compiling[0m boringtun v0.7.1
-[1m[92m   Compiling[0m ureq v2.12.1
-[1m[92m   Compiling[0m time v0.3.55
+[1m[92m   Compiling[0m deranged v0.5.9
+[1m[92m   Compiling[0m android_log-sys v0.3.2
 [1m[92m   Compiling[0m android_logger v0.14.1
 [1m[92m   Compiling[0m jni v0.21.1
+[1m[92m   Compiling[0m boringtun v0.7.1
+[1m[92m   Compiling[0m time v0.3.55
+[1m[92m   Compiling[0m ureq v2.12.1
 [1m[92m   Compiling[0m halo-core v0.1.0 (/home/runner/work/halo/halo/rust)
 [1m[33mwarning[0m[1m: function `start_named_tun` is never used[0m
   [1m[94m--> [0msrc/tunnel.rs:66:8
@@ -270,108 +270,108 @@ date=Fri Nov 27 04:43:53 UTC 2026
    [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
 [1m[33mwarning[0m: `halo-core` (lib) generated 1 warning
-[1m[92m    Finished[0m `release` profile [optimized] target(s) in 41.75s
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 27.78s
 [1m[92m   Compiling[0m cfg-if v1.0.5
 [1m[92m   Compiling[0m libc v0.2.191
 [1m[92m   Compiling[0m zerofrom v0.1.8
 [1m[92m   Compiling[0m generic-array v0.14.7
-[1m[92m   Compiling[0m stable_deref_trait v1.2.1
 [1m[92m   Compiling[0m typenum v1.20.1
-[1m[92m   Compiling[0m yoke v0.8.4
+[1m[92m   Compiling[0m stable_deref_trait v1.2.1
 [1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m yoke v0.8.4
 [1m[92m   Compiling[0m zerovec v0.11.9
 [1m[92m   Compiling[0m subtle v2.6.1
 [1m[92m   Compiling[0m memchr v2.8.3
 [1m[92m   Compiling[0m getrandom v0.2.17
 [1m[92m   Compiling[0m rand_core v0.6.4
 [1m[92m   Compiling[0m tinystr v0.8.5
+[1m[92m   Compiling[0m utf_types v1.0.0
 [1m[92m   Compiling[0m smallvec v1.16.6
 [1m[92m   Compiling[0m litemap v0.8.3
 [1m[92m   Compiling[0m writeable v0.6.4
-[1m[92m   Compiling[0m utf_types v1.0.0
-[1m[92m   Compiling[0m potential_utf v0.1.6
 [1m[92m   Compiling[0m utf8_iter v1.1.0
-[1m[92m   Compiling[0m icu_locale_core v2.4.0
+[1m[92m   Compiling[0m potential_utf v0.1.6
+[1m[92m   Compiling[0m crypto-common v0.1.7
 [1m[92m   Compiling[0m zerotrie v0.2.5
+[1m[92m   Compiling[0m icu_locale_core v2.4.0
 [1m[92m   Compiling[0m icu_properties_data v2.4.0
 [1m[92m   Compiling[0m icu_normalizer_data v2.4.0
 [1m[92m   Compiling[0m icu_collections v2.4.0
-[1m[92m   Compiling[0m crypto-common v0.1.7
 [1m[92m   Compiling[0m ring v0.17.14
 [1m[92m   Compiling[0m rustls-pki-types v1.16.0
-[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m once_cell v1.21.4
 [1m[92m   Compiling[0m log v0.4.35
 [1m[92m   Compiling[0m icu_provider v2.4.0
-[1m[92m   Compiling[0m once_cell v1.21.4
-[1m[92m   Compiling[0m icu_properties v2.4.0
+[1m[92m   Compiling[0m untrusted v0.9.0
 [1m[92m   Compiling[0m icu_normalizer v2.4.0
+[1m[92m   Compiling[0m icu_properties v2.4.0
 [1m[92m   Compiling[0m serde_core v1.0.229
 [1m[92m   Compiling[0m block-buffer v0.10.4
 [1m[92m   Compiling[0m inout v0.1.4
 [1m[92m   Compiling[0m aho-corasick v1.1.5
 [1m[92m   Compiling[0m regex-syntax v0.8.12
+[1m[92m   Compiling[0m crc32fast v1.5.6
 [1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m parking_lot_core v0.9.12
 [1m[92m   Compiling[0m idna_adapter v1.2.2
-[1m[92m   Compiling[0m crc32fast v1.5.6
 [1m[92m   Compiling[0m cipher v0.4.4
 [1m[92m   Compiling[0m regex-automata v0.4.19
 [1m[92m   Compiling[0m digest v0.10.7
 [1m[92m   Compiling[0m curve25519-dalek v4.1.3
 [1m[92m   Compiling[0m universal-hash v0.5.1
+[1m[92m   Compiling[0m adler2 v2.0.1
 [1m[92m   Compiling[0m simd-adler32 v0.3.10
 [1m[92m   Compiling[0m scopeguard v1.2.0
-[1m[92m   Compiling[0m percent-encoding v2.3.2
 [1m[92m   Compiling[0m opaque-debug v0.3.1
-[1m[92m   Compiling[0m adler2 v2.0.1
-[1m[92m   Compiling[0m serde v1.0.229
-[1m[92m   Compiling[0m miniz_oxide v0.9.1
-[1m[92m   Compiling[0m poly1305 v0.8.0
+[1m[92m   Compiling[0m percent-encoding v2.3.2
 [1m[92m   Compiling[0m form_urlencoded v1.2.3
 [1m[92m   Compiling[0m jni-sys v0.3.1
+[1m[92m   Compiling[0m poly1305 v0.8.0
 [1m[92m   Compiling[0m lock_api v0.4.14
 [1m[92m   Compiling[0m thiserror v1.0.69
 [1m[92m   Compiling[0m serde_json v1.0.154
 [1m[92m   Compiling[0m rustls v0.23.46
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
+[1m[92m   Compiling[0m serde v1.0.229
 [1m[92m   Compiling[0m portable-atomic v1.15.0
 [1m[92m   Compiling[0m jni-sys v0.4.1
 [1m[92m   Compiling[0m regex v1.13.2
 [1m[92m   Compiling[0m rustls-webpki v0.103.17
 [1m[92m   Compiling[0m chacha20 v0.9.1
-[1m[92m   Compiling[0m nix v0.31.4
 [1m[92m   Compiling[0m idna v1.1.0
-[1m[92m   Compiling[0m tracing-core v0.1.36
+[1m[92m   Compiling[0m nix v0.31.4
 [1m[92m   Compiling[0m webpki-roots v1.0.12
+[1m[92m   Compiling[0m tracing-core v0.1.36
 [1m[92m   Compiling[0m aead v0.5.2
+[1m[92m   Compiling[0m bytes v1.12.2
+[1m[92m   Compiling[0m itoa v1.0.19
 [1m[92m   Compiling[0m bitflags v2.13.2
 [1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
 [1m[92m   Compiling[0m ip_network v0.4.1
-[1m[92m   Compiling[0m pin-project-lite v0.2.18
-[1m[92m   Compiling[0m bytes v1.12.2
 [1m[92m   Compiling[0m base64 v0.22.1
-[1m[92m   Compiling[0m itoa v1.0.19
-[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m pin-project-lite v0.2.18
 [1m[92m   Compiling[0m tracing v0.1.44
 [1m[92m   Compiling[0m ip_network_table v0.2.0
+[1m[92m   Compiling[0m combine v4.6.9
 [1m[92m   Compiling[0m chacha20poly1305 v0.10.1
 [1m[92m   Compiling[0m webpki-roots v0.26.11
-[1m[92m   Compiling[0m parking_lot v0.12.5
-[1m[92m   Compiling[0m url v2.5.9
 [1m[92m   Compiling[0m flate2 v1.1.11
+[1m[92m   Compiling[0m parking_lot v0.12.5
 [1m[92m   Compiling[0m x25519-dalek v2.0.1
+[1m[92m   Compiling[0m url v2.5.9
 [1m[92m   Compiling[0m env_filter v0.1.4
 [1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m blake2 v0.10.6
+[1m[92m   Compiling[0m num-conv v0.2.2
 [1m[92m   Compiling[0m deranged v0.5.9
 [1m[92m   Compiling[0m powerfmt v0.2.1
-[1m[92m   Compiling[0m time-core v0.1.9
 [1m[92m   Compiling[0m hex v0.4.3
-[1m[92m   Compiling[0m cesu8 v1.1.0
-[1m[92m   Compiling[0m num-conv v0.2.2
 [1m[92m   Compiling[0m android_log-sys v0.3.2
+[1m[92m   Compiling[0m time-core v0.1.9
+[1m[92m   Compiling[0m cesu8 v1.1.0
 [1m[92m   Compiling[0m android_logger v0.14.1
-[1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m jni v0.21.1
+[1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m boringtun v0.7.1
 [1m[92m   Compiling[0m ureq v2.12.1
 [1m[92m   Compiling[0m halo-core v0.1.0 (/home/runner/work/halo/halo/rust)
@@ -384,17 +384,17 @@ date=Fri Nov 27 04:43:53 UTC 2026
    [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
 [1m[33mwarning[0m: `halo-core` (lib) generated 1 warning
-[1m[92m    Finished[0m `release` profile [optimized] target(s) in 25.36s
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 19.86s
 [1m[92m   Compiling[0m cfg-if v1.0.5
 [1m[92m   Compiling[0m libc v0.2.191
 [1m[92m   Compiling[0m zerofrom v0.1.8
 [1m[92m   Compiling[0m generic-array v0.14.7
-[1m[92m   Compiling[0m stable_deref_trait v1.2.1
 [1m[92m   Compiling[0m typenum v1.20.1
-[1m[92m   Compiling[0m zeroize v1.9.2
+[1m[92m   Compiling[0m stable_deref_trait v1.2.1
 [1m[92m   Compiling[0m yoke v0.8.4
-[1m[92m   Compiling[0m subtle v2.6.1
+[1m[92m   Compiling[0m zeroize v1.9.2
 [1m[92m   Compiling[0m zerovec v0.11.9
+[1m[92m   Compiling[0m subtle v2.6.1
 [1m[92m   Compiling[0m memchr v2.8.3
 [1m[92m   Compiling[0m tinystr v0.8.5
 [1m[92m   Compiling[0m getrandom v0.2.17
@@ -402,33 +402,33 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[92m   Compiling[0m rand_core v0.6.4
 [1m[92m   Compiling[0m litemap v0.8.3
 [1m[92m   Compiling[0m writeable v0.6.4
-[1m[92m   Compiling[0m crypto-common v0.1.7
 [1m[92m   Compiling[0m smallvec v1.16.6
+[1m[92m   Compiling[0m crypto-common v0.1.7
 [1m[92m   Compiling[0m utf8_iter v1.1.0
 [1m[92m   Compiling[0m icu_locale_core v2.4.0
 [1m[92m   Compiling[0m potential_utf v0.1.6
 [1m[92m   Compiling[0m zerotrie v0.2.5
 [1m[92m   Compiling[0m icu_properties_data v2.4.0
 [1m[92m   Compiling[0m icu_normalizer_data v2.4.0
-[1m[92m   Compiling[0m icu_collections v2.4.0
 [1m[92m   Compiling[0m ring v0.17.14
+[1m[92m   Compiling[0m icu_collections v2.4.0
 [1m[92m   Compiling[0m cpufeatures v0.2.17
 [1m[92m   Compiling[0m rustls-pki-types v1.16.0
 [1m[92m   Compiling[0m untrusted v0.9.0
 [1m[92m   Compiling[0m log v0.4.35
 [1m[92m   Compiling[0m icu_provider v2.4.0
 [1m[92m   Compiling[0m once_cell v1.21.4
-[1m[92m   Compiling[0m serde_core v1.0.229
 [1m[92m   Compiling[0m icu_properties v2.4.0
 [1m[92m   Compiling[0m icu_normalizer v2.4.0
+[1m[92m   Compiling[0m serde_core v1.0.229
 [1m[92m   Compiling[0m inout v0.1.4
 [1m[92m   Compiling[0m block-buffer v0.10.4
 [1m[92m   Compiling[0m aho-corasick v1.1.5
 [1m[92m   Compiling[0m regex-syntax v0.8.12
-[1m[92m   Compiling[0m crc32fast v1.5.6
-[1m[92m   Compiling[0m parking_lot_core v0.9.12
 [1m[92m   Compiling[0m idna_adapter v1.2.2
+[1m[92m   Compiling[0m parking_lot_core v0.9.12
 [1m[92m   Compiling[0m zmij v1.0.23
+[1m[92m   Compiling[0m crc32fast v1.5.6
 [1m[92m   Compiling[0m digest v0.10.7
 [1m[92m   Compiling[0m regex-automata v0.4.19
 [1m[92m   Compiling[0m cipher v0.4.4
@@ -436,23 +436,23 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[92m   Compiling[0m universal-hash v0.5.1
 [1m[92m   Compiling[0m curve25519-dalek-derive v0.1.1
 [1m[92m   Compiling[0m scopeguard v1.2.0
-[1m[92m   Compiling[0m simd-adler32 v0.3.10
 [1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m simd-adler32 v0.3.10
 [1m[92m   Compiling[0m adler2 v2.0.1
 [1m[92m   Compiling[0m percent-encoding v2.3.2
-[1m[92m   Compiling[0m portable-atomic v1.15.0
 [1m[92m   Compiling[0m miniz_oxide v0.9.1
 [1m[92m   Compiling[0m form_urlencoded v1.2.3
 [1m[92m   Compiling[0m jni-sys v0.3.1
-[1m[92m   Compiling[0m poly1305 v0.8.0
+[1m[92m   Compiling[0m portable-atomic v1.15.0
 [1m[92m   Compiling[0m thiserror v1.0.69
 [1m[92m   Compiling[0m serde_json v1.0.154
 [1m[92m   Compiling[0m rustls v0.23.46
-[1m[92m   Compiling[0m lock_api v0.4.14
+[1m[92m   Compiling[0m poly1305 v0.8.0
 [1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m lock_api v0.4.14
 [1m[92m   Compiling[0m jni-sys v0.4.1
-[1m[92m   Compiling[0m chacha20 v0.9.1
 [1m[92m   Compiling[0m regex v1.13.2
+[1m[92m   Compiling[0m chacha20 v0.9.1
 [1m[92m   Compiling[0m rustls-webpki v0.103.17
 [1m[92m   Compiling[0m idna v1.1.0
 [1m[92m   Compiling[0m nix v0.31.4
@@ -460,35 +460,35 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m aead v0.5.2
 [1m[92m   Compiling[0m base64 v0.22.1
-[1m[92m   Compiling[0m pin-project-lite v0.2.18
+[1m[92m   Compiling[0m bytes v1.12.2
+[1m[92m   Compiling[0m itoa v1.0.19
 [1m[92m   Compiling[0m bitflags v2.13.2
 [1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
 [1m[92m   Compiling[0m ip_network v0.4.1
-[1m[92m   Compiling[0m bytes v1.12.2
-[1m[92m   Compiling[0m itoa v1.0.19
-[1m[92m   Compiling[0m ip_network_table v0.2.0
-[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m pin-project-lite v0.2.18
 [1m[92m   Compiling[0m tracing v0.1.44
+[1m[92m   Compiling[0m combine v4.6.9
+[1m[92m   Compiling[0m ip_network_table v0.2.0
 [1m[92m   Compiling[0m chacha20poly1305 v0.10.1
 [1m[92m   Compiling[0m webpki-roots v0.26.11
-[1m[92m   Compiling[0m flate2 v1.1.11
 [1m[92m   Compiling[0m url v2.5.9
 [1m[92m   Compiling[0m parking_lot v0.12.5
+[1m[92m   Compiling[0m flate2 v1.1.11
 [1m[92m   Compiling[0m env_filter v0.1.4
 [1m[92m   Compiling[0m x25519-dalek v2.0.1
 [1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m blake2 v0.10.6
+[1m[92m   Compiling[0m android_log-sys v0.3.2
 [1m[92m   Compiling[0m num-conv v0.2.2
 [1m[92m   Compiling[0m powerfmt v0.2.1
 [1m[92m   Compiling[0m deranged v0.5.9
-[1m[92m   Compiling[0m android_log-sys v0.3.2
 [1m[92m   Compiling[0m time-core v0.1.9
 [1m[92m   Compiling[0m cesu8 v1.1.0
 [1m[92m   Compiling[0m hex v0.4.3
 [1m[92m   Compiling[0m boringtun v0.7.1
-[1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m jni v0.21.1
 [1m[92m   Compiling[0m ureq v2.12.1
+[1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m android_logger v0.14.1
 [1m[92m   Compiling[0m halo-core v0.1.0 (/home/runner/work/halo/halo/rust)
 [1m[33mwarning[0m[1m: function `start_named_tun` is never used[0m
@@ -500,37 +500,36 @@ date=Fri Nov 27 04:43:53 UTC 2026
    [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
 [1m[33mwarning[0m: `halo-core` (lib) generated 1 warning
-[1m[92m    Finished[0m `release` profile [optimized] target(s) in 25.83s
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 20.02s
 [1m[92m   Compiling[0m proc-macro2 v1.0.107
 [1m[92m   Compiling[0m quote v1.0.47
 [1m[92m   Compiling[0m unicode-ident v1.0.27
 [1m[92m   Compiling[0m cfg-if v1.0.5
 [1m[92m   Compiling[0m libc v0.2.191
 [1m[92m   Compiling[0m version_check v0.9.5
-[1m[92m   Compiling[0m generic-array v0.14.7
-[1m[92m   Compiling[0m typenum v1.20.1
 [1m[92m   Compiling[0m stable_deref_trait v1.2.1
+[1m[92m   Compiling[0m typenum v1.20.1
+[1m[92m   Compiling[0m generic-array v0.14.7
 [1m[92m   Compiling[0m subtle v2.6.1
 [1m[92m   Compiling[0m find-msvc-tools v0.1.15
-[1m[92m   Compiling[0m shlex v2.0.1
 [1m[92m   Compiling[0m syn v3.0.10
 [1m[92m   Compiling[0m syn v2.0.119
+[1m[92m   Compiling[0m shlex v2.0.1
 [1m[92m   Compiling[0m cc v1.11.3
 [1m[92m   Compiling[0m getrandom v0.2.17
 [1m[92m   Compiling[0m rand_core v0.6.4
 [1m[92m   Compiling[0m crypto-common v0.1.7
 [1m[92m   Compiling[0m utf_types v1.0.0
 [1m[92m   Compiling[0m litemap v0.8.3
+[1m[92m   Compiling[0m synstructure v0.14.0
 [1m[92m   Compiling[0m writeable v0.6.4
 [1m[92m   Compiling[0m smallvec v1.16.6
-[1m[92m   Compiling[0m utf8_iter v1.1.0
-[1m[92m   Compiling[0m synstructure v0.14.0
 [1m[92m   Compiling[0m ring v0.17.14
-[1m[92m   Compiling[0m icu_normalizer_data v2.4.0
+[1m[92m   Compiling[0m utf8_iter v1.1.0
 [1m[92m   Compiling[0m icu_properties_data v2.4.0
-[1m[92m   Compiling[0m semver v1.0.28
+[1m[92m   Compiling[0m icu_normalizer_data v2.4.0
 [1m[92m   Compiling[0m cpufeatures v0.2.17
-[1m[92m   Compiling[0m rustc_version v0.4.1
+[1m[92m   Compiling[0m semver v1.0.28
 [1m[92m   Compiling[0m zerofrom-derive v0.1.8
 [1m[92m   Compiling[0m yoke-derive v0.8.4
 [1m[92m   Compiling[0m zerofrom v0.1.8
@@ -539,61 +538,62 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[92m   Compiling[0m displaydoc v0.2.7
 [1m[92m   Compiling[0m zerotrie v0.2.5
 [1m[92m   Compiling[0m zerovec v0.11.9
+[1m[92m   Compiling[0m rustc_version v0.4.1
 [1m[92m   Compiling[0m zeroize_derive v1.5.0
-[1m[92m   Compiling[0m untrusted v0.9.0
-[1m[92m   Compiling[0m serde_core v1.0.229
-[1m[92m   Compiling[0m once_cell v1.21.4
-[1m[92m   Compiling[0m zeroize v1.9.2
 [1m[92m   Compiling[0m tinystr v0.8.5
 [1m[92m   Compiling[0m potential_utf v0.1.6
 [1m[92m   Compiling[0m icu_locale_core v2.4.0
 [1m[92m   Compiling[0m icu_collections v2.4.0
+[1m[92m   Compiling[0m zeroize v1.9.2
 [1m[92m   Compiling[0m rustls-pki-types v1.16.0
+[1m[92m   Compiling[0m once_cell v1.21.4
+[1m[92m   Compiling[0m untrusted v0.9.0
+[1m[92m   Compiling[0m serde_core v1.0.229
 [1m[92m   Compiling[0m curve25519-dalek v4.1.3
-[1m[92m   Compiling[0m block-buffer v0.10.4
-[1m[92m   Compiling[0m inout v0.1.4
-[1m[92m   Compiling[0m crc32fast v1.5.6
-[1m[92m   Compiling[0m cfg_aliases v0.2.2
-[1m[92m   Compiling[0m parking_lot_core v0.9.12
-[1m[92m   Compiling[0m zmij v1.0.23
 [1m[92m   Compiling[0m icu_provider v2.4.0
-[1m[92m   Compiling[0m nix v0.31.4
+[1m[92m   Compiling[0m inout v0.1.4
+[1m[92m   Compiling[0m block-buffer v0.10.4
+[1m[92m   Compiling[0m parking_lot_core v0.9.12
 [1m[92m   Compiling[0m icu_properties v2.4.0
 [1m[92m   Compiling[0m icu_normalizer v2.4.0
-[1m[92m   Compiling[0m cipher v0.4.4
+[1m[92m   Compiling[0m zmij v1.0.23
+[1m[92m   Compiling[0m crc32fast v1.5.6
+[1m[92m   Compiling[0m cfg_aliases v0.2.2
+[1m[92m   Compiling[0m nix v0.31.4
 [1m[92m   Compiling[0m digest v0.10.7
+[1m[92m   Compiling[0m cipher v0.4.4
 [1m[92m   Compiling[0m curve25519-dalek-derive v0.1.1
-[1m[92m   Compiling[0m universal-hash v0.5.1
-[1m[92m   Compiling[0m serde v1.0.229
 [1m[92m   Compiling[0m idna_adapter v1.2.2
-[1m[92m   Compiling[0m serde_json v1.0.154
-[1m[92m   Compiling[0m scopeguard v1.2.0
-[1m[92m   Compiling[0m opaque-debug v0.3.1
+[1m[92m   Compiling[0m universal-hash v0.5.1
 [1m[92m   Compiling[0m rustls v0.23.46
 [1m[92m   Compiling[0m adler2 v2.0.1
 [1m[92m   Compiling[0m simd-adler32 v0.3.10
 [1m[92m   Compiling[0m portable-atomic v1.15.0
 [1m[92m   Compiling[0m percent-encoding v2.3.2
-[1m[92m   Compiling[0m miniz_oxide v0.9.1
-[1m[92m   Compiling[0m form_urlencoded v1.2.3
-[1m[92m   Compiling[0m poly1305 v0.8.0
-[1m[92m   Compiling[0m lock_api v0.4.14
-[1m[92m   Compiling[0m idna v1.1.0
+[1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m serde_json v1.0.154
+[1m[92m   Compiling[0m scopeguard v1.2.0
+[1m[92m   Compiling[0m opaque-debug v0.3.1
 [1m[92m   Compiling[0m rustls-webpki v0.103.17
+[1m[92m   Compiling[0m lock_api v0.4.14
+[1m[92m   Compiling[0m poly1305 v0.8.0
+[1m[92m   Compiling[0m form_urlencoded v1.2.3
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
+[1m[92m   Compiling[0m idna v1.1.0
 [1m[92m   Compiling[0m chacha20 v0.9.1
-[1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m tracing-core v0.1.36
+[1m[92m   Compiling[0m webpki-roots v1.0.12
 [1m[92m   Compiling[0m tracing-attributes v0.1.31
 [1m[92m   Compiling[0m serde_derive v1.0.229
 [1m[92m   Compiling[0m aead v0.5.2
+[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
+[1m[92m   Compiling[0m ip_network v0.4.1
+[1m[92m   Compiling[0m itoa v1.0.19
 [1m[92m   Compiling[0m pin-project-lite v0.2.18
 [1m[92m   Compiling[0m log v0.4.35
 [1m[92m   Compiling[0m memchr v2.8.3
 [1m[92m   Compiling[0m base64 v0.22.1
 [1m[92m   Compiling[0m bitflags v2.13.2
-[1m[92m   Compiling[0m ip_network_table-deps-treebitmap v0.5.0
-[1m[92m   Compiling[0m ip_network v0.4.1
-[1m[92m   Compiling[0m itoa v1.0.19
 [1m[92m   Compiling[0m tracing v0.1.44
 [1m[92m   Compiling[0m ip_network_table v0.2.0
 [1m[92m   Compiling[0m chacha20poly1305 v0.10.1
@@ -602,13 +602,13 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[92m   Compiling[0m flate2 v1.1.11
 [1m[92m   Compiling[0m parking_lot v0.12.5
 [1m[92m   Compiling[0m url v2.5.9
-[1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m blake2 v0.10.6
-[1m[92m   Compiling[0m num-conv v0.2.2
+[1m[92m   Compiling[0m hmac v0.12.1
 [1m[92m   Compiling[0m powerfmt v0.2.1
 [1m[92m   Compiling[0m deranged v0.5.9
 [1m[92m   Compiling[0m hex v0.4.3
 [1m[92m   Compiling[0m time-core v0.1.9
+[1m[92m   Compiling[0m num-conv v0.2.2
 [1m[92m   Compiling[0m boringtun v0.7.1
 [1m[92m   Compiling[0m time v0.3.55
 [1m[92m   Compiling[0m ureq v2.12.1
@@ -755,17 +755,17 @@ date=Fri Nov 27 04:43:53 UTC 2026
 [1m[94m278[0m [1m[94m|[0m fn timer_loop(shared: Arc<Shared>) {
     [1m[94m|[0m    [1m[33m^^^^^^^^^^[0m
 
-[1m[33mwarning[0m: `halo-core` (lib) generated 23 warnings
 [1m[33mwarning[0m: `halo-core` (lib test) generated 23 warnings (23 duplicates)
-[1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 18.22s
+[1m[33mwarning[0m: `halo-core` (lib) generated 23 warnings
+[1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 14.61s
 [1m[92m     Running[0m unittests src/lib.rs (rust/target/debug/build/halo-core/6ee80c8bf6c94e41/out/halo_core-6ee80c8bf6c94e41)
 
 running 8 tests
+test dns::tests::blocks_exact_and_subdomain ... ok
 test dns::tests::does_not_sinkhole_other_ports ... ok
 test dns::tests::forwards_allowed_query ... ok
-test dns::tests::blocks_exact_and_subdomain ... ok
-test dns::tests::sinkholes_full_udp_packet_and_swaps_endpoints ... ok
 test dns::tests::sinkholes_blocked_a_query ... ok
+test dns::tests::sinkholes_full_udp_packet_and_swaps_endpoints ... ok
 test dns::tests::supports_allow_and_adguard_syntax ... ok
 test wgconf::tests::parses_full_config ... ok
 test wgconf::tests::rejects_missing_key ... ok
@@ -794,15 +794,15 @@ Daemon will be stopped at the end of the build
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:checkDebugAarMetadata
 > Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
-> Task :app:mergeDebugResources
 > Task :app:parseDebugLocalResources
+> Task :app:mergeDebugResources
 
 > Task :app:processDebugMainManifest
 /home/runner/work/halo/halo/app/src/main/AndroidManifest.xml:63:9-67:48 Warning:
@@ -810,8 +810,8 @@ Daemon will be stopped at the end of the build
 
 > Task :app:processDebugManifest
 > Task :app:javaPreCompileDebug
-> Task :app:mergeDebugShaders
 > Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
@@ -819,38 +819,10 @@ Daemon will be stopped at the end of the build
 > Task :app:processDebugResources
 > Task :app:checkDebugDuplicateClasses
 > Task :app:desugarDebugFileDependencies
-> Task :app:compileDebugKotlin
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/MainActivity.kt:213:27 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/MainActivity.kt:271:23 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:23:52 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:24:58 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:25:48 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:26:46 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:28 Argument type mismatch: actual type is 'Float', but 'FloatArray!' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:47 Argument type mismatch: actual type is 'Float', but 'Int' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:66 Argument type mismatch: actual type is 'Float', but 'Int' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:294:24 None of the following candidates is applicable:
-fun put(p0: Int, p1: FloatBuffer!, p2: Int, p3: Int): FloatBuffer!
-fun put(p0: Int, p1: FloatArray!, p2: Int, p3: Int): FloatBuffer!
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:324:20 None of the following candidates is applicable:
-fun put(p0: Int, p1: FloatBuffer!, p2: Int, p3: Int): FloatBuffer!
-fun put(p0: Int, p1: FloatArray!, p2: Int, p3: Int): FloatBuffer!
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/HaloGlobeView.kt:33:13 'val' cannot be reassigned.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/HomeScreen.kt:254:22 Unresolved reference 'size'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/HomeScreen.kt:263:41 Unresolved reference 'size'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/LogsDialog.kt:34:27 Cannot infer type for this parameter. Specify it explicitly.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/LogsDialog.kt:34:55 Unresolved reference 'logs'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/CatalogRepository.kt:119:47 None of the following candidates is applicable:
-constructor(p0: (MutableMap<Any?, Any?>..Map<*, *>?)): JSONObject
-constructor(p0: JSONTokener!): JSONObject
-constructor(p0: String!): JSONObject
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/CountryGeo.kt:6:29 Const 'val' initializer must be a constant value.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/OpenVpnEngine.kt:143:23 Unresolved reference 'appContext'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/OpenVpnEngine.kt:150:1 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/VpnStarter.kt:36:23 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/VpnStarter.kt:97:23 Unresolved reference 'disconnect'.
 
 > Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/HaloGlobeView.kt:33:13 Unresolved reference 'setOpaque'.
+
 > Task :app:mergeExtDexDebug
 
 [Incubating] Problems report is available at: file:///home/runner/work/halo/halo/build/reports/problems/problems-report.html
@@ -874,7 +846,7 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 3m 2s
+BUILD FAILED in 2m 13s
 21 actionable tasks: 21 executed
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
@@ -914,38 +886,8 @@ Daemon will be stopped at the end of the build
 > Task :app:stripDebugDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libhalo_core.so, libopenvpn.so, libosslspeedtest.so, libosslutil.so, libovpn3.so, libovpnexec.so, libovpnutil.so.
 
-> Task :app:compileDebugKotlin
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/MainActivity.kt:213:27 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/MainActivity.kt:271:23 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:23:52 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:24:58 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:25:48 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:26:46 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:28 Argument type mismatch: actual type is 'Float', but 'FloatArray!' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:47 Argument type mismatch: actual type is 'Float', but 'Int' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:66 Argument type mismatch: actual type is 'Float', but 'Int' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:294:24 None of the following candidates is applicable:
-fun put(p0: Int, p1: FloatBuffer!, p2: Int, p3: Int): FloatBuffer!
-fun put(p0: Int, p1: FloatArray!, p2: Int, p3: Int): FloatBuffer!
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:324:20 None of the following candidates is applicable:
-fun put(p0: Int, p1: FloatBuffer!, p2: Int, p3: Int): FloatBuffer!
-fun put(p0: Int, p1: FloatArray!, p2: Int, p3: Int): FloatBuffer!
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/HaloGlobeView.kt:33:13 'val' cannot be reassigned.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/HomeScreen.kt:254:22 Unresolved reference 'size'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/HomeScreen.kt:263:41 Unresolved reference 'size'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/LogsDialog.kt:34:27 Cannot infer type for this parameter. Specify it explicitly.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/LogsDialog.kt:34:55 Unresolved reference 'logs'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/CatalogRepository.kt:119:47 None of the following candidates is applicable:
-constructor(p0: (MutableMap<Any?, Any?>..Map<*, *>?)): JSONObject
-constructor(p0: JSONTokener!): JSONObject
-constructor(p0: String!): JSONObject
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/CountryGeo.kt:6:29 Const 'val' initializer must be a constant value.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/OpenVpnEngine.kt:143:23 Unresolved reference 'appContext'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/OpenVpnEngine.kt:150:1 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/VpnStarter.kt:36:23 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/VpnStarter.kt:97:23 Unresolved reference 'disconnect'.
-
 > Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/HaloGlobeView.kt:33:13 Unresolved reference 'setOpaque'.
 
 [Incubating] Problems report is available at: file:///home/runner/work/halo/halo/build/reports/problems/problems-report.html
 
@@ -968,7 +910,7 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 23s
+BUILD FAILED in 18s
 28 actionable tasks: 8 executed, 20 up-to-date
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
@@ -1007,35 +949,7 @@ Daemon will be stopped at the end of the build
 > Task :app:writeDebugSigningConfigVersions UP-TO-DATE
 
 > Task :app:compileDebugKotlin FAILED
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/MainActivity.kt:213:27 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/MainActivity.kt:271:23 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:23:52 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:24:58 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:25:48 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:26:46 No value passed for parameter 'program'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:28 Argument type mismatch: actual type is 'Float', but 'FloatArray!' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:47 Argument type mismatch: actual type is 'Float', but 'Int' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:293:66 Argument type mismatch: actual type is 'Float', but 'Int' was expected.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:294:24 None of the following candidates is applicable:
-fun put(p0: Int, p1: FloatBuffer!, p2: Int, p3: Int): FloatBuffer!
-fun put(p0: Int, p1: FloatArray!, p2: Int, p3: Int): FloatBuffer!
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/GlobeRenderer.kt:324:20 None of the following candidates is applicable:
-fun put(p0: Int, p1: FloatBuffer!, p2: Int, p3: Int): FloatBuffer!
-fun put(p0: Int, p1: FloatArray!, p2: Int, p3: Int): FloatBuffer!
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/HaloGlobeView.kt:33:13 'val' cannot be reassigned.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/HomeScreen.kt:254:22 Unresolved reference 'size'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/HomeScreen.kt:263:41 Unresolved reference 'size'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/LogsDialog.kt:34:27 Cannot infer type for this parameter. Specify it explicitly.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/screens/LogsDialog.kt:34:55 Unresolved reference 'logs'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/CatalogRepository.kt:119:47 None of the following candidates is applicable:
-constructor(p0: (MutableMap<Any?, Any?>..Map<*, *>?)): JSONObject
-constructor(p0: JSONTokener!): JSONObject
-constructor(p0: String!): JSONObject
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/CountryGeo.kt:6:29 Const 'val' initializer must be a constant value.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/OpenVpnEngine.kt:143:23 Unresolved reference 'appContext'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/OpenVpnEngine.kt:150:1 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/VpnStarter.kt:36:23 Unresolved reference 'disconnect'.
-e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/vpn/VpnStarter.kt:97:23 Unresolved reference 'disconnect'.
+e: file:///home/runner/work/halo/halo/app/src/main/java/dev/lurexh/halo/ui/render/HaloGlobeView.kt:33:13 Unresolved reference 'setOpaque'.
 
 [Incubating] Problems report is available at: file:///home/runner/work/halo/halo/build/reports/problems/problems-report.html
 
@@ -1058,5 +972,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 21s
+BUILD FAILED in 16s
 28 actionable tasks: 1 executed, 27 up-to-date
