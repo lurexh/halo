@@ -116,7 +116,7 @@ object CatalogRepository {
         val root = JSONObject().apply {
             put("updated_at", catalog.updatedAt)
             put("servers", JSONArray().apply {
-                catalog.servers.forEach { put(JSONObject(it.toJson())) }
+                catalog.servers.forEach { put(it.toJson()) }
             })
         }
         val temp = File(file.parentFile, "$FILE.tmp")

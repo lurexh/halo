@@ -30,7 +30,7 @@ class HaloGlobeView(
             setEGLContextClientVersion(3)
             setEGLConfigChooser(8, 8, 8, 8, 16, 0)
             holder.setFormat(PixelFormat.TRANSLUCENT)
-            isOpaque = false
+            setOpaque(false)
             setPreserveEGLContextOnPause(true)
             setRenderer(renderer)
             renderMode = RENDERMODE_CONTINUOUSLY

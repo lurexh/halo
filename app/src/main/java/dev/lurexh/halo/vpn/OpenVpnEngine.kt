@@ -122,7 +122,6 @@ object OpenVpnEngine {
                 )
             }
         }
-    }
 
     fun disconnect(context: Context) {
         val wasOpenVpn = VpnController.state.value.engine == "openvpn"

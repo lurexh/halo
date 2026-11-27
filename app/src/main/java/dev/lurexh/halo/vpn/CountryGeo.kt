@@ -3,7 +3,7 @@ package dev.lurexh.halo.vpn
 data class GeoPoint(val lat: Float, val lon: Float)
 
 object CountryGeo {
-    private const val RAW = """
+    private val RAW = """
 AD:42.5:1.5,AE:24.0:54.0,AF:33.0:65.0,AG:17.1:-61.8,AI:18.2:-63.1,AL:41.1:20.0,
 AM:40.1:45.0,AO:-12.2:17.9,AQ:-82.0:0.0,AR:-38.4:-63.6,AS:-14.3:-170.7,AT:47.5:14.5,
 AU:-25.3:133.8,AW:12.5:-69.9,AX:60.3:20.0,AZ:40.1:47.6,BA:44.2:17.9,BB:13.2:-59.5,

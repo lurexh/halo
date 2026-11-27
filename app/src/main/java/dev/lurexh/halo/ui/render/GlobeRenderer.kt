@@ -290,8 +290,13 @@ class GlobeRenderer(private val onFailure: () -> Unit) : GLSurfaceView.Renderer 
                 val point = slerp(from, to, t)
                 val radius = 1.045f + 0.02f * sin(t * Math.PI.toFloat())
                 normalizeInPlace(point)
-                buffer.put(point[0] * radius, point[1] * radius, point[2] * radius)
-                buffer.put(accent[0], accent[1], accent[2], (1f - t) * 0.9f + 0.1f)
+                buffer.put(point[0] * radius)
+                buffer.put(point[1] * radius)
+                buffer.put(point[2] * radius)
+                buffer.put(accent[0])
+                buffer.put(accent[1])
+                buffer.put(accent[2])
+                buffer.put((1f - t) * 0.9f + 0.1f)
                 buffer.put(7f * scale)
             }
         }
@@ -321,7 +326,10 @@ class GlobeRenderer(private val onFailure: () -> Unit) : GLSurfaceView.Renderer 
         val buffer = ensureBuffer(lineVbo, arc.size * 7)
         arc.forEach { point ->
             buffer.put(point)
-            buffer.put(pulse[0], pulse[1], pulse[2], 0.72f)
+            buffer.put(pulse[0])
+            buffer.put(pulse[1])
+            buffer.put(pulse[2])
+            buffer.put(0.72f)
         }
         buffer.flip()
         GLES30.glBindBuffer(GLES30.GL_ARRAY_BUFFER, lineVbo)
@@ -528,43 +536,49 @@ class GlobeRenderer(private val onFailure: () -> Unit) : GLSurfaceView.Renderer 
 
     private fun frac(value: Float): Float = value - kotlin.math.floor(value)
 
-    private class SurfaceLocations(program: Int) {
-        val projection = GLES30.glGetUniformLocation(program, "uProjection")
-        val view = GLES30.glGetUniformLocation(program, "uView")
-        val model = GLES30.glGetUniformLocation(program, "uModel")
-        val accent = GLES30.glGetUniformLocation(program, "uAccent")
-        val pulse = GLES30.glGetUniformLocation(program, "uPulse")
-        val time = GLES30.glGetUniformLocation(program, "uTime")
-        val scan = GLES30.glGetUniformLocation(program, "uScan")
-        val alert = GLES30.glGetUniformLocation(program, "uAlert")
-        val position = GLES30.glGetAttribLocation(program, "aPosition")
-        val uv = GLES30.glGetAttribLocation(program, "aUv")
+    private class SurfaceLocations(program: Int = -1) {
+        val projection = loc(program, "uProjection")
+        val view = loc(program, "uView")
+        val model = loc(program, "uModel")
+        val accent = loc(program, "uAccent")
+        val pulse = loc(program, "uPulse")
+        val time = loc(program, "uTime")
+        val scan = loc(program, "uScan")
+        val alert = loc(program, "uAlert")
+        val position = attrib(program, "aPosition")
+        val uv = attrib(program, "aUv")
     }
 
-    private class AtmosphereLocations(program: Int) {
-        val projection = GLES30.glGetUniformLocation(program, "uProjection")
-        val view = GLES30.glGetUniformLocation(program, "uView")
-        val model = GLES30.glGetUniformLocation(program, "uModel")
-        val accent = GLES30.glGetUniformLocation(program, "uAccent")
-        val alert = GLES30.glGetUniformLocation(program, "uAlert")
-        val position = GLES30.glGetAttribLocation(program, "aPosition")
-        val uv = GLES30.glGetAttribLocation(program, "aUv")
+    private class AtmosphereLocations(program: Int = -1) {
+        val projection = loc(program, "uProjection")
+        val view = loc(program, "uView")
+        val model = loc(program, "uModel")
+        val accent = loc(program, "uAccent")
+        val alert = loc(program, "uAlert")
+        val position = attrib(program, "aPosition")
+        val uv = attrib(program, "aUv")
     }
 
-    private class PointLocations(program: Int) {
-        val projection = GLES30.glGetUniformLocation(program, "uProjection")
-        val view = GLES30.glGetUniformLocation(program, "uView")
-        val model = GLES30.glGetUniformLocation(program, "uModel")
-        val position = GLES30.glGetAttribLocation(program, "aPosition")
-        val color = GLES30.glGetAttribLocation(program, "aColor")
-        val size = GLES30.glGetAttribLocation(program, "aSize")
+    private class PointLocations(program: Int = -1) {
+        val projection = loc(program, "uProjection")
+        val view = loc(program, "uView")
+        val model = loc(program, "uModel")
+        val position = attrib(program, "aPosition")
+        val color = attrib(program, "aColor")
+        val size = attrib(program, "aSize")
     }
 
-    private class LineLocations(program: Int) {
-        val projection = GLES30.glGetUniformLocation(program, "uProjection")
-        val view = GLES30.glGetUniformLocation(program, "uView")
-        val model = GLES30.glGetUniformLocation(program, "uModel")
-        val position = GLES30.glGetAttribLocation(program, "aPosition")
-        val color = GLES30.glGetAttribLocation(program, "aColor")
+    private class LineLocations(program: Int = -1) {
+        val projection = loc(program, "uProjection")
+        val view = loc(program, "uView")
+        val model = loc(program, "uModel")
+        val position = attrib(program, "aPosition")
+        val color = attrib(program, "aColor")
     }
 }
+
+private fun loc(program: Int, name: String): Int =
+    if (program >= 0) GLES30.glGetUniformLocation(program, name) else -1
+
+private fun attrib(program: Int, name: String): Int =
+    if (program >= 0) GLES30.glGetAttribLocation(program, name) else -1
